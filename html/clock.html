@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Class Start Reference Time</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#60a5fa;
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.03);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      background:linear-gradient(180deg,var(--bg), #071126 80%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      zoom: 125%;
+    }
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      box-sizing:border-box;
+    }
+    .card{
+      width:100%;
+      max-width:600px;
+      background:linear-gradient(180deg,var(--card), rgba(11,18,32,0.6));
+      border-radius:16px;
+      padding:28px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.7), inset 0 1px 0 rgba(255,255,255,0.03);
+      text-align:center;
+      border:5px solid rgba(255, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+    }
+    .time {
+      color:rgb(0,255,0);
+      font-size:60px;
+      font-weight:700;
+      letter-spacing: -0.02em;
+      margin:0;
+      display:flex;
+      align-items:baseline;
+      justify-content:center;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .seconds{
+      font-size:22px;
+      font-weight:600;
+      opacity:0.85;
+    }
+    .ampm{
+      font-size:16px;
+      font-weight:600;
+      margin-left:6px;
+    }
+    .date {
+      margin-top:8px;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .meta {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-top:18px;
+    }
+    .tz {
+      color:var(--muted);
+      font-size:13px;
+    }
+    .controls {
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    .btn {
+      background:var(--glass);
+      border:1px solid rgba(255,255,255,0.04);
+      padding:8px 12px;
+      border-radius:10px;
+      color:inherit;
+      font-weight:600;
+      font-size:13px;
+      cursor:pointer;
+      transition: transform .08s ease, background .12s ease;
+    }
+    .btn:active{ transform:translateY(1px) }
+    .small {
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    /* responsive */
+    @media (max-width:420px){
+      .time { font-size:40px; }
+      .seconds { font-size:18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="card" aria-labelledby="clockTitle" role="region">
+      <h2 id="clockTitle" style="margin:0 0 8px 0; font-size:24px; font-weight:700; color:#00ff00">
+        <span style="display: none;">
+          Domain Name:<span style="color:#ffffff">cyber312.local</span><br />
+          User Name Convention: <span style="color:#ffffff">FirstName.LastName (no capitalization necessary)</span><br />
+          Default Password: <span style="color:#ffffff">def@ultP@55w0rd</span>
+        </span>
+      </h2>
+        <h3>This is your reference clock for the time this class will start.</h3>
+        <h4>Do not forget your Online Attendance Assignment IF IT IS REQUIRED</h4>
+      <div class="time" aria-live="polite" id="timeDisplay">
+        <span id="hoursMinutes">00:00</span>
+        <span class="seconds" id="seconds">00</span>
+        <span class="ampm" id="ampm" aria-hidden="true">AM</span>
+      </div>
+
+      <div class="date" id="dateDisplay">Loading date…</div>
+
+      <div class="meta">
+        <div class="tz" id="tzDisplay">Time zone: —</div>
+
+        <div class="controls">
+          <button class="btn" id="toggle24">24-hour</button>
+          <div class="small" id="status">Auto update</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    (function(){
+      const hoursMinutesEl = document.getElementById('hoursMinutes');
+      const secondsEl = document.getElementById('seconds');
+      const ampmEl = document.getElementById('ampm');
+      const dateEl = document.getElementById('dateDisplay');
+      const tzEl = document.getElementById('tzDisplay');
+      const toggleBtn = document.getElementById('toggle24');
+      const statusEl = document.getElementById('status');
+
+      // start in 12-hour mode unless user's locale usually uses 24h
+      let use24Hour = false;
+
+      // Attempt to detect user preference for 24h by formatting a time and checking hour format
+      try {
+        const test = new Intl.DateTimeFormat(undefined, {hour: 'numeric'}).format(new Date(2020,0,1,13));
+        use24Hour = !/13/.test(test) ? false : true;
+      } catch(e) {
+        use24Hour = false;
+      }
+
+      // reflect initial toggle label
+      function updateToggleLabel(){ toggleBtn.textContent = use24Hour ? '12-hour' : '24-hour'; }
+      updateToggleLabel();
+
+      toggleBtn.addEventListener('click', () => {
+        use24Hour = !use24Hour;
+        updateToggleLabel();
+        updateClock(); // immediate update
+      });
+
+      // get timezone name if available
+      function getTimeZoneName(){
+        try{
+          const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Local';
+          return tz;
+        }catch(e){
+          return 'Local';
+        }
+      }
+      tzEl.textContent = 'Time zone: ' + getTimeZoneName();
+
+      function pad(n){ return String(n).padStart(2,'0'); }
+
+      function updateClock(){
+        const now = new Date();
+
+        let hours = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        let ampm = '';
+        if(!use24Hour){
+          ampm = hours >= 12 ? 'PM' : 'AM';
+          hours = hours % 12 || 12;
+          ampmEl.style.display = 'inline';
+          ampmEl.textContent = ampm;
+        } else {
+          ampmEl.style.display = 'none';
+        }
+
+        hoursMinutesEl.textContent = pad(hours) + ':' + pad(minutes);
+        secondsEl.textContent = pad(seconds);
+
+        // Friendly date using user's locale
+        dateEl.textContent = now.toLocaleDateString(undefined, {
+          weekday: 'long',
+          month: 'short',
+          day: 'numeric',
+          year: 'numeric'
+        });
+
+        // optional small status: show whether system clock is precise (best-effort)
+        statusEl.textContent = 'Auto update · ' + (use24Hour ? '24h' : '12h');
+      }
+
+      // Update exactly on the second for smoothness
+      function startTicker(){
+        updateClock();
+        // compute ms until next full second
+        const now = Date.now();
+        const msToNextSecond = 1000 - (now % 1000);
+        setTimeout(function(){
+          updateClock();
+          setInterval(updateClock, 1000);
+        }, msToNextSecond);
+      }
+
+      startTicker();
+    })();
+  </script>
+</body>
+</html>
