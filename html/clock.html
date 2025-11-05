@@ -7,7 +7,7 @@
   <style>
     :root{
       --bg:#0f1724;
-      --card:#0b1220;
+      --card:#000000;
       --accent:#60a5fa;
       --muted:#94a3b8;
       --glass: rgba(255,255,255,0.03);
@@ -38,7 +38,7 @@
       padding:28px;
       box-shadow: 0 8px 30px rgba(2,6,23,0.7), inset 0 1px 0 rgba(255,255,255,0.03);
       text-align:center;
-      border:5px solid rgba(255, 0, 0, 0.75);
+      border:5px solid rgba(0, 255, 0, 0.75);
       backdrop-filter: blur(6px);
     }
     .time {
@@ -106,20 +106,31 @@
       .time { font-size:40px; }
       .seconds { font-size:18px; }
     }
+    #editable {
+      padding: 5px;
+      margin: 0 auto;
+      width: 99%;
+      color: #ffffff;
+      border: 1px solid rgb(62, 61, 61); 
+      background-color: rgba(70, 60, 60, 0.5);
+    }
   </style>
 </head>
 <body>
+
+
   <div class="wrap">
     <section class="card" aria-labelledby="clockTitle" role="region">
       <h2 id="clockTitle" style="margin:0 0 8px 0; font-size:24px; font-weight:700; color:#00ff00">
+        <div id ="editable" contenteditable="true"></div>
         <span style="display: none;">
           Domain Name:<span style="color:#ffffff">cyber312.local</span><br />
           User Name Convention: <span style="color:#ffffff">FirstName.LastName (no capitalization necessary)</span><br />
           Default Password: <span style="color:#ffffff">def@ultP@55w0rd</span>
         </span>
       </h2>
-        <h3>This is your reference clock for the time this class will start.</h3>
-        <h4>Do not forget your Online Attendance Assignment IF IT IS REQUIRED</h4>
+        <h3>This is your reference clock for the time that class will start.</h3>
+        <h4>Do not forget your Online Attendance Assignment</h4>
       <div class="time" aria-live="polite" id="timeDisplay">
         <span id="hoursMinutes">00:00</span>
         <span class="seconds" id="seconds">00</span>

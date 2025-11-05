@@ -94,4 +94,3 @@ if (!$SpeedtestHealth) {
 }
 write-host "Speedtest Health Check Result:" 
 $SpeedtestHealth | ForEach-Object { Write-Output "- $_" }
-.\waitonkeypress.ps1
