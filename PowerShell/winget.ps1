@@ -112,7 +112,6 @@ $programs =@(
 
 # Various 
 'PDFgear.PDFgear', #Read, edit, convert, merge, and sign PDF files completely free
-'Git.Git', # Git - is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmer
 'Microsoft.LAPS', # Local Administrator Password Solution - Provides management of local account passwords of domain joined computers. Passwords are stored in Active Directory
 'Microsoft.DeploymentToolkit', # Microsoft Deployment Toolkit (MDT) - provides a unified collection of tools, processes, and guidance for automating desktop and server deployments.
 'Microsoft.VisualStudioCode', # Visual Studio Code - is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions for other languages (such as C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity).
