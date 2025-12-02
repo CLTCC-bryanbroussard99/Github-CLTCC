@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample HTML Document</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head> 
+<style>
+  /* Basic styling for professional look */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  th {
+    background-color: #f2f2f2;
+    color: #333333;
+    font-weight: bold;
+  }
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  .layer-name {
+    font-weight: bold;
+    color: #0056b3; /* A strong color for the layer name */
+  }
+</style>
+
+<h2>The 7-Layer OSI Model Summary</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Layer #</th>
+      <th>Layer Name</th>
+      <th>Description</th>
+      <th>Data Unit</th>
+      <th>Key Protocols</th>
+      <th>Common Devices</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>7</td>
+      <td class="layer-name">Application</td>
+      <td>Provides the interface between the applications (like web browsers or email clients) and the network.</td>
+      <td>Data</td>
+      <td>**HTTP**, **HTTPS**, **FTP**, **SMTP**, **DNS**, **POP3**, **IMAP**</td>
+      <td>Gateway, PC/Server Software</td>
+      <td>Opening a web browser to view a webpage.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td class="layer-name">Presentation</td>
+      <td>Responsible for data formatting, translation, encryption, and compression so the data can be presented to the Application Layer.</td>
+      <td>Data</td>
+      <td>**SSL/TLS**, **JPEG**, **MPEG**, **ASCII**</td>
+      <td>PC/Server Software, Gateway</td>
+      <td>Encrypting an email before it is sent.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td class="layer-name">Session</td>
+      <td>Manages the establishment, maintenance, and termination of connections (sessions) between applications on different devices.</td>
+      <td>Data</td>
+      <td>**NetBIOS**, **RPC**, **PPTP**</td>
+      <td>PC/Server Software, Gateway</td>
+      <td>Maintaining a continuous connection while transferring a large file.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td class="layer-name">Transport</td>
+      <td>Handles reliable and sequential data delivery between processes on the source and destination hosts. Manages segmentation and reassembly.</td>
+      <td>**Segment** (TCP)<br>**Datagram** (UDP)</td>
+      <td>**TCP**, **UDP**, **SCTP**</td>
+      <td>Firewall, Load Balancer, Gateway</td>
+      <td>Ensuring that all packets arrive and are in the correct order when downloading a file (**TCP**).</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td class="layer-name">Network</td>
+      <td>Responsible for logical addressing (IP addressing) and path determination (routing) of data from source to destination across multiple networks.</td>
+      <td>**Packet**</td>
+      <td>**IP**, **ICMP**, **OSPF**, **EIGRP**</td>
+      <td>**Router**, Layer 3 Switch</td>
+      <td>Finding the best route for a data packet to travel from New York to London.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td class="layer-name">Data Link</td>
+      <td>Provides node-to-node data transfer and detects/corrects errors that may occur at the Physical Layer. Uses **MAC addresses**. Divided into LLC and MAC sublayers.</td>
+      <td>**Frame**</td>
+      <td>**Ethernet**, **ARP**, **PPP**, **Wi-Fi** (802.11)</td>
+      <td>**Switch**, Bridge, Network Interface Card (**NIC**)</td>
+      <td>Sending data between two computers on the same **local network segment**.</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td class="layer-name">Physical</td>
+      <td>Defines the physical characteristics of the network, including cables, connectors, voltage levels, and timing. It transmits raw bit streams over a physical medium.</td>
+      <td>**Bit**</td>
+      <td>**Cables** (Copper, Fiber), **Radio Waves**</td>
+      <td>**Hub**, Repeater, Cabling, Transceiver</td>
+      <td>Converting a digital **1** or **0** into an electrical pulse or light signal for transmission.</td>
+    </tr>
+  </tbody>
+</table>
+</html>
