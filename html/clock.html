@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-  <meta charset="UTF-8">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -18,7 +17,7 @@
       height:100%;
       margin:0;
       background:linear-gradient(180deg,var(--bg), #071126 80%);
-      color:#000000;
+      color:#e6eef8;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       zoom: 125%;
@@ -107,7 +106,6 @@
       .time { font-size:40px; }
       .seconds { font-size:18px; }
     }
-    /* Editable area */
     #editable {
       padding: 5px;
       margin: 0 auto;
@@ -116,92 +114,37 @@
       border: 1px solid rgb(62, 61, 61); 
       background-color: rgba(70, 60, 60, 0.5);
     }
-
-    /* Flyout container */
-    .flyout-container {
-        position: relative;
-        display: inline-block;
-        font-family: Arial, sans-serif;
-    }
-
-    /* Hide the checkbox */
-    .flyout-toggle {
-        display: none;
-    }
-
-    /* Button that opens flyout */
-    .flyout-button {
-        padding: 5px 5px;
-        background: #2a6df4;
-        color: #fff;
-        cursor: pointer;
-        border-radius: 4px;
-        user-select: none;
-        display: inline-block;
-    }
-
-    /* Flyout panel (hidden by default) */
-    .flyout-panel {
-        display: none;
-        position: absolute;
-        top: 45px;
-        left: 0;
-        background: #fff;
-        min-width: 500px;
-        border: 1px solid #ccc;
-        box-shadow: 0px 2px 6px rgba(0,0,0,0.3);
-        padding: 10px;
-        z-index: 100;
-    }
-
-    /* Checkbox hack: show when checked */
-    .flyout-toggle:checked + label + .flyout-panel {
-        display: block;
-    }
-
-    .flyout-panel a {
-        display: block;
-        padding: 8px;
-        text-decoration: none;
-        color: #333;
-        border-radius: 4px;
-    }
-
-    .flyout-panel a:hover {
-        background: #931717;
-    }
-</style>
-
+  </style>
 </head>
 <body>
 
 
   <div class="wrap">
     <section class="card" aria-labelledby="clockTitle" role="region">
-      <div class="flyout-container">
-
-    <!-- Hidden checkbox -->
-    <input type="checkbox" id="flyoutToggle" class="flyout-toggle">
-
-    <!-- The label acts as the button -->
-    <label for="flyoutToggle" class="flyout-button">Password Information</label>
-
-    <!-- Flyout panel -->
-    <div class="flyout-panel">
-          Domain Name: cyber312.local<br />
-          User Name Convention: FirstName.LastName<br />(no capitalization necessary)<br />
-          Default Password: def@ultP@55w0rd
-    </div>
-      <h2 id="clockTitle" style="margin:0 0 8px 0; font-size:24px; font-weight:700; color:#00ff00">
-        <div id ="editable" contenteditable="true"></div>
-        <span style="display: none;" >
-          Domain Name:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#ffffff">cybeihour312.local</span><br />
-          User Name Convention:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#ffffff">FirstName.LastName<br />(no capitalization necessary)</span><br />
-          Default Password:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color:#ffffff">def@ultP@55w0rd</span>
-        </span>
-      </h2>
-        <h3>This is your reference clock for the time that class will start.</h3>
-        <h4>Do not forget your Online Attendance Assignment</h4>
+      <details> 
+          <summary style=" color:#00FF00; cursor: pointer; padding: 5px;">Credential Information</summary>
+            <div style="text-align: left; color:#FFFFFF;">
+              <strong style="text-decoration: underline;">Domain Name</strong>: cyber312.local<br />
+              <strong style="text-decoration: underline;">User Name Convention</strong>: FirstName.LastName<br />
+              <span style="padding-left: 40px;;">(no capitalization necessary)<br /></span>
+              <strong style="text-decoration: underline;">Default Password</strong>: def@ultP@55w0rd</br>
+              <strong style="text-decoration: underline;">Password Length Required</strong>: 14 Characters</br>
+              <strong style="text-decoration: underline;">Password Complexity Requirements</strong>
+              <ul style="margin-top: 0px;">
+                <li>Characters from at least three of four categories:</li>
+                  <ul>
+                    <li><strong style="text-decoration: underline;">Uppercase letters</strong> (A-Z)</li>
+                    <li><strong style="text-decoration: underline;">Lowercase letters</strong> (a-z)</li>
+                    <li><strong style="text-decoration: underline;">Numbers</strong> (0-9)</li>
+                    <li><strong style="text-decoration: underline;">Special characters allowed</strong>  \ ( ! , \ # , \ % \ ) </li>
+                  </ul>
+                <li>Cannot contain the user's account name or parts of their full name</li>
+                <li>Meet a minimum length requirement of 14 characters</li>
+              </ul>
+          </div>
+            
+          </details>  
+      <div style="border: 1px solid #5f5f55"id ="editable" contenteditable="true"></div>
       <div class="time" aria-live="polite" id="timeDisplay">
         <span id="hoursMinutes">00:00</span>
         <span class="seconds" id="seconds">00</span>
