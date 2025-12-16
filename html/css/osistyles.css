@@ -1,0 +1,26 @@
+  /* Basic styling for professional look */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  th {
+    background-color: #9cd3e7;
+    color: #333333;
+    font-weight: bold;
+  }
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  .layer-name {
+    font-weight: bold;
+    color: #0056b3; /* A strong color for the layer name */
+  }
+  ul{
+    margin: 2px;
+  }
