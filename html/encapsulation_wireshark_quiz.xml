@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questestinterop>
+
+  <assessment title="Encapsulation and Packet Analysis Quiz">
+    <section ident="root_section">
+
+      <!-- Question 1 -->
+      <item ident="Q1" title="Encapsulation Layer">
+        <presentation>
+          <material>
+            <mattext>Which OSI layer adds port numbers during encapsulation?</mattext>
+          </material>
+          <response_lid ident="response1" rcardinality="Single">
+            <render_choice>
+              <response_label ident="A"><material><mattext>Network</mattext></material></response_label>
+              <response_label ident="B"><material><mattext>Transport</mattext></material></response_label>
+              <response_label ident="C"><material><mattext>Data Link</mattext></material></response_label>
+              <response_label ident="D"><material><mattext>Application</mattext></material></response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes><decvar/></outcomes>
+          <respcondition>
+            <conditionvar>
+              <varequal respident="response1">B</varequal>
+            </conditionvar>
+            <setvar action="Set">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+
+      <!-- Question 2 -->
+      <item ident="Q2" title="Wireshark Packet Detail">
+        <presentation>
+          <material>
+            <mattext>Which Wireshark section contains IP addressing information?</mattext>
+          </material>
+          <response_lid ident="response2" rcardinality="Single">
+            <render_choice>
+              <response_label ident="A"><material><mattext>Frame</mattext></material></response_label>
+              <response_label ident="B"><material><mattext>Ethernet</mattext></material></response_label>
+              <response_label ident="C"><material><mattext>IP</mattext></material></response_label>
+              <response_label ident="D"><material><mattext>TCP</mattext></material></response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes><decvar/></outcomes>
+          <respcondition>
+            <conditionvar>
+              <varequal respident="response2">C</varequal>
+            </conditionvar>
+            <setvar action="Set">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+
+      <!-- Question 3 -->
+      <item ident="Q3" title="Security Concept">
+        <presentation>
+          <material>
+            <mattext>Why is encapsulation important to network security?</mattext>
+          </material>
+          <response_lid ident="response3" rcardinality="Single">
+            <render_choice>
+              <response_label ident="A"><material><mattext>It encrypts all traffic</mattext></material></response_label>
+              <response_label ident="B"><material><mattext>It allows inspection of headers</mattext></material></response_label>
+              <response_label ident="C"><material><mattext>It increases bandwidth</mattext></material></response_label>
+              <response_label ident="D"><material><mattext>It prevents routing</mattext></material></response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes><decvar/></outcomes>
+          <respcondition>
+            <conditionvar>
+              <varequal respident="response3">B</varequal>
+            </conditionvar>
+            <setvar action="Set">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+
+      <!-- Question 4 -->
+      <item ident="Q4" title="Attack Type">
+        <presentation>
+          <material>
+            <mattext>Modifying packet headers to impersonate another system is known as:</mattext>
+          </material>
+          <response_lid ident="response4" rcardinality="Single">
+            <render_choice>
+              <response_label ident="A"><material><mattext>Phishing</mattext></material></response_label>
+              <response_label ident="B"><material><mattext>Spoofing</mattext></material></response_label>
+              <response_label ident="C"><material><mattext>Replay</mattext></material></response_label>
+              <response_label ident="D"><material><mattext>DoS</mattext></material></response_label>
+            </render_choice>
+          </response_lid>
+        </presentation>
+        <resprocessing>
+          <outcomes><decvar/></outcomes>
+          <respcondition>
+            <conditionvar>
+              <varequal respident="response4">B</varequal>
+            </conditionvar>
+            <setvar action="Set">100</setvar>
+          </respcondition>
+        </resprocessing>
+      </item>
+
+    </section>
+  </assessment>
+
+</questestinterop>
