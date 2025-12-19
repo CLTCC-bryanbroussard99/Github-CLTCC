@@ -358,6 +358,9 @@ foreach ($tool in $RSATTools) {
     Add-WindowsCapability -Online -Name $tool
 }
 
+# install Windows SDK
+winget install --source winget --exact --id Microsoft.WindowsSDK.10.0.26100 --log $env:USERPROFILE/Desktop/sdk-install.log
+
 # Verify RSAT installation ########################################################
 Get-WindowsCapability -Name RSAT* -Online | Where-Object State -eq 'Installed'
 
