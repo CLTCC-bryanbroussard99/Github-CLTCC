@@ -1,0 +1,56 @@
+<!-- 
+ 
+Core Layout Logic
+
+The first two properties are the most critical for defining the table structure.
+
+- display: grid; This activates the CSS Grid Layout engine. Unlike the default block layout 
+    (where divs stack on top of each other)
+    This allows you to align items into rows and columns simultaneously.
+- grid-template-columns: repeat(3, 1fr); This defines the column structure.
+
+- repeat(3, ...) tells the browser you want exactly 3 columns.
+- 1fr (Fractional Unit) tells each column to take up one equal part of the available space. 
+    Using 1fr ensures the table is fluid and fills the container width evenly.
+
+Sizing and Alignment
+
+These properties control the "box" that holds your table data.
+- width: 100%; Ensures the table expands to fill its parent container 
+    (like a sidebar or main page body).
+- max-width: 800px; Prevents the table from becoming awkwardly wide on large desktop monitors, 
+    maintaining readability.
+- margin: 20px auto; The 20px adds space above and below the table, 
+    while auto centers the entire table horizontally on the page.
+
+Aesthetics and Typography
+
+- These properties ensure the table looks polished and professional.
+- border: 1px solid #ccc; Adds a light grey outer frame to the table so the boundaries are clear.
+- font-family: sans-serif; Switches the text from the default "Times New Roman" 
+    style to a cleaner, modern font (like Arial or Helvetica), 
+    which is standard for professional web interfaces.
+- To vertically center content within a div grid cell, you use the align-items property on the container or align-self on individual cells. For a professional table layout, you typically want both horizontal and vertical centering.
+
+-->
+<div style="display: grid; grid-template-columns: repeat(5, 1fr); align-items: stretch; width: 100%; max-width: 800px; border: 1px solid #ccc; margin: 2px; font-family: sans-serif;"><!-- Title -->
+    <div style="grid-column: span 5; padding: 8px; background-color: #333; color: white; text-align: center; font-weight: bold;">Title</div>
+    <!-- Header Row -->
+    <div style="padding: 8px; border: 1px solid #eee; background-color: #e0e0e0; font-weight: bold; text-align: center;">Header</div>
+    <div style="padding: 8px; border: 1px solid #eee; background-color: #e0e0e0; font-weight: bold; text-align: center;">Header</div>
+    <div style="padding: 8px; border: 1px solid #eee; background-color: #e0e0e0; font-weight: bold; text-align: center;">Header</div>
+    <div style="padding: 8px; border: 1px solid #eee; background-color: #e0e0e0; font-weight: bold; text-align: center;">Header</div>
+    <div style="padding: 8px; border: 1px solid #eee; background-color: #e0e0e0; font-weight: bold; text-align: center;">Header</div>
+    <!--Clear Row -->
+    <div style="padding: 8px; border: 1px solid #eeeeee; text-align: center;">Cell</div>
+    <div style="padding: 8px; border: 1px solid #eeeeee; text-align: center;">Cell</div>
+    <div style="padding: 8px; border: 1px solid #eeeeee; text-align: center;">Cell</div>
+    <div style="padding: 8px; border: 1px solid #eeeeee; text-align: center;">Cell</div>
+    <div style="padding: 8px; border: 1px solid #eeeeee; text-align: center;">Cell</div>
+    <!-- Colored Row -->
+    <div style="padding: 8px; border: 1px solid #eeeeee; text-align: center; background-color: #f4f4f4;">Cell</div>
+    <div style="padding: 8px; border: 1px solid #eeeeee; text-align: center; background-color: #f4f4f4;">Cell</div>
+    <div style="padding: 8px; border: 1px solid #eeeeee; text-align: center; background-color: #f4f4f4;">Cell</div>
+    <div style="padding: 8px; border: 1px solid #eeeeee; text-align: center; background-color: #f4f4f4;">Cell</div>
+    <div style="padding: 8px; border: 1px solid #eeeeee; text-align: center; background-color: #f4f4f4;">Cell</div>
+</div>
