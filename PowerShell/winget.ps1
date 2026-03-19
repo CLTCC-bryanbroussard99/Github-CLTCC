@@ -82,57 +82,59 @@ winget source update
 
 # array of programs to install  ########################################################
 $programs =@(   
-# Browsers
-'Brave.Brave' # Brave Browser - Fast with built-in adblock and tracking protection.
-'Microsoft.Edge', # World-class performance with more privacy, more productivity, and more value while you browse.
-'Mozilla.Firefox', # Firefox Browser, also known as Mozilla Firefox or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.
-'VivaldiTechnologies.Vivaldi', # The new Vivaldi browser protects you from trackers, blocks unwanted ads, and puts you in control with unique built-in features. Get Vivaldi and browse fast.
-'Google.Chrome', # Google Chrome - A more simple, secure, and faster web browser than ever, with Google’s smarts built-in.
-'Opera.Opera', # Opera Stable - is a multi-platform web browser developed by Opera Software. Opera is a Chromium-based browser. It distinguishes itself from other browsers through its user interface, functionality, and other features
+    # Browsers  
+        'Brave.Brave' # Brave Browser - Fast with built-in adblock and tracking protection.
+        'Microsoft.Edge', # World-class performance with more privacy, more productivity, and more value while you browse.
+        'Mozilla.Firefox', # Firefox Browser, also known as Mozilla Firefox or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.
+        'VivaldiTechnologies.Vivaldi', # The new Vivaldi browser protects you from trackers, blocks unwanted ads, and puts you in control with unique built-in features. Get Vivaldi and browse fast.
+        'Google.Chrome', # Google Chrome - A more simple, secure, and faster web browser than ever, with Google’s smarts built-in.
+        'Opera.Opera', # Opera Stable - is a multi-platform web browser developed by Opera Software. Opera is a Chromium-based browser. It distinguishes itself from other browsers through its user interface, functionality, and other features
 
-#Tools
-'Git.Git', # Git - is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmer
-'GitHub.GitHubDesktop', #Focus on what matters instead of fighting with Git. Whether you're new to Git or a seasoned user, GitHub Desktop simplifies your development workflow.
-'Google.GoogleDrive', #Mounts Google Drive(s) as a share drive and streams files as needed from the cloud. 
-'Microsoft.VCRedist.2015+.x64'. # The Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017, 2019, and 2022 installs runtime components of Visual C++ libraries.
-'SUPERAntiSpyware.SuperAntiSpyware', #SUPERAntiSpyware - Detects and removes spyware, adware, malware, trojans, dialers, worms, keyloggers, hijackers, parasites, rootkits, and many other types of threats.
-'Malwarebytes.Malwarebytes', #Malwarebytes - is an anti-malware software for Microsoft Windows, macOS, Android, and iOS that finds and removes malware.
-'filezilla.FileZillaClient', # FileZilla Client - is a free and open-source, cross-platform FTP application, consisting of FileZilla Client and FileZilla Server. Client binaries are available for Windows, Linux, and macOS.
-'Oracle.MySQLWorkbench', # MySQL Workbench - is a unified visual tool for database architects, developers, and DBAs. MySQL Workbench provides data modeling, SQL development, and comprehensive administration tools for server configuration, user administration, backup, and much more.
-'PowerSoftware.PowerISO', #Provides an all-in-one solution. You can do every thing with your ISO files and disc image files.
-'Microsoft.PowerToys', #Microsoft PowerToys is a set of utilities for power users to tune and streamline their Windows experience for greater productivity
-'RevoUninstaller.RevoUninstaller'. #Revo Uninstaller is a freeware uninstall utility. It has powerful features to uninstall programs scanning for leftover files,
-'VideoLAN.VLC', #VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVDs, Audio CDs, VCDs, and various streaming protocols.
-'RustDesk.RustDesk', #RustDesk is a full-featured open source remote control alternative for self-hosting and security with minimal configuration.
-'Piriform.CCleaner', #CCleaner is a utility used to clean potentially unwanted files and invalid Windows Registry entries from a computer.
+    #Tools
+        'Git.Git', # Git - is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmer
+        'GitHub.GitHubDesktop', #Focus on what matters instead of fighting with Git. Whether you're new to Git or a seasoned user, GitHub Desktop simplifies your development workflow.
+        'Google.GoogleDrive', #Mounts Google Drive(s) as a share drive and streams files as needed from the cloud. 
+        'Microsoft.VCRedist.2015+.x64'. # The Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017, 2019, and 2022 installs runtime components of Visual C++ libraries.
+        'SUPERAntiSpyware.SuperAntiSpyware', #SUPERAntiSpyware - Detects and removes spyware, adware, malware, trojans, dialers, worms, keyloggers, hijackers, parasites, rootkits, and many other types of threats.
+        'Malwarebytes.Malwarebytes', #Malwarebytes - is an anti-malware software for Microsoft Windows, macOS, Android, and iOS that finds and removes malware.
+        'filezilla.FileZillaClient', # FileZilla Client - is a free and open-source, cross-platform FTP application, consisting of FileZilla Client and FileZilla Server. Client binaries are available for Windows, Linux, and macOS.
+        'Oracle.MySQLWorkbench', # MySQL Workbench - is a unified visual tool for database architects, developers, and DBAs. MySQL Workbench provides data modeling, SQL development, and comprehensive administration tools for server configuration, user administration, backup, and much more.
+        'PowerSoftware.PowerISO', #Provides an all-in-one solution. You can do every thing with your ISO files and disc image files.
+        'Microsoft.PowerToys', #Microsoft PowerToys is a set of utilities for power users to tune and streamline their Windows experience for greater productivity
+        'RevoUninstaller.RevoUninstaller'. #Revo Uninstaller is a freeware uninstall utility. It has powerful features to uninstall programs scanning for leftover files,
+        'VideoLAN.VLC', #VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVDs, Audio CDs, VCDs, and various streaming protocols.
+        'RustDesk.RustDesk', #RustDesk is a full-featured open source remote control alternative for self-hosting and security with minimal configuration.
+        'Piriform.CCleaner', #CCleaner is a utility used to clean potentially unwanted files and invalid Windows Registry entries from a computer.
+        'ar51an.iPerf3', #iPerf3 - is a tool for active measurements of the maximum achievable bandwidth on IP networks. It is a new implementation from scratch of the original iPerf, with the goal of producing a smaller, simpler codebase.
+        'Microsoft.WindowsTerminal', # Windows Terminal - A new, modern, fast, efficient, powerful, and productive terminal application for users of command-line tools and shells like Command Prompt, PowerShell, and WSL.
+        
+    # Communication
+        'Microsoft.Teams', #Make amazing things happen together at home, work, and school.
+        'tomlm.electron-outlook-365', #Outlook Web Application as a dedicated application. This hosts mail.office365.com and is suitable for using with enterprise work or school environmen
 
-# Communication
-'Microsoft.Teams', #Make amazing things happen together at home, work, and school.
-'tomlm.electron-outlook-365', #Outlook Web Application as a dedicated application. This hosts mail.office365.com and is suitable for using with enterprise work or school environmen
-
-# Various 
-'PDFgear.PDFgear', #Read, edit, convert, merge, and sign PDF files completely free
-'Microsoft.LAPS', # Local Administrator Password Solution - Provides management of local account passwords of domain joined computers. Passwords are stored in Active Directory
-'Microsoft.DeploymentToolkit', # Microsoft Deployment Toolkit (MDT) - provides a unified collection of tools, processes, and guidance for automating desktop and server deployments.
-'Microsoft.VisualStudioCode', # Visual Studio Code - is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions for other languages (such as C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity).
-'Famatech.AdvancedIPScanner', # Advanced IP Scanner - shows all network devices, gives you access to shared folders, and can even remotely switch computers off.
-'Oracle.MySQL', # MySQL - delivers a very fast, multithreaded, multi-user, and robust SQL (Structured Query Language) database server.
-'Oracle.JavaRuntimeEnvironment', # Its also integral to the intranet applications and other e-business solutions that are the foundation of corporate computing.
-'Oracle.JDK.19' ,# The JDK is a development environment for building applications, applets, and components using the Java programming language.
-'Python.Python.3.12', # Python - is a programming language that lets you work more quickly and integrate your systems more effectively.
-'7zip.7zip', # 7-zip - Free and open source file archiver with a high compression ratio.
-'PuTTY.PuTTY', # PuTTY - A free implementation of SSH and Telnet, along with an xterm terminal emulator.
-'Notepad++.Notepad++', # Notepad++ - is a free (as in “free speech” and also as in “free beer”) source code editor and Notepad replacement that supports several languages. Running in the MS Windows environment, its use is governed by GNU General Public License.
-'RevoUninstaller.RevoUninstaller', # Revo Uninstaller - is a freeware uninstall utility. It has powerful features to uninstall programs scanning for leftover files, folders and registry entries after uninstall. With its unique 'Hunter mode' it offers you some simple, easy to use but effective and powerful approaches to manage (uninstall, stop, delete, disable from auto starting) and to get information about your installed and/or running application. Many cleaning tools included!
-'CodecGuide.K-LiteCodecPack.Standard', # K-Lite Codec Pack Standard - is a collection of DirectShow filters, VFW/ACM codecs, and tools. Codecs and DirectShow filters are needed for encoding and decoding audio and video formats. The K-Lite Codec Pack is designed as a user-friendly solution for playing all your audio and movie files. With the K-Lite Codec Pack you should be able to play all the popular audio and video formats and even several less common formats.
-'Microsoft.DotNet.DesktopRuntime.7', # Microsoft .NET Windows Desktop Runtime 7.0 - .NET is a free, cross-platform, open-source developer platform for building many different types of applications.
-'.net desktopruntime.6', # Microsoft .NET Windows Desktop Runtime 6.0 - .NET is a free, cross-platform, open-source developer platform for building many different types of applications.
-'.net 45.2 targeting pack', # The .NET Framework 4.5.2 Targeting Pack enables developers to build applications that run on the .NET Framework 4.5.2.
-'dotPDNLLC.paintdotnet', # Paint.NET - is image and photo editing software for PCs that run Windows.
-'Microsoft.PowerShell', # PowerShell - is a cross-platform (Windows, Linux, and macOS) automation and configuration tool/framework that works well with your existing tools and is optimized for dealing with structured data (e.g. JSON, CSV, XML, etc.), REST APIs, and object models. It includes a command-line shell, an associated scripting language and a framework for processing cmdlets.
-'Oracle.VirtualBox', # VirtualBox - is a powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use. Not only is VirtualBox an extremely feature rich, high performance product for enterprise customers, it is also the only professional solution that is freely available as Open Source Software under the terms of the GNU General Public License (GPL) version 3.
-'WiresharkFoundation.Wireshark' # Wireshark - is the world's foremost and widely-used network protocol analyzer. It lets you see what's happening on your network at a microscopic level and is the de facto (and often de jure) standard across many commercial and non-profit enterprises, government agencies, and educational institutions.
-'Bitwarden.Bitwarden' #A secure and free password manager for all of your devices.
+    # Various 
+        'PDFgear.PDFgear', #Read, edit, convert, merge, and sign PDF files completely free
+        'Microsoft.LAPS', # Local Administrator Password Solution - Provides management of local account passwords of domain joined computers. Passwords are stored in Active Directory
+        'Microsoft.DeploymentToolkit', # Microsoft Deployment Toolkit (MDT) - provides a unified collection of tools, processes, and guidance for automating desktop and server deployments.
+        'Microsoft.VisualStudioCode', # Visual Studio Code - is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions for other languages (such as C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity).
+        'Famatech.AdvancedIPScanner', # Advanced IP Scanner - shows all network devices, gives you access to shared folders, and can even remotely switch computers off.
+        'Oracle.MySQL', # MySQL - delivers a very fast, multithreaded, multi-user, and robust SQL (Structured Query Language) database server.
+        'Oracle.JavaRuntimeEnvironment', # Its also integral to the intranet applications and other e-business solutions that are the foundation of corporate computing.
+        'Oracle.JDK.19' ,# The JDK is a development environment for building applications, applets, and components using the Java programming language.
+        'Python.Python.3.12', # Python - is a programming language that lets you work more quickly and integrate your systems more effectively.
+        '7zip.7zip', # 7-zip - Free and open source file archiver with a high compression ratio.
+        'PuTTY.PuTTY', # PuTTY - A free implementation of SSH and Telnet, along with an xterm terminal emulator.
+        'Notepad++.Notepad++', # Notepad++ - is a free (as in “free speech” and also as in “free beer”) source code editor and Notepad replacement that supports several languages. Running in the MS Windows environment, its use is governed by GNU General Public License.
+        'RevoUninstaller.RevoUninstaller', # Revo Uninstaller - is a freeware uninstall utility. It has powerful features to uninstall programs scanning for leftover files, folders and registry entries after uninstall. With its unique 'Hunter mode' it offers you some simple, easy to use but effective and powerful approaches to manage (uninstall, stop, delete, disable from auto starting) and to get information about your installed and/or running application. Many cleaning tools included!
+        'CodecGuide.K-LiteCodecPack.Standard', # K-Lite Codec Pack Standard - is a collection of DirectShow filters, VFW/ACM codecs, and tools. Codecs and DirectShow filters are needed for encoding and decoding audio and video formats. The K-Lite Codec Pack is designed as a user-friendly solution for playing all your audio and movie files. With the K-Lite Codec Pack you should be able to play all the popular audio and video formats and even several less common formats.
+        'Microsoft.DotNet.DesktopRuntime.7', # Microsoft .NET Windows Desktop Runtime 7.0 - .NET is a free, cross-platform, open-source developer platform for building many different types of applications.
+        '.net desktopruntime.6', # Microsoft .NET Windows Desktop Runtime 6.0 - .NET is a free, cross-platform, open-source developer platform for building many different types of applications.
+        '.net 45.2 targeting pack', # The .NET Framework 4.5.2 Targeting Pack enables developers to build applications that run on the .NET Framework 4.5.2.
+        'dotPDNLLC.paintdotnet', # Paint.NET - is image and photo editing software for PCs that run Windows.
+        'Microsoft.PowerShell', # PowerShell - is a cross-platform (Windows, Linux, and macOS) automation and configuration tool/framework that works well with your existing tools and is optimized for dealing with structured data (e.g. JSON, CSV, XML, etc.), REST APIs, and object models. It includes a command-line shell, an associated scripting language and a framework for processing cmdlets.
+        'Oracle.VirtualBox', # VirtualBox - is a powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use. Not only is VirtualBox an extremely feature rich, high performance product for enterprise customers, it is also the only professional solution that is freely available as Open Source Software under the terms of the GNU General Public License (GPL) version 3.
+        'WiresharkFoundation.Wireshark' # Wireshark - is the world's foremost and widely-used network protocol analyzer. It lets you see what's happening on your network at a microscopic level and is the de facto (and often de jure) standard across many commercial and non-profit enterprises, government agencies, and educational institutions.
+        'Bitwarden.Bitwarden' #A secure and free password manager for all of your devices.
 )
 
 # Unistall Microsoft Office if installed ########################################################
