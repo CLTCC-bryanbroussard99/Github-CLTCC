@@ -1,8 +1,6 @@
 <#
-.SYNOPSIS
     Detects Microsoft Office installations and attempts to uninstall them.
 
-.DESCRIPTION
     This script searches common registry uninstall locations (HKLM/HKCU and Wow6432Node)
     for products whose DisplayName contains 'Microsoft Office' or 'Office' and/or detects
     Click-to-Run (Office 365) via the ClickToRun configuration key. For each discovered

@@ -1,5 +1,4 @@
-<# 
-    Set-HostsDNSFilter.ps1
+<#
     Description: Turns your Windows hosts file into a DNS-based ad and malware filter.
     Source: Uses Steven Black’s unified hosts list (ads + malware + tracking)
     https://github.com/StevenBlack/hosts

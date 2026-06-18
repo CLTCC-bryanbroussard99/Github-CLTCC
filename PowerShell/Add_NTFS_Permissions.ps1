@@ -1,8 +1,7 @@
 <# 
-.SYNOPSIS
+
     Adds NTFS permissions with validation, user listing, and confirmation.
 
-.DESCRIPTION
     - Lists available local and/or domain users/groups
     - Validates path and account resolution
     - Confirms changes before applying ACL

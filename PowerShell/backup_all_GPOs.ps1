@@ -1,8 +1,6 @@
 <#
-.SYNOPSIS
-    Backup all GPOs from a remote domain controller.
 
-.DESCRIPTION
+    Backup all GPOs from a remote domain controller.
     This script connects to a remote computer, verifies access to the Group Policy module,
     and exports all or selected GPOs to a specified backup path.
 
