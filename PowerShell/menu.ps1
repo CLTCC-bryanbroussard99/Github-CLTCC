@@ -1,99 +1,147 @@
-# Menu.ps1
-# Persistent PowerShell menu to run other scripts in the same folder
+# Requires -RunAsAdministrator
 
-# Relaunch the script using the latest PowerShell (pwsh) if running in legacy PowerShell
-if ($PSVersionTable.PSVersion.Major -le 5) {
-    if (Get-Command pwsh -ErrorAction SilentlyContinue) {
-        pwsh -File $MyInvocation.MyCommand.Definition
-        exit
-    } else {
-        Write-Error "PowerShell 7+ is not installed on this system."
-        exit
-    }
+# 1. Define your Active Directory Search Target
+# Replace this with the actual Distinguished Name (DN) of your target OU
+$TargetOU = "OU=Domain Clients,OU=Cyber312.local Accounts,DC=cyber312,DC=local"
+# Requires -RunAsAdministrator
+
+# 1. Define your Active Directory Search Target
+# Replace this with the actual Distinguished Name (DN) of your target OU
+$TargetOU = "OU=Computers,OU=TechDept,DC=yourdomain,DC=com"
+
+Write-Host "=============================================" -ForegroundColor Cyan
+Write-Host "REMOTE DEPLOYMENT: OU-INTEGRATED WINDOWS REPAIR" -ForegroundColor Cyan
+Write-Host "=============================================" -ForegroundColor Cyan
+
+# Check if Active Directory Module is available
+if (-not (Get-Module -ListAvailable -Name ActiveDirectory)) {
+    Write-Host "[!] Error: Active Directory module is not installed on this machine." -ForegroundColor Red
+    Write-Host "Please install RSAT AD tools or run this script from a Domain Controller." -ForegroundColor Yellow
+    Exit
 }
 
-
-Clear-Host
-
-# --- Determine script directory reliably ---
+# 2. Dynamic Target Querying
+Write-Host "`nFetching active computer accounts from OU..." -ForegroundColor Yellow
 try {
-    # $PSScriptRoot is an automatic variable in PowerShell that contains the full path to the directory of the currently executing script.
-    if ($PSScriptRoot) {
-        $ScriptDir = $PSScriptRoot
-    # $MyInvocation is an automatic variable that provides information about the current command, specifically when that command is a function, a script, or a script block.    
-    } elseif ($MyInvocation.MyCommand.Path) {
-        $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-    } else {
-        $ScriptDir = Get-Location
+    # Queries the OU, filters for enabled computers, and extracts just their names
+    $MasterList = Get-ADComputer -SearchBase $TargetOU -Filter 'Enabled -eq $true' | Select-Object -ExpandProperty Name | Sort-Object
+    
+    if (-not $MasterList) {
+        Write-Host "[!] No active computers found in the specified OU." -ForegroundColor Red
+        Exit
     }
 }
 catch {
-    $ScriptDir = Get-Location
+    Write-Host "[!] AD Query Failed: Ensure the Distinguished Name (DN) is correct and you have read rights." -ForegroundColor Red
+    Write-Error $_
+    Exit
 }
 
-# --- Get all .ps1 scripts except this one ---
-$ThisScript = Split-Path -Leaf $MyInvocation.MyCommand.Path
-$Scripts = Get-ChildItem -Path $ScriptDir -Filter *.ps1 | Where-Object { $_.Name -ne $ThisScript }
+# 3. Numbered Selection Menu
+Write-Host "`nDiscovered Systems in OU:" -ForegroundColor Cyan
+for ($i = 0; $i -lt $MasterList.Count; $i++) {
+    # Formats index padding for clean vertical alignment (e.g., [ 1], [12])
+    $IndexStr = ($i + 1).ToString().PadLeft(($MasterList.Count.ToString().Length))
+    Write-Host " [$IndexStr] $($MasterList[$i])" -ForegroundColor Gray
+}
 
-# --- Main menu loop ---
-do {
-    Clear-Host
-    Write-Host "===================================" -ForegroundColor Cyan
-    Write-Host "   PowerShell Script Menu" -ForegroundColor Green
-    Write-Host "===================================" -ForegroundColor Cyan
+Write-Host "`n[STEP 1] Choose target computer(s):" -ForegroundColor Cyan
+Write-Host " - Type 'A' to target ALL computers"
+Write-Host " - Type a single number to target one computer (e.g., 3)"
+Write-Host " - Type comma-separated numbers to target a subset (e.g., 1,3,5)"
 
-    # Display dynamic scripts if any exist
-    if ($Scripts) {
-        for ($i = 0; $i -lt $Scripts.Count; $i++) {
-            Write-Host ("[{0}] {1}" -f ($i + 1), $Scripts[$i].Name)
+$UserSelection = Read-Host "`nEnter your selection"
+$Computers = @()
+
+# Evaluate user input
+if ($UserSelection.Trim().ToUpper() -eq "A") {
+    $Computers = $MasterList
+    Write-Host "`nTargeting ALL computers: $($Computers -join ', ')" -ForegroundColor Green
+} else {
+    # Split input by commas, trim excess spaces, and filter out non-numeric values
+    $Indices = $UserSelection.Split(',').ForEach({ $_.Trim() }) | Where-Object { $_ -match '^\d+$' }
+    
+    foreach ($Index in $Indices) {
+        $IntIndex = [int]$Index
+        if ($IntIndex -ge 1 -and $IntIndex -le $MasterList.Count) {
+            $Computers += $MasterList[$IntIndex - 1]
         }
-        Write-Host "-----------------------------------"
-    } else {
-        Write-Host "No local scripts found in $ScriptDir" -ForegroundColor Yellow
-        Write-Host "-----------------------------------"
     }
+    
+    # Validation step to ensure array populated correctly
+    if ($Computers.Count -eq 0) {
+        Write-Host "[!] Invalid selection or numbers out of bounds. Aborting deployment." -ForegroundColor Red
+        Exit
+    }
+    
+    Write-Host "`nTargeting selection: $($Computers -join ', ')" -ForegroundColor Green
+}
 
-    # Built-in utilities
-    Write-Host "[G] Run GPUpdate (Force)" -ForegroundColor Magenta
-    Write-Host "[0] Exit" -ForegroundColor Yellow
-    Write-Host "==================================="
-    $choice = Read-Host "Select an option"
+# 4. Interactive Restart Selection
+Write-Host "`n[STEP 2] Choose restart policy for targets:" -ForegroundColor Cyan
+Write-Host "1) Restart with 60-second delay"
+Write-Host "2) Restart Immediately"
+Write-Host "3) Execute repairs only (Do NOT restart)"
 
-    switch ($choice) {
-        '0' {
-            Write-Host "Exiting..." -ForegroundColor Yellow
-            break
+$RestartChoice = Read-Host "`nEnter option number (1, 2, or 3)"
+
+if ($RestartChoice -notin @("1", "2", "3")) {
+    Write-Host "Invalid selection. Aborting deployment." -ForegroundColor Red
+    Exit
+}
+
+# 5. Remote Script Block Execution Setup
+$ScriptBlock = {
+    param($RestartOption)
+    
+    $Computer = $env:COMPUTERNAME
+    $LogPath = "C:\Windows\Logs\DISM\TotalRepair.log"
+    
+    function Log-Message([string]$Message) {
+        $TimeStamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+        "[$TimeStamp] $Message" | Out-File -FilePath $LogPath -Append
+    }
+    
+    Log-Message "=== Starting repair sequence on $Computer ==="
+    
+    # Step 1: Deep Scan
+    Log-Message "Running DISM ScanHealth..."
+    dism /Online /Cleanup-Image /ScanHealth *>$null
+    
+    # Step 2: Online Restoration
+    Log-Message "Running DISM RestoreHealth..."
+    dism /Online /Cleanup-Image /RestoreHealth *>$null
+    
+    # Step 3: Component Store Cleanup
+    Log-Message "Running DISM StartComponentCleanup..."
+    dism /Online /Cleanup-Image /StartComponentCleanup *>$null
+    
+    # Step 4: System File Checker
+    Log-Message "Running SFC Scannow..."
+    sfc /scannow *>$null
+    
+    Log-Message "Repairs completed on $Computer."
+    
+    # Step 5: Execute chosen restart policy on the remote computer
+    switch ($RestartOption) {
+        "1" {
+            Log-Message "Initiating 60-second delayed reboot."
+            Restart-Computer -Force -Delay 60
         }
-
-        'G' {
-            Write-Host "`nRunning Group Policy Update..." -ForegroundColor Cyan
-            try {
-                gpupdate /force
-            }
-            catch {
-                Write-Host "Error running gpupdate: $($_.Exception.Message)" -ForegroundColor Red
-            }
-            Write-Host "`nProcess finished. Press Enter to return to the menu..."
-            Read-Host
+        "2" {
+            Log-Message "Initiating immediate reboot."
+            Restart-Computer -Force
         }
-
-        { $Scripts -and $_ -match '^\d+$' -and $_ -le $Scripts.Count -and $_ -gt 0 } {
-            $selectedScript = $Scripts[$choice - 1].FullName
-            Write-Host "`nRunning: $($selectedScript)`n" -ForegroundColor Cyan
-            try {
-                & $selectedScript
-            }
-            catch {
-                Write-Host "Error running script: $($_.Exception.Message)" -ForegroundColor Red
-            }
-            Write-Host "`nScript finished. Press Enter to return to the menu..."
-            Read-Host
-        }
-
-        default {
-            Write-Host "Invalid selection!" -ForegroundColor Red
-            Start-Sleep -Seconds 1.5
+        "3" {
+            Log-Message "Sequence complete. No reboot requested."
         }
     }
 }
-until ($choice -eq '0')
+
+# 6. Parallel Execution across the selected targets
+Write-Host "`nDeploying repair sequence to chosen targets in parallel..." -ForegroundColor Yellow
+
+Invoke-Command -ComputerName $Computers -ScriptBlock $ScriptBlock -ArgumentList $RestartChoice -ThrottleLimit 15
+
+Write-Host "`n[✓] Deployment commands sent to all reachable targets." -ForegroundColor Green
+Write-Host "Check local log files at 'C:\Windows\Logs\DISM\TotalRepair.log' on target machines for details." -ForegroundColor Gray
