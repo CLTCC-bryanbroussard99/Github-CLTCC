@@ -1,0 +1,167 @@
+<div style="width: 99%; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; line-height: 1.6; color: #1a202c; background-color: #f8fafc; padding: 20px; box-sizing: border-box;"><!-- Main Concept Card -->
+    <div style="background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 24px; margin-bottom: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+        <h2 style="color: #0f172a; margin-top: 0; margin-bottom: 16px; font-size: 1.75rem; border-bottom: 2px solid #2563eb; padding-bottom: 8px;">What is DNS and Why Does It Matter to Analysts?</h2>
+        <p style="font-size: 1.05rem; color: #334155; margin-bottom: 16px;">The <strong>Domain Name System (DNS)</strong> serves as the internet's directory, translating human-readable hostnames (such as <code>example.com</code>) into numerical IP addresses required to route network traffic.</p>
+        <div style="background-color: #eff6ff; border-left: 4px solid #1d4ed8; padding: 16px; margin-top: 16px; border-radius: 0 4px 4px 0;">
+            <h3 style="color: #1e40af; margin-top: 0; margin-bottom: 8px; font-size: 1.2rem;">The "So What?" for Cybersecurity</h3>
+            <p style="color: #1e293b; margin: 0;">Default DNS resolvers provided by Internet Service Providers (ISPs) typically perform basic resolution without threat inspection. By implementing filtering public DNS resolvers across workstations or perimeter firewalls, security analysts can block malicious domains, phishing infrastructure, tracking mechanisms, and inappropriate content before initial network connection attempts succeed.</p>
+        </div>
+        <!-- Instructor Additions: Analyst Context -->
+        <div style="margin-top: 20px; background-color: #f1f5f9; padding: 16px; border-radius: 6px; border: 1px solid #e2e8f0;">
+            <h3 style="color: #0f172a; margin-top: 0; margin-bottom: 8px; font-size: 1.1rem;">SOC Analyst Key Takeaway: Threat Hunting &amp; Telemetry</h3>
+            <p style="color: #334155; margin: 0 0 8px 0;">Over 90% of malware uses DNS to establish Command and Control (C2) channels, exfiltrate data via DNS tunneling, or dynamically locate infrastructure. Analyzing DNS logs allows SOC analysts to detect early-stage compromises before payloads execute on host systems.</p>
+            <p style="margin: 0;"><a style="color: #046798ff; font-weight: 600; text-decoration: underline;" href="https://www.cisa.gov/news-events/alerts/2021/03/10/dns-over-https-doh-and-security-implications" target="_blank" rel="noopener"> Learn more: CISA Guidance on Secure DNS Implementations &rarr; </a></p>
+        </div>
+    </div>
+    <!-- Provider Directory Card Header -->
+    <div style="background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 24px; margin-bottom: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+        <h2 style="color: #0f172a; margin-top: 0; margin-bottom: 8px; font-size: 1.5rem;">Overview of Major Public DNS Providers</h2>
+        <p style="color: #475569; margin: 0;">Review the primary IP addresses and security filtering profiles for standard public DNS resolvers below:</p>
+    </div>
+    <!-- Provider Cards Container -->
+    <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between;"><!-- AdGuard Card -->
+        <div style="flex: 1 1 calc(50% - 16px); min-width: 300px; background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; box-sizing: border-box;">
+            <h3 style="color: #0f172a; margin-top: 0; margin-bottom: 8px; font-size: 1.25rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;"><a style="color: #0f172a; text-decoration: none;" href="https://adguard-dns.io/" target="_blank" rel="noopener">AdGuard</a></h3>
+            <p style="color: #475569; margin-top: 0; margin-bottom: 12px; font-size: 0.95rem;"><strong>Filtering Focus:</strong> Advertisements, Trackers, Adult Content</p>
+            <ul style="margin: 0; padding-left: 20px; color: #1e293b;">
+                <li style="margin-bottom: 6px;"><code>94.140.14.14</code> / <code>94.140.15.15</code> &mdash; Standard Ad &amp; Tracker Blocking</li>
+                <li><code>94.140.14.15</code> / <code>94.140.15.16</code> &mdash; Family Protection (Ads, Trackers, &amp; Adult Content)</li>
+            </ul>
+        </div>
+        <!-- CleanBrowsing Card -->
+        <div style="flex: 1 1 calc(50% - 16px); min-width: 300px; background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; box-sizing: border-box;">
+            <h3 style="color: #0f172a; margin-top: 0; margin-bottom: 8px; font-size: 1.25rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;"><a style="color: #0f172a; text-decoration: none;" href="https://cleanbrowsing.org/" target="_blank" rel="noopener">CleanBrowsing</a></h3>
+            <p style="color: #475569; margin-top: 0; margin-bottom: 12px; font-size: 0.95rem;"><strong>Filtering Focus:</strong> Adult Content, Malicious Domains</p>
+            <ul style="margin: 0; padding-left: 20px; color: #1e293b;">
+                <li style="margin-bottom: 6px;"><code>185.228.168.168</code> / <code>185.228.169.168</code> &mdash; Adult Filter</li>
+                <li><code>185.228.168.10</code> / <code>185.228.168.9</code> &mdash; Security Filter (Malware Blocking)</li>
+            </ul>
+        </div>
+        <!-- Cloudflare Card -->
+        <div style="flex: 1 1 calc(50% - 16px); min-width: 300px; background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; box-sizing: border-box;">
+            <h3 style="color: #0f172a; margin-top: 0; margin-bottom: 8px; font-size: 1.25rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;"><a style="color: #0f172a; text-decoration: none;" href="https://1.1.1.1/" target="_blank" rel="noopener">Cloudflare</a></h3>
+            <p style="color: #475569; margin-top: 0; margin-bottom: 12px; font-size: 0.95rem;"><strong>Filtering Focus:</strong> Malware, Phishing, Adult Content</p>
+            <ul style="margin: 0; padding-left: 20px; color: #1e293b;">
+                <li style="margin-bottom: 6px;"><code>1.1.1.1</code> / <code>1.0.0.1</code> &mdash; Standard Unfiltered Resolution</li>
+                <li style="margin-bottom: 6px;"><code>1.1.1.2</code> &mdash; Malware &amp; Phishing Protection</li>
+                <li><code>1.1.1.3</code> &mdash; Malware &amp; Adult Content Protection</li>
+            </ul>
+        </div>
+        <!-- ControlD Card -->
+        <div style="flex: 1 1 calc(50% - 16px); min-width: 300px; background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; box-sizing: border-box;">
+            <h3 style="color: #0f172a; margin-top: 0; margin-bottom: 8px; font-size: 1.25rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;"><a style="color: #0f172a; text-decoration: none;" href="https://controld.com/" target="_blank" rel="noopener">ControlD</a></h3>
+            <p style="color: #475569; margin-top: 0; margin-bottom: 12px; font-size: 0.95rem;"><strong>Filtering Focus:</strong> Advertisements, Trackers, Adult Content, Malware</p>
+            <ul style="margin: 0; padding-left: 20px; color: #1e293b;">
+                <li style="margin-bottom: 6px;"><code>76.76.2.0</code> &mdash; Unfiltered</li>
+                <li style="margin-bottom: 6px;"><code>76.76.2.1</code> &mdash; Malware Protection</li>
+                <li style="margin-bottom: 6px;"><code>76.76.2.2</code> &mdash; Ad &amp; Tracker Blocking</li>
+                <li><code>76.76.2.4</code> &mdash; Adult Content Blocking</li>
+            </ul>
+        </div>
+        <!-- Google Public DNS Card -->
+        <div style="flex: 1 1 calc(50% - 16px); min-width: 300px; background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; box-sizing: border-box;">
+            <h3 style="color: #0f172a; margin-top: 0; margin-bottom: 8px; font-size: 1.25rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;"><a style="color: #0f172a; text-decoration: none;" href="https://developers.google.com/speed/public-dns" target="_blank" rel="noopener">Google Public DNS</a></h3>
+            <p style="color: #475569; margin-top: 0; margin-bottom: 12px; font-size: 0.95rem;"><strong>Filtering Focus:</strong> None (Standard High-Speed Resolution)</p>
+            <ul style="margin: 0; padding-left: 20px; color: #1e293b;">
+                <li><code>8.8.8.8</code> / <code>8.8.4.4</code> &mdash; Primary and Secondary Public Resolvers</li>
+            </ul>
+        </div>
+        <!-- Mullvad Card -->
+        <div style="flex: 1 1 calc(50% - 16px); min-width: 300px; background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; box-sizing: border-box;">
+            <h3 style="color: #0f172a; margin-top: 0; margin-bottom: 8px; font-size: 1.25rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;"><a style="color: #0f172a; text-decoration: none;" href="https://mullvad.net/en/help/dns-over-https-and-dns-over-tls" target="_blank" rel="noopener">Mullvad</a></h3>
+            <p style="color: #475569; margin-top: 0; margin-bottom: 12px; font-size: 0.95rem;"><strong>Filtering Focus:</strong> Ads, Trackers, Malware, Adult Content</p>
+            <ul style="margin: 0; padding-left: 20px; color: #1e293b;">
+                <li style="margin-bottom: 6px;"><code>194.242.2.3</code> &mdash; Ad Blocking</li>
+                <li style="margin-bottom: 6px;"><code>194.242.2.4</code> &mdash; Ad &amp; Malware Blocking</li>
+                <li style="margin-bottom: 6px;"><code>194.242.2.5</code> &mdash; Tracker Blocking</li>
+                <li><code>194.242.2.9</code> &mdash; Malware &amp; Adult Content Blocking</li>
+            </ul>
+        </div>
+        <!-- OpenDNS Card -->
+        <div style="flex: 1 1 calc(50% - 16px); min-width: 300px; background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; box-sizing: border-box;">
+            <h3 style="color: #0f172a; margin-top: 0; margin-bottom: 8px; font-size: 1.25rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;"><a style="color: #0f172a; text-decoration: none;" href="https://www.opendns.com/" target="_blank" rel="noopener">OpenDNS (Cisco)</a></h3>
+            <p style="color: #475569; margin-top: 0; margin-bottom: 12px; font-size: 0.95rem;"><strong>Filtering Focus:</strong> Malware, Phishing, Adult Content</p>
+            <ul style="margin: 0; padding-left: 20px; color: #1e293b;">
+                <li style="margin-bottom: 6px;"><code>208.67.222.222</code> / <code>208.67.220.220</code> &mdash; Home / Security Filter</li>
+                <li><code>208.67.222.123</code> / <code>208.67.220.123</code> &mdash; FamilyShield (Adult Content Blocking)</li>
+            </ul>
+        </div>
+        <!-- Quad9 Card -->
+        <div style="flex: 1 1 calc(50% - 16px); min-width: 300px; background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; box-sizing: border-box;">
+            <h3 style="color: #0f172a; margin-top: 0; margin-bottom: 8px; font-size: 1.25rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;"><a style="color: #0f172a; text-decoration: none;" href="https://www.quad9.net/" target="_blank" rel="noopener">Quad9</a></h3>
+            <p style="color: #475569; margin-top: 0; margin-bottom: 12px; font-size: 0.95rem;"><strong>Filtering Focus:</strong> Threat Intelligence, Malware, Phishing</p>
+            <ul style="margin: 0; padding-left: 20px; color: #1e293b;">
+                <li style="margin-bottom: 6px;"><code>9.9.9.9</code> / <code>149.112.112.112</code> &mdash; Threat Blocklist Enabled</li>
+                <li><code>9.9.9.11</code> / <code>149.112.112.11</code> &mdash; Threat Blocklist Enabled + EDNS Client Subnet (ECS)</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Router Setup Instructions Card -->
+    <div style="background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 24px; margin-bottom: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+        <h2 style="color: #0f172a; margin-top: 0; margin-bottom: 12px; font-size: 1.5rem; border-bottom: 2px solid #0284c7; padding-bottom: 8px;">Configuring Custom DNS on a Home Router</h2>
+        <p style="color: #334155; margin-bottom: 16px;">Changing DNS settings directly on your home gateway or Wi-Fi router applies DNS-level threat filtering network-wide to every connected endpoint (computers, mobile devices, smart TVs, and IoT hardware) without requiring individual device configuration.</p>
+        <!-- General Step-by-Step Box -->
+        <ul style="list-style-type: disc;">
+            <li style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;">
+                <h3 style="color: #0f172a; margin-top: 0; margin-bottom: 12px; font-size: 1.15rem;">Generalized Configuration Workflow</h3>
+                <ol style="margin: 0; padding-left: 20px; color: #1e293b;">
+                    <li style="margin-bottom: 8px;"><strong>Access the Administrative Console:</strong> Open a browser and enter your router's local gateway IP address (commonly <code>192.168.1.1</code> or <code>192.168.0.1</code>). Log in using your administrator credentials.</li>
+                    <li style="margin-bottom: 8px;"><strong>Locate DNS / WAN Settings:</strong> Navigate to the network configuration section (typically labeled <em>Network</em>, <em>Internet</em>, <em>WAN</em>, or <em>DHCP Server Settings</em>).</li>
+                    <li style="margin-bottom: 8px;"><strong>Switch DNS Assignment to Manual:</strong> Change DNS assignment mode from "Automatic / Get from ISP" to "Manual" or "Static".</li>
+                    <li style="margin-bottom: 8px;"><strong>Enter Resolver Addresses:</strong> Input your chosen provider&rsquo;s IP addresses into the <strong>Primary (Preferred) DNS</strong> and <strong>Secondary (Alternate) DNS</strong> fields (e.g., Quad9: <code>9.9.9.9</code> and <code>149.112.112.112</code>).</li>
+                    <li style="margin-bottom: 8px;"><strong>Save and Flush Client Cache:</strong> Apply changes and reboot the router. On endpoints, clear local DNS caches
+                        <ul style="margin: 0px; padding-left: 20px; color: #1e293b; list-style-type: disc;">
+                            <li style="margin-bottom: 8px;">Windows: ipconfig /flushdns</li>
+                            <li style="margin-bottom: 8px;">Linux/macOS: restart the DNS resolver daemon or reboot).</li>
+                            <li style="margin-bottom: 8px;">
+                                <div class="otQkpb" role="heading" aria-level="3" data-animation-nesting="" data-sfc-cp="" data-sfc-root="ep" data-copy-service-computed-style="font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 20px; font-weight: 600; margin: 24px 0px 12px; text-decoration: none; border-bottom: 0px rgb(238, 240, 255);">Modern Systems (<code class="KDcb0c" dir="ltr" data-sfc-root="ep" data-copy-service-computed-style="font-family: monospace; font-size: 14px; font-weight: 600; margin: 0px; text-decoration: none; border-bottom: 0.666667px solid rgb(44, 46, 53);">systemd-resolved<!--TgQPHd|||[]--></code>)</div>
+                                <ul style="margin: 0px; padding-left: 20px; color: #1e293b; list-style-type: disc;">
+                                    <li style="margin-bottom: 8px;">
+                                        <div class="otQkpb" role="heading" aria-level="3" data-animation-nesting="" data-sfc-cp="" data-sfc-root="ep" data-copy-service-computed-style="font-family: &quot;Google Sans&quot;, Roboto, Arial, sans-serif; font-size: 20px; font-weight: 600; margin: 24px 0px 12px; text-decoration: none; border-bottom: 0px rgb(238, 240, 255);"><!--TgQPHd|||[]--></div>
+                                        <strong>Ubuntu 22.04+ and newer distributions</strong>: Run <code>sudo resolvectl flush-caches</code>
+                                    </li>
+                                    <li style="margin-bottom: 8px;"><strong>Older systemd versions</strong>: Run <code>sudo systemd-resolve --flush-caches</code></li>
+                                </ul>
+                            </li>
+                            <li style="margin-bottom: 8px;">Alternative DNS Services<br />
+                                <ul style="margin: 0px; padding-left: 20px; color: #1e293b; list-style-type: disc;">
+                                    <li style="margin-bottom: 8px;"><strong>Name Service Cache Daemon (nscd)</strong>: Run <code>sudo systemctl restart nscd</code></li>
+                                    <li style="margin-bottom: 8px;"><strong>Dnsmasq</strong>: Run <code>sudo systemctl restart dnsmasq</code></li>
+                                    <li style="margin-bottom: 8px;"><strong>BIND</strong>: Run <code>sudo systemctl restart named</code> or <code>sudo rndc restart</code></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </li>
+        </ul>
+        <!-- Common Router Documentation Links -->
+        <div style="background-color: #f1f5f9; padding: 16px; border-radius: 6px; border: 1px solid #cbd5e1;">
+            <h3 style="color: #0f172a; margin-top: 0; margin-bottom: 8px; font-size: 1.05rem;">Vendor Setup Guides</h3>
+            <p style="color: #475569; margin: 0 0 10px 0; font-size: 0.95rem;">For vendor-specific instructions, consult official hardware documentation:</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px;"><a style="color:#016ca6ff;font-weight:600;text-decoration:underline;font-size:0.95rem;" href="https://kb.netgear.com/30510/How-do-I-change-the-DNS-servers-on-my-NETGEAR-router" target="_blank" rel="noopener">NETGEAR DNS Guide &rarr;</a> <a style="color:#016ca6ff;font-weight:600;text-decoration:underline;font-size:0.95rem;" href="https://www.tp-link.com/us/support/faq/1712/" target="_blank" rel="noopener">TP-Link DNS Guide &rarr;</a> <a style="color:#016ca6ff;font-weight:600;text-decoration:underline;font-size:0.95rem;" href="https://www.asus.com/support/FAQ/1006117/" target="_blank" rel="noopener">ASUS DNS Guide &rarr;</a> <a style="color:#016ca6ff;font-weight:600;text-decoration:underline;font-size:0.95rem;" href="https://www.linksys.com/support-article?articleNum=135502" target="_blank" rel="noopener">Linksys DNS Guide &rarr;</a></div>
+        </div>
+    </div>
+    <!-- Instructor Supplement: Protocol & Tool Reference -->
+    <div style="background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 24px; margin-top: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+        <h2 style="color: #0f172a; margin-top: 0; margin-bottom: 12px; font-size: 1.5rem;">Lab Prep: Essential DNS Protocols &amp; CLI Tools</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+            <div style="flex: 1 1 250px;">
+                <h3 style="color: #1e293b; font-size: 1.1rem; margin-bottom: 6px;">Encrypted DNS Protocols</h3>
+                <ul style="margin: 0; padding-left: 20px; color: #334155;">
+                    <li><strong>DoH (DNS over HTTPS):</strong> Port 443</li>
+                    <li><strong>DoT (DNS over TLS):</strong> Port 853</li>
+                    <li><strong>Standard Unencrypted DNS:</strong> UDP/TCP Port 53</li>
+                </ul>
+            </div>
+            <div style="flex: 1 1 250px;">
+                <h3 style="color: #1e293b; font-size: 1.1rem; margin-bottom: 6px;">Key Analysis Tools</h3>
+                <ul style="margin: 0; padding-left: 20px; color: #334155;">
+                    <li><code>nslookup &lt;domain&gt; &lt;server-IP&gt;</code> (Windows/Linux)</li>
+                    <li><code>dig @&lt;server-IP&gt; &lt;domain&gt;</code> (Linux/macOS)</li>
+                    <li><a style="color: #046798ff; text-decoration: underline;" href="https://www.wireshark.org/" target="_blank" rel="noopener">Wireshark</a> (Packet Capture &amp; Protocol Analysis)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
