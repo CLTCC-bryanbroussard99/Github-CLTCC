@@ -1,0 +1,128 @@
+<div style="width: 99%; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #0f172a; padding: 24px; box-sizing: border-box; line-height: 1.6;"><!-- Header Card -->
+    <div style="background-color: #1e293b; color: #ffffff; padding: 28px; border-radius: 10px; margin-bottom: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+        <h2 style="margin-top: 0; color: #38bdf8; font-size: 1.85rem; font-weight: bold; border-bottom: 2px solid #334155; padding-bottom: 12px;">OPNsense Firewall Lab &mdash; VirtualBox Environment</h2>
+        <p style="font-size: 1.1rem; color: #e2e8f0; margin-bottom: 0;"><strong>Course Context:</strong> Hands-on cybersecurity lab focusing on installing OPNsense in VirtualBox, configuring dual WAN/LAN interfaces, building stateful firewall rules, and validating traffic segmentation.</p>
+    </div>
+    <!-- Objectives & Requirements Grid -->
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 24px;"><!-- Objectives Card -->
+        <div style="flex: 1 1 45%; min-width: 300px; background-color: #ffffff; border: 1px solid #cbd5e1; border-left: 6px solid #0284c7; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <h3 style="margin-top: 0; color: #0f172a; font-size: 1.3rem;">Lab Objectives</h3>
+            <ul style="padding-left: 20px; margin-bottom: 0;">
+                <li style="margin-bottom: 8px;">Install OPNsense within VirtualBox configured with dual network adapters: <strong>WAN (NAT)</strong> and <strong>LAN (Internal Network)</strong>.</li>
+                <li style="margin-bottom: 8px;">Configure stateful firewall rules to allow ICMP traffic and block destination websites.</li>
+                <li style="margin-bottom: 8px;">Test network connectivity and gather empirical screenshot evidence for verification.</li>
+                <li style="margin-bottom: 0;">Explain how network segmentation and the Principle of Least Privilege operate in modern firewall architecture.</li>
+            </ul>
+        </div>
+        <!-- Prerequisites Card -->
+        <div style="flex: 1 1 45%; min-width: 300px; background-color: #ffffff; border: 1px solid #cbd5e1; border-left: 6px solid #0369a1; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <h3 style="margin-top: 0; color: #0f172a; font-size: 1.3rem;">Software Requirements</h3>
+            <ul style="padding-left: 20px; margin-bottom: 0;">
+                <li style="margin-bottom: 10px;">Hypervisor: <a style="color: #0369a1; text-decoration: underline; font-weight: 600;" title="Download Official Oracle VM VirtualBox Hypervisor Software" href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">Oracle VirtualBox (Latest Release)</a></li>
+                <li style="margin-bottom: 10px;">Firewall ISO: <a style="color: #0369a1; text-decoration: underline; font-weight: 600;" title="Download Official OPNsense Firewall ISO Images" href="https://opnsense.org/download/" target="_blank" rel="noopener">OPNsense Official Installation ISO</a></li>
+                <li style="margin-bottom: 10px;">Documentation Reference: <a style="color: #0369a1; text-decoration: underline; font-weight: 600;" title="Explore Official OPNsense System Administration Documentation" href="https://docs.opnsense.org/" target="_blank" rel="noopener">OPNsense System Administration Guide</a></li>
+                <li style="margin-bottom: 0;">Virtual Machine Architecture: Two active VMs (<strong>OPNsenseFirewall</strong> and a client OS such as <strong>Windows Client</strong> or <strong>Linux Workstation</strong>).</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Setup Walkthrough Card -->
+    <div style="background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 24px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        <h2 style="margin-top: 0; color: #1e293b; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Step-by-Step Lab Setup Procedures</h2>
+        <div style="margin-bottom: 18px; padding: 16px; background-color: #f8fafc; border-left: 4px solid #0f766e; border-radius: 4px;">
+            <h3 style="margin-top: 0; color: #0f766e; font-size: 1.15rem;">1. Create OPNsense Virtual Machine</h3>
+            <p style="margin-bottom: 0;">In VirtualBox, select <strong>New VM</strong>. Set OS Type to <strong>BSD</strong> and Version to <strong>FreeBSD (64-bit)</strong>. Allocate at least <strong>2048 MB RAM</strong> and a <strong>20 GB VDI</strong> dynamically allocated disk. Attach two virtual network adapters:</p>
+            <ul style="margin-top: 8px; margin-bottom: 0;">
+                <li><strong>Adapter 1 (WAN):</strong> Attached to <code style="background-color: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-family: monospace;">NAT</code> (provides upstream internet exposure).</li>
+                <li><strong>Adapter 2 (LAN):</strong> Attached to <code style="background-color: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-family: monospace;">Internal Network</code> named <code style="background-color: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-family: monospace;">LabNet</code>.</li>
+            </ul>
+        </div>
+        <div style="margin-bottom: 18px; padding: 16px; background-color: #f8fafc; border-left: 4px solid #0f766e; border-radius: 4px;">
+            <h3 style="margin-top: 0; color: #0f766e; font-size: 1.15rem;">2. Install OPNsense &amp; Assign Interfaces</h3>
+            <p style="margin-bottom: 0;">Boot the VM from your downloaded OPNsense ISO. Follow the installer prompts to assign interface mapping: map <code style="background-color: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-family: monospace;">em0</code> to WAN and <code style="background-color: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-family: monospace;">em1</code> to LAN. By default, the OPNsense LAN gateway IP is set to <code style="background-color: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-family: monospace;">192.168.1.1/24</code>.</p>
+        </div>
+        <div style="margin-bottom: 18px; padding: 16px; background-color: #f8fafc; border-left: 4px solid #0f766e; border-radius: 4px;">
+            <h3 style="margin-top: 0; color: #0f766e; font-size: 1.15rem;">3. Client VM Configuration</h3>
+            <p style="margin-bottom: 0;">Connect your Client VM (Windows or Linux) to the same Internal Network (<code style="background-color: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-family: monospace;">LabNet</code>). Assign the client static IP <code style="background-color: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-family: monospace;">192.168.1.10/24</code> with default gateway <code style="background-color: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-family: monospace;">192.168.1.1</code> (or enable OPNsense DHCP service). Confirm web connectivity by opening a browser and reaching the WebGUI at <code style="background-color: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-family: monospace;">https://192.168.1.1</code>.</p>
+        </div>
+        <div style="margin-bottom: 18px; padding: 16px; background-color: #f8fafc; border-left: 4px solid #0f766e; border-radius: 4px;">
+            <h3 style="margin-top: 0; color: #0f766e; font-size: 1.15rem;">4. Configure Firewall Rules</h3>
+            <p style="margin-bottom: 8px;">Navigate to <strong>Firewall &rarr; Rules &rarr; LAN</strong> in the OPNsense WebGUI:</p>
+            <ul style="margin-bottom: 0;">
+                <li>Create an <strong>Allow Rule</strong> for ICMP protocol (echo request/reply) to allow ping testing out to external targets.</li>
+                <li>Create a <strong>Block Rule</strong> for <code style="background-color: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-family: monospace;">facebook.com</code> using an IP/Domain Alias or Blocklist.</li>
+                <li>Click <strong>Apply Changes</strong> to enforce rule evaluation.</li>
+            </ul>
+        </div>
+        <div style="margin-bottom: 0; padding: 16px; background-color: #f8fafc; border-left: 4px solid #0f766e; border-radius: 4px;">
+            <h3 style="margin-top: 0; color: #0f766e; font-size: 1.15rem;">5. Validation &amp; Screenshot Evidence Collection</h3>
+            <p style="margin-bottom: 0;">From the client machine terminal, execute <code style="background-color: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-family: monospace;">ping 8.8.8.8</code> to verify ICMP pass-through. Next, attempt navigating to <code style="background-color: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-family: monospace;">https://facebook.com</code> in your client browser to confirm the connection is dropped/blocked. Capture clear screenshots of: (1) OPNsense LAN Rules list, (2) successful terminal ping output, and (3) browser timeout/blocked connection page.</p>
+        </div>
+    </div>
+    <!-- Network Diagram Concept & Quick Commands -->
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 24px;"><!-- Quick Commands Card -->
+        <div style="flex: 1 1 45%; min-width: 300px; background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <h2 style="margin-top: 0; color: #1e293b; font-size: 1.3rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px;">Lab Walkthrough &mdash; Diagnostic Commands</h2>
+            <div style="background-color: #0f172a; color: #38bdf8; padding: 14px; border-radius: 6px; font-family: Consolas, Monaco, monospace; font-size: 0.95rem; line-height: 1.5;">
+                <p style="margin: 0 0 8px 0;"><span style="color: #94a3b8;"># Test Internet &amp; ICMP Connectivity:</span><br />ping 8.8.8.8</p>
+                <p style="margin: 0 0 8px 0;"><span style="color: #94a3b8;"># Inspect Client Network Configuration:</span><br />ipconfig /all <span style="color: #94a3b8;">(Windows)</span> or ifconfig <span style="color: #94a3b8;">(Linux)</span></p>
+                <p style="margin: 0;"><span style="color: #94a3b8;"># OPNsense State Table Verification:</span><br />WebGUI &rarr; Firewall &rarr; Diagnostics &rarr; States</p>
+            </div>
+        </div>
+        <!-- Design Tips Card -->
+        <div style="flex: 1 1 45%; min-width: 300px; background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <h2 style="margin-top: 0; color: #1e293b; font-size: 1.3rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px;">Firewall Engineering Best Practices</h2>
+            <ul style="padding-left: 20px; margin-bottom: 0;">
+                <li style="margin-bottom: 10px;"><strong>Rule Ordering:</strong> Place specific BLOCK rules <em>above</em> general ALLOW rules. Firewalls process rules sequentially top-to-bottom and apply the first matching rule.</li>
+                <li style="margin-bottom: 10px;"><strong>Alias Management:</strong> Group domain names and IP addresses into <em>Aliases</em> (<code style="background-color: #e2e8f0; padding: 2px 4px; border-radius: 4px;">Firewall &rarr; Diagnostics &rarr; Aliases</code>) for modular rule maintenance.</li>
+                <li style="margin-bottom: 0;"><strong>Logging &amp; Auditing:</strong> Always enable logging on block rules to track unauthorized connection attempts in <code style="background-color: #e2e8f0; padding: 2px 4px; border-radius: 4px;">Firewall &rarr; Log Files &rarr; Live View</code>.</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Topology Architecture Layout -->
+    <div style="background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 20px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        <h2 style="margin-top: 0; color: #1e293b; font-size: 1.3rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px;">Network Topology Architecture</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center; gap: 12px; text-align: center; padding: 12px; background-color: #f1f5f9; border-radius: 6px;">
+            <div style="background-color: #ffffff; border: 2px solid #0284c7; padding: 12px; border-radius: 6px; flex: 1 1 180px; min-width: 150px;"><strong style="color: #0369a1; display: block;">Internet / NAT</strong> <span style="font-size: 0.85rem; color: #475569;">WAN Interface (em0)</span></div>
+            <div style="font-weight: bold; color: #64748b; font-size: 1.2rem;">⇆</div>
+            <div style="background-color: #ffffff; border: 2px solid #0f766e; padding: 12px; border-radius: 6px; flex: 1 1 200px; min-width: 180px;"><strong style="color: #0f766e; display: block;">OPNsense Firewall VM</strong> <span style="font-size: 0.85rem; color: #475569;">Gateway: 192.168.1.1</span></div>
+            <div style="font-weight: bold; color: #64748b; font-size: 1.2rem;">⇆</div>
+            <div style="background-color: #ffffff; border: 2px solid #b91c1c; padding: 12px; border-radius: 6px; flex: 1 1 180px; min-width: 150px;"><strong style="color: #b91c1c; display: block;">LabNet Internal Segment</strong> <span style="font-size: 0.85rem; color: #475569;">LAN Interface (em1)</span></div>
+            <div style="font-weight: bold; color: #64748b; font-size: 1.2rem;">⇆</div>
+            <div style="background-color: #ffffff; border: 2px solid #4338ca; padding: 12px; border-radius: 6px; flex: 1 1 180px; min-width: 150px;"><strong style="color: #4338ca; display: block;">Client Workstation VM</strong> <span style="font-size: 0.85rem; color: #475569;">IP: 192.168.1.10/24</span></div>
+        </div>
+    </div>
+    <!-- Submissions & Reflection Card -->
+    <div style="background-color: #ffffff; border: 1px solid #cbd5e1; border-left: 6px solid #b91c1c; border-radius: 8px; padding: 20px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        <h2 style="margin-top: 0; color: #b91c1c; font-size: 1.3rem;">Canvas Submission Deliverables</h2>
+        <p style="margin-bottom: 10px;">Upload the following items directly to the Canvas assignment submission portal:</p>
+        <ol style="padding-left: 20px; margin-bottom: 16px;">
+            <li style="margin-bottom: 6px;"><strong>Screenshot 1:</strong> OPNsense firewall rules configuration list showing your custom LAN rules.</li>
+            <li style="margin-bottom: 6px;"><strong>Screenshot 2:</strong> Terminal output showing a successful ICMP ping to <code style="background-color: #e2e8f0; padding: 2px 4px; border-radius: 4px;">8.8.8.8</code>.</li>
+            <li style="margin-bottom: 6px;"><strong>Screenshot 3:</strong> Browser window proving blocked access attempt to <code style="background-color: #e2e8f0; padding: 2px 4px; border-radius: 4px;">facebook.com</code>.</li>
+            <li style="margin-bottom: 0;"><strong>Reflection Statement:</strong> A concise 3 to 5 sentence summary detailing how firewall rules enforce network segmentation and the Principle of Least Privilege in enterprise environments.</li>
+        </ol>
+        <div style="background-color: #fef2f2; border: 1px solid #fca5a5; padding: 12px; border-radius: 6px; color: #991b1b; font-size: 0.95rem;"><strong>Instructor Note:</strong> Embedded network diagram graphics or customized screenshot placeholders should be finalized before publishing this unit module to students.</div>
+    </div>
+    <!-- Grading Rubric (Non-Table Card Layout) -->
+    <div style="background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        <h2 style="margin-top: 0; color: #1e293b; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">Grading Distribution Breakdown (100 Points Total)</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 16px;">
+            <div style="flex: 1 1 22%; min-width: 200px; background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 16px; text-align: center;">
+                <div style="font-size: 1.8rem; font-weight: bold; color: #0284c7;">40 Pts</div>
+                <strong style="color: #0f172a; display: block; margin-top: 4px;">Firewall Configuration</strong> <span style="font-size: 0.85rem; color: #475569;">Correct VM network setup, interface mapping, and rule definitions.</span>
+            </div>
+            <div style="flex: 1 1 22%; min-width: 200px; background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 16px; text-align: center;">
+                <div style="font-size: 1.8rem; font-weight: bold; color: #0284c7;">30 Pts</div>
+                <strong style="color: #0f172a; display: block; margin-top: 4px;">Screenshot Verification</strong> <span style="font-size: 0.85rem; color: #475569;">Clear, complete visual proof of rules, ping validation, and site blocking.</span>
+            </div>
+            <div style="flex: 1 1 22%; min-width: 200px; background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 16px; text-align: center;">
+                <div style="font-size: 1.8rem; font-weight: bold; color: #0284c7;">10 Pts</div>
+                <strong style="color: #0f172a; display: block; margin-top: 4px;">Reflection Quality</strong> <span style="font-size: 0.85rem; color: #475569;">Accurate technical explanation of least privilege and network segmentation concepts.</span>
+            </div>
+            <div style="flex: 1 1 22%; min-width: 200px; background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 16px; text-align: center;">
+                <div style="font-size: 1.8rem; font-weight: bold; color: #0284c7;">20 Pts</div>
+                <strong style="color: #0f172a; display: block; margin-top: 4px;">Canvas Assessment Quiz</strong> <span style="font-size: 0.85rem; color: #475569;">Completion of the corresponding online conceptual lab quiz in Canvas.</span>
+            </div>
+        </div>
+    </div>
+</div>

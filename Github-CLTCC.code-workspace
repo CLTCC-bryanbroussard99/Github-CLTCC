@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "\\\\dc02\\DistroFolder\\"
 		}
 	],
 	"settings": {}
