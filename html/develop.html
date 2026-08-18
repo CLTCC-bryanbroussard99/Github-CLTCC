@@ -1,421 +1,64 @@
-<<<<<<< HEAD
-<div style="width: 99%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; padding: 20px; line-height: 1.6; color: #333; margin: auto;">
-    <header style="text-align: center; margin-bottom: 40px;">
-        <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; display: inline-block; padding-bottom: 10px;">Curated Technical Guide: Essential USB Boot Drives</h2>
-        <p style="font-style: italic; color: #555;">Professional instructional overview for cybersecurity and systems administration.</p>
-    </header>
-    <div style="background: #fff; border-radius: 8px; padding: 25px; margin-bottom: 25px; border-left: 5px solid #3498db;">
-        <h2 style="margin-top: 0; color: #2c3e50;">Introduction</h2>
-        <p>In the field of cybersecurity and IT support, a robust toolkit of bootable USB drives is indispensable. These tools allow for system recovery, malware removal, and secure computing environments that bypass the host operating system. This guide summarizes the primary tools every technician should maintain, supplemented by advanced security and efficiency techniques.</p>
+
+<!-- Nominee Information -->
+<div class="section-card">
+  <div class="section-title">2. Nominee Information</div>
+  <div class="flex-row">
+    <div class="flex-col-full" style="margin-bottom: 12px;">
+      <label for="nomination_type">Nomination Type <span class="required">*</span></label>
+      <select id="nomination_type" name="nomination_type" required aria-required="true">
+        <option value="self">Self-Nomination</option>
+        <option value="peer">Nominating a Colleague</option>
+      </select>
     </div>
-    <div style="background: #fff; border-radius: 8px; padding: 25px; margin-bottom: 25px; border-left: 5px solid #e67e22;">
-        <h3 style="margin-top: 0; color: #d35400;">1. System Recovery &amp; OS Installation</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-            <div style="flex: 1; min-width: 250px;">
-                <h4 style="color: #2c3e50;">Windows Installation Media</h4>
-                <p>Essential for performing "clean installs" or repairing corrupted systems. <a class="inline_disabled" style="color: #0000ebff; text-decoration: none;" href="https://www.microsoft.com/software-download/windows10" target="_blank" rel="noopener">Download Windows 10</a> | <a class="inline_disabled" style="color: #0000ebff; text-decoration: none;" href="https://www.microsoft.com/en-us/software-download/windows11" target="_blank" rel="noopener">Download Windows 11</a></p>
-            </div>
-            <div style="flex: 1; min-width: 250px;">
-                <h4 style="color: #2c3e50;">Windows Recovery Drive</h4>
-                <p>A specialized drive containing system files and tools specific to a machine's hardware. Create this directly within Windows by searching for "Create a recovery drive" in the Taskbar. <a class="inline_disabled" target="_blank">Tutorial</a></p>
-            </div>
-        </div>
+  </div>
+  <div class="flex-row">
+    <div class="flex-col">
+      <label for="nominee_name">Nominee Full Name <span class="required">*</span></label>
+      <input type="text" id="nominee_name" name="nominee_name" required aria-required="true">
+    </div>Google Project Management
+    <div class="flex-col">
+      <label for="nominee_email">Nominee Campus Email Address <span class="required">*</span></label>
+      <input type="email" id="nominee_email" name="nominee_email" placeholder="username@cltcc.edu" required aria-required="true">
     </div>
-    <div style="background: #fff; border-radius: 8px; padding: 25px; margin-bottom: 25px; border-left: 5px solid #27ae60;">
-        <h3 style="margin-top: 0; color: #1e8449;">2. Diagnostic &amp; Repair Toolkits</h3>
-        <p>Preinstallation Environments (PE) provide a GUI with professional-grade utilities for systems that fail to boot.</p>
-        <ul style="padding-left: 20px; list-style-type: none;">
-            <li style="margin-bottom: 15px;"><strong><a class="inline_disabled" style="color: #0000ebff; text-decoration: none;" href="https://www.hirensbootcd.org/" target="_blank" rel="noopener">Hiren&rsquo;s BootCD PE</a>:</strong> A Windows 11-based environment packed with disk diagnostics and recovery tools.</li>
-            <li style="margin-bottom: 15px;"><strong><a class="inline_disabled" style="color: #0000ebff; text-decoration: none;" href="https://medicatusb.com/" target="_blank" rel="noopener">Medicat USB</a>:</strong> A comprehensive suite featuring Malwarebytes, Acronis, and Macrium Reflect.</li>
-        </ul>
+  </div>
+  <div class="flex-row" style="margin-top: 12px;">
+    <div class="flex-col">
+      <label for="nominee_department">Nominee Department / Program <span class="required">*</span></label>
+      <input type="text" id="nominee_department" name="nominee_department" required aria-required="true">
     </div>
-    <div style="background: #fff; border-radius: 8px; padding: 25px; margin-bottom: 25px; border-left: 5px solid #9b59b6;">
-        <h3 style="margin-top: 0; color: #8e44ad;">3. Privacy and Live Linux Environments</h3>
-        <p>Live environments allow hardware access without touching internal storage&mdash;vital for forensics and security.</p>
-        <ul style="padding-left: 20px; list-style-type: none;">
-            <li style="margin-bottom: 15px;"><strong><a class="inline_disabled" style="color: #0000ebff; text-decoration: none;" href="https://tails.net/" target="_blank" rel="noopener">Tails (The Amnesic Incognito Live System)</a>:</strong> Routes traffic through Tor and leaves no trace on host hardware.</li>
-            <li style="margin-bottom: 15px;"><strong><a class="inline_disabled" style="color: #0000ebff; text-decoration: none;" href="https://ubuntu.com/download" target="_blank" rel="noopener">Ubuntu</a> / <a class="inline_disabled" style="color: #0000ebff; text-decoration: none;" href="https://linuxmint.com/download.php" target="_blank" rel="noopener">Linux Mint</a>:</strong> Reliable distributions for quick file retrieval and hardware testing.</li>
-        </ul>
+    <div class="flex-col">
+      <label for="nominee_title">Nominee Academic Rank / Title <span class="required">*</span></label>
+      <input type="text" id="nominee_title" name="nominee_title" placeholder="e.g., Instructor, Associate Professor" required aria-required="true">
     </div>
-    <div style="background: #fff; border-radius: 8px; padding: 25px; margin-bottom: 25px; border-left: 5px solid #c0392b;">
-        <h3 style="margin-top: 0; color: #a93226;">4. Specialized Utility &amp; Security Tools</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-            <div style="flex: 1; min-width: 250px;">
-                <h4 style="color: #2c3e50;">Disk Management &amp; Forensic Sanitization</h4>
-                <p><strong><a class="inline_disabled" style="color: #0000ebff; text-decoration: none;" href="https://gparted.org/" target="_blank" rel="noopener">GParted</a>:</strong> Partition management.</p>
-                <p><strong><a class="inline_disabled" style="color: #0000ebff; text-decoration: none;" href="https://clonezilla.org/" target="_blank" rel="noopener">Clonezilla</a>:</strong> Disk cloning.</p>
-                <p><strong><a class="inline_disabled" style="color: #0000ebff; text-decoration: none;" href="https://dban.org/" target="_blank" rel="noopener">DBAN (Darik's Boot and Nuke)</a>:</strong> Wipes data using military-grade standards. <em>Warning: Data is unrecoverable.</em></p>
-            </div>
-            <div style="flex: 1; min-width: 250px;">
-                <h4 style="color: #2c3e50;">Hardware Stability &amp; Testing</h4>
-                <p><strong><a class="inline_disabled" style="color: #0000ebff; text-decoration: none;" href="https://www.memtest.org/" target="_blank" rel="noopener">MemTest86+</a>:</strong> Diagnoses faulty RAM.</p>
-                <p><strong><a class="inline_disabled" style="color: #0000ebff; text-decoration: none;" href="https://www.mersenne.org/download/#stresstest" target="_blank" rel="noopener">Prime95</a>:</strong> A stress-test utility that pushes CPU and RAM to confirm hardware stability.</p>
-            </div>
-        </div>
-    </div>
-    <div style="background: #fff; border-radius: 8px; padding: 25px; margin-bottom: 25px; border-left: 5px solid #f1c40f;">
-        <h3 style="margin-top: 0; color: #9a7d0a;">5. Advanced USB Use Cases &amp; Hardening</h3>
-        <p>Beyond simple bootable media, USB drives serve as critical components in a hardened security posture:</p>
-        <ul style="padding-left: 20px;">
-            <li style="margin-bottom: 10px;"><strong>Physical Security Keys:</strong> Tools like <a class="inline_disabled" style="color: #0000ebff; text-decoration: none;" href="https://sourceforge.net/projects/usbraptor/" target="_blank" rel="noopener"><strong>USB Raptor</strong></a> can turn a drive into a physical lock for your PC, while <a class="inline_disabled" style="color: #0000ebff; text-decoration: none;" href="https://www.yubico.com/get-yubikey/" target="_blank" rel="noopener"><strong>YubiKey</strong></a> provides hardware-backed MFA.</li>
-            <li style="margin-bottom: 10px;"><strong>Encrypted Portable Vaults:</strong> Use <a class="inline_disabled" style="color: #0000ebff; text-decoration: none;" href="https://veracrypt.jp/en/Home.html" target="_blank" rel="noopener"><strong>VeraCrypt</strong></a> to create encrypted containers on your drive for storing sensitive credentials or forensic evidence.</li>
-            <li style="margin-bottom: 10px;"><strong>Symbolic Link Syncing:</strong> Advanced users can use mklink /J to redirect application data to a USB drive, keeping environment settings consistent across machines.<br />
-                <p>These are like shortcuts on steroids that trick your apps into storing their settings on your USB drive instead of the local hard drive.</p>
-                <p><strong>Here&rsquo;s how it works in Windows:</strong></p>
-                <ul>
-                    <li style="margin-bottom: 10px;">Plug in your USB stick and open up a command prompt</li>
-                    <li style="margin-bottom: 10px;">Type <code>mklink /J "C:\Users\username\AppData\Roaming\Mozilla\Firefox" "X:\apps\firefox"</code> (replace your username and X with your USB drive letter)</li>
-                    <li style="margin-bottom: 10px;">Repeat for any other apps or folders you want to sync</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    <div style="background: #fff; border-radius: 8px; padding: 25px; margin-bottom: 25px; border-left: 5px solid #34495e;">
-        <h3 style="margin-top: 0; color: #2c3e50;">6. Deployment &amp; Hardware Recommendations</h3>
-        <h4 style="color: #2c3e50;">Creation Software</h4>
-        <ul style="list-style-type: none; padding-left: 0;">
-            <li style="margin-bottom: 10px; padding: 10px; background: #f9f9f9; border-radius: 4px;"><strong><a class="inline_disabled" style="color: #0000ebff; text-decoration: none;" href="https://rufus.ie/en/" target="_blank" rel="noopener">Rufus</a>:</strong> The standard for single-boot drives and "Windows To Go" portable installations.</li>
-            <li style="margin-bottom: 10px; padding: 10px; background: #f9f9f9; border-radius: 4px;"><strong><a class="inline_disabled" title="Link" href="https://www.ventoy.net/en/index.html" target="_blank" rel="noopener">Ventoy</a>:</strong> A multi-boot solution that allows you to drag-and-drop multiple ISO files onto one drive.</li>
-        </ul>
-        <h4 style="color: #2c3e50; margin-top: 20px;">Hardware Choice</h4>
-        <p>Not all USB drives are equal. For critical boot tasks, <strong>USB 3.0 or higher</strong> (USB 3.2 Gen 2 preferred) is recommended. Ensure you use reputable brands like <strong>Samsung, SanDisk, or Kingston</strong> to prevent data corruption during critical deployments.</p>
-=======
-<div style="width: 99%; margin: 0 auto; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a1a; background-color: #f8f9fa; padding: 16px;">
-    <div style="background-color: #ffffff; border-radius: 8px; padding: 20px; margin-bottom: 24px; border: 1px solid #d0d7de;">
-        <h2 style="color: #0f172a; font-size: 1.5rem; margin-top: 0; margin-bottom: 16px; border-bottom: 2px solid #0284c7; padding-bottom: 8px;">IPv4 Subnet Chart</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px;">
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/1</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 128.0.0.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 2,147,483,648</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 2,147,483,646</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/2</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 192.0.0.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 1,073,741,824</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 1,073,741,822</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/3</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 224.0.0.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 536,870,912</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 536,870,910</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/4</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 240.0.0.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 268,435,456</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 268,435,454</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/5</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 248.0.0.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 134,217,728</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 134,217,726</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/6</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 252.0.0.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 67,108,864</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 67,108,862</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/7</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 254.0.0.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 33,554,432</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 33,554,430</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/8</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.0.0.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 16,777,216</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 16,777,214</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/9</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.128.0.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 8,388,608</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 8,388,606</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/10</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.192.0.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 4,194,304</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 4,194,302</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/11</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.224.0.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 2,097,152</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 2,097,150</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/12</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.240.0.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 1,048,576</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 1,048,574</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/13</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.248.0.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 524,288</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 524,286</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/14</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.252.0.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 262,144</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 262,142</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/15</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.254.0.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 131,072</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 131,070</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/16</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.255.0.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 65,536</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 65,534</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/17</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.255.128.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 32,768</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 32,766</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/18</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.255.192.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 16,384</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 16,382</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/19</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.255.224.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 8,192</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 8,190</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/20</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.255.240.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 4,096</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 4,094</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/21</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.255.248.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 2,048</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 2,046</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/22</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.255.252.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 1,024</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 1,022</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/23</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.255.254.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 512</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 510</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/24</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.255.255.0</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 256</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 254</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/25</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.255.255.128</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 128</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 126</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/26</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.255.255.192</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 64</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 62</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/27</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.255.255.224</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 32</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 30</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/28</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.255.255.240</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 16</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 14</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/29</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.255.255.248</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 8</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 6</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/30</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.255.255.252</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 4</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 2</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/31</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.255.255.254</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 2</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 2 *</div>
-            </div>
-            <div style="background-color: #f1f5f9; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.25rem; color: #0369a1; margin-bottom: 4px;">/32</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet Mask:</strong> 255.255.255.255</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Total IPs:</strong> 1</div>
-                <div style="font-size: 0.95rem;"><strong>Assignable IPs:</strong> 1</div>
-            </div>
-        </div>
-        <div style="margin-top: 16px; padding: 12px; background-color: #fffbe0; border-left: 4px solid #d97706; border-radius: 0 4px 4px 0;">
-            <p style="margin: 0; font-size: 0.9rem; color: #1e293b; line-height: 1.4;">* /31 subnets are described in <a style="color: #0284c7; text-decoration: underline;" href="https://tools.ietf.org/html/rfc3021" target="_blank" rel="noopener">RFC3021</a>, which was primarily motivated by the potential for public address space conservation. There is no need for a broadcast address in "IPv4 Point-to-Point Links".</p>
-        </div>
-    </div>
-    <div style="background-color: #ffffff; border-radius: 8px; padding: 20px; margin-bottom: 24px; border: 1px solid #d0d7de;">
-        <h2 style="color: #0f172a; font-size: 1.5rem; margin-top: 0; margin-bottom: 4px; border-bottom: 2px solid #0284c7; padding-bottom: 8px;">IPv4 Classful Ranges</h2>
-        <p style="margin-top: 4px; margin-bottom: 16px;"><a style="color: #0284c7; text-decoration: underline;" href="https://tools.ietf.org/html/rfc790" target="_blank" rel="noopener">RFC790 Reference</a></p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px;">
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.2rem; color: #0f172a; margin-bottom: 4px;">Class A</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet:</strong> 0.0.0.0/1</div>
-                <div style="font-size: 0.95rem;"><strong>Range:</strong> 0.0.0.0 - 127.255.255.255</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.2rem; color: #0f172a; margin-bottom: 4px;">Class B</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet:</strong> 128.0.0.0/2</div>
-                <div style="font-size: 0.95rem;"><strong>Range:</strong> 128.0.0.0 - 191.255.255.255</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.2rem; color: #0f172a; margin-bottom: 4px;">Class C</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet:</strong> 192.0.0.0/3</div>
-                <div style="font-size: 0.95rem;"><strong>Range:</strong> 192.0.0.0 - 223.255.255.255</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.2rem; color: #0f172a; margin-bottom: 4px;">Class D</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet:</strong> 224.0.0.0/4</div>
-                <div style="font-size: 0.95rem;"><strong>Range:</strong> 224.0.0.0 - 239.255.255.255</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.2rem; color: #0f172a; margin-bottom: 4px;">Class E</div>
-                <div style="font-size: 0.95rem; margin-bottom: 2px;"><strong>Subnet:</strong> 240.0.0.0/4</div>
-                <div style="font-size: 0.95rem;"><strong>Range:</strong> 240.0.0.0 - 255.255.255.255</div>
-            </div>
-        </div>
-    </div>
-    <div style="background-color: #ffffff; border-radius: 8px; padding: 20px; margin-bottom: 24px; border: 1px solid #d0d7de;">
-        <h2 style="color: #0f172a; font-size: 1.5rem; margin-top: 0; margin-bottom: 4px; border-bottom: 2px solid #0284c7; padding-bottom: 8px;">IPv4 Private IP Ranges</h2>
-        <p style="margin-top: 4px; margin-bottom: 16px;"><a style="color: #0284c7; text-decoration: underline;" href="https://tools.ietf.org/html/rfc1918" target="_blank" rel="noopener">RFC1918 Reference</a></p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px;">
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0369a1; margin-bottom: 4px;">10.0.0.0/8</div>
-                <div style="font-size: 0.95rem; color: #334155;">A single class A network</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0369a1; margin-bottom: 4px;">172.16.0.0/12</div>
-                <div style="font-size: 0.95rem; color: #334155;">16 contiguous class B networks</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0369a1; margin-bottom: 4px;">192.168.0.0/16</div>
-                <div style="font-size: 0.95rem; color: #334155;">256 contiguous class C networks</div>
-            </div>
-        </div>
-    </div>
-    <div style="background-color: #ffffff; border-radius: 8px; padding: 20px; border: 1px solid #d0d7de;">
-        <h2 style="color: #0f172a; font-size: 1.5rem; margin-top: 0; margin-bottom: 4px; border-bottom: 2px solid #0284c7; padding-bottom: 8px;">IPv4 Special-Purpose Ranges</h2>
-        <p style="margin-top: 4px; margin-bottom: 8px;"><a style="color: #0284c7; text-decoration: underline;" href="https://tools.ietf.org/html/rfc5736" target="_blank" rel="noopener">RFC5736</a>, <a style="color: #0284c7; text-decoration: underline;" href="https://tools.ietf.org/html/rfc6890" target="_blank" rel="noopener">RFC6890</a> &amp; <a style="color: #0284c7; text-decoration: underline;" href="https://tools.ietf.org/html/rfc8190" target="_blank" rel="noopener">RFC8190</a></p>
-        <p style="font-size: 0.9rem; color: #475569; margin-bottom: 16px;">Note: Private IP addresses actually belong to this category as well, but are listed in the section above for clarity.</p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px;">
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">0.0.0.0/8</div>
-                <div style="font-size: 0.95rem; color: #334155;">This network</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">0.0.0.0/32</div>
-                <div style="font-size: 0.95rem; color: #334155;">This host on this network</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">100.64.0.0/10</div>
-                <div style="font-size: 0.95rem; color: #334155;">Shared Address Space</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">127.0.0.0/8</div>
-                <div style="font-size: 0.95rem; color: #334155;">Loopback * Several protocols have been granted exceptions to this rule. For examples, see [<a style="color: #0284c7; text-decoration: underline;" href="https://tools.ietf.org/html/rfc4379" target="_blank" rel="noopener">RFC4379</a>] and [<a style="color: #0284c7; text-decoration: underline;" href="https://tools.ietf.org/html/rfc5884" target="_blank" rel="noopener">RFC5884</a>].</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">169.254.0.0/16</div>
-                <div style="font-size: 0.95rem; color: #334155;">Link local</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">192.0.0.0/24</div>
-                <div style="font-size: 0.95rem; color: #334155;">IETF Assignments</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">192.0.0.0/29</div>
-                <div style="font-size: 0.95rem; color: #334155;">IPv4 Service Continuity Prefix</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">192.0.0.8/32</div>
-                <div style="font-size: 0.95rem; color: #334155;">IPv4 dummy address</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">192.0.0.9/32</div>
-                <div style="font-size: 0.95rem; color: #334155;">Port Control Protocol Anycast</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">192.0.0.10/32</div>
-                <div style="font-size: 0.95rem; color: #334155;">Traversal Using Relays around NAT A</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">192.0.0.170-171/32</div>
-                <div style="font-size: 0.95rem; color: #334155;">NAT64/DNS64 Discovery</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">192.0.2.0/24</div>
-                <div style="font-size: 0.95rem; color: #334155;">Documentation (TEST-NET-1)</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">192.31.196.0/24</div>
-                <div style="font-size: 0.95rem; color: #334155;">AS112-v4</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">192.52.193.0/24</div>
-                <div style="font-size: 0.95rem; color: #334155;">AMT</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">192.175.48.0/24</div>
-                <div style="font-size: 0.95rem; color: #334155;">Direct Delegation AS112 Service</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">198.18.0.0/15</div>
-                <div style="font-size: 0.95rem; color: #334155;">Benchmarking</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">198.51.100.0/24</div>
-                <div style="font-size: 0.95rem; color: #334155;">Documentation (TEST-NET-2)</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">203.0.113.0/24</div>
-                <div style="font-size: 0.95rem; color: #334155;">Documentation (TEST-NET-3)</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">240.0.0.0/4</div>
-                <div style="font-size: 0.95rem; color: #334155;">Reserved</div>
-            </div>
-            <div style="background-color: #f8fafc; border-radius: 6px; padding: 12px; border: 1px solid #cbd5e1;">
-                <div style="font-size: 1.1rem; color: #0f172a; margin-bottom: 4px;">255.255.255.255/32</div>
-                <div style="font-size: 0.95rem; color: #334155;">Limited broadcast</div>
-            </div>
-        </div>
->>>>>>> 40e565ef6b0306d166ca5b4c5ec15791c710d519
-    </div>
+  </div>
 </div>
+
+<!-- Statement & Qualifications -->
+<div class="section-card">
+  <div class="section-title">3. Nomination Statement</div>
+  <div class="flex-row">
+    <div class="flex-col-full">
+      <label for="statement">Statement of Support / Qualifications <span class="required">*</span></label>
+      <textarea id="statement" name="statement" required aria-required="true" placeholder="Please briefly describe how the nominee embodies leadership, service, integrity, and shared governance..."></textarea>
+      <div class="help-text">Limit response to 250-300 words. This statement may be shared with faculty voters during the election period.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Eligibility & Verification -->
+<div class="section-card">
+  <div class="section-title">4. Eligibility Verification</div>
+  <div class="checkbox-group">
+    <input type="checkbox" id="eligibility_confirm" name="eligibility_confirm" required aria-required="true">
+    <label for="eligibility_confirm">I confirm that the nominee is a full-time faculty member in good standing and meets all eligibility criteria set forth by the Faculty Senate Constitution. <span class="required">*</span></label>
+  </div>
+  <div class="checkbox-group" style="margin-top: 12px;">
+    <input type="checkbox" id="consent_confirm" name="consent_confirm" required aria-required="true">
+    <label for="consent_confirm">If nominating a colleague, I have discussed this nomination with the nominee, and they have agreed to serve if elected. <span class="required">*</span></label>
+  </div>
+</div>
+
+<div style="margin-top: 24px;">
+  <button type="submit" class="btn-submit">Submit Nomination</button>
+</div>
+
