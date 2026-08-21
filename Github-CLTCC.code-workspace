@@ -7,5 +7,7 @@
 			"path": "\\\\dc02\\DistroFolder\\"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"powershell.cwd": "Github-CLTCC"
+	}
 }

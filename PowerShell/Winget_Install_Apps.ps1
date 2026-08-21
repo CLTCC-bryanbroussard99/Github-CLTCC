@@ -91,7 +91,7 @@ $programs =@(
         'Opera.Opera', # Opera Stable - is a multi-platform web browser developed by Opera Software. Opera is a Chromium-based browser. It distinguishes itself from other browsers through its user interface, functionality, and other features
 
     #Tools
-        'Git.Git', # Git - is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmer
+     #   'Git.Git', # Git - is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmer
         'GitHub.GitHubDesktop', #Focus on what matters instead of fighting with Git. Whether you're new to Git or a seasoned user, GitHub Desktop simplifies your development workflow.
         'Google.GoogleDrive', #Mounts Google Drive(s) as a share drive and streams files as needed from the cloud. 
         'Microsoft.VCRedist.2015+.x64'. # The Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017, 2019, and 2022 installs runtime components of Visual C++ libraries.
