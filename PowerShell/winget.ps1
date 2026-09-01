@@ -105,6 +105,7 @@ $programs =@(
 'VideoLAN.VLC', #VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVDs, Audio CDs, VCDs, and various streaming protocols.
 'RustDesk.RustDesk', #RustDesk is a full-featured open source remote control alternative for self-hosting and security with minimal configuration.
 'Piriform.CCleaner', #CCleaner is a utility used to clean potentially unwanted files and invalid Windows Registry entries from a computer.
+'Paessler.PRTGNetworkMonitor', #PRTG Network Monitor - is a network monitoring software that allows you to monitor your network for problems caused by overloaded data links or network connections, as well as for abnormal traffic that could be indicative of a breach.
 
 # Communication
 'Microsoft.Teams', #Make amazing things happen together at home, work, and school.

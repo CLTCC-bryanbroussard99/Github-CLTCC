@@ -1,64 +1,66 @@
-
-<!-- Nominee Information -->
-<div class="section-card">
-  <div class="section-title">2. Nominee Information</div>
-  <div class="flex-row">
-    <div class="flex-col-full" style="margin-bottom: 12px;">
-      <label for="nomination_type">Nomination Type <span class="required">*</span></label>
-      <select id="nomination_type" name="nomination_type" required aria-required="true">
-        <option value="self">Self-Nomination</option>
-        <option value="peer">Nominating a Colleague</option>
-      </select>
+<div style="width: 99%; margin: 0 auto; font-family: sans-serif; color: #333; line-height: 1.6; padding: 5px;">
+    <div style="width: 99%; margin: 0 auto; font-family: sans-serif; color: #333; line-height: 1.6; padding: 5px;">
+        <h2 style="color: #003087; border-bottom: 3px solid #C6B17D; padding-bottom: 10px;">Lab Assignment:  CAT6 Patch Cable Termination</h2>
+        <p>This practical lab requires students to construct <strong>one</strong>  CAT6 patch cables by hand. This work must be completed in <strong>Room 312</strong> at the <a href="https://maps.app.goo.gl/FZjxt2KmYdeGk2G66" target="_blank" rel="noopener">Murray Street Campus</a>.</p>
+        <h2 style="color: #003087;">Project Specifications</h2>
+        <p>You are required to fabricate one individual Ethernet cable. The standard length is set to 3 feet; however, <strong>please consult your instructor for any length adjustments before beginning your work.</strong></p>
+        <h2 style="color: #003087;">Required Tools and Supplies</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="color: #000000ff;">Tools</h3>
+                <ul style="list-style-type: square; padding-left: 20px;">
+                    <li>RJ45 Crimper<br /><a class="inline_disabled" href="https://www.cdw.com/search/?key=rj45%20crimper%20tool&amp;fta=1" target="_blank" rel="noopener">RJ-45 Crimpers</a></li>
+                    <li>UTP Cable Stripper <br /><a class="inline_disabled" href="https://www.cdw.com/search/?key=cable%20stripper&amp;fta=1" target="_blank" rel="noopener">Cable Strippers</a></li>
+                    <li>Scissors or Wire Cutters</li>
+                    <li>Cable Tester<br /><a class="inline_disabled" href="https://www.cdw.com/search/networking/network-management/network-testing/?w=RD4&amp;cp=1&amp;key=cable+tester&amp;enkwrd=cable+tester&amp;akr=0" target="_blank" rel="noopener">Cable Testers</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="color: #000000ff;">Supplies</h3>
+                <ul style="list-style-type: square; padding-left: 20px;">
+                    <li>(1) 3.5-foot lengths of UTP Cat 6 cable<br /><a class="inline_disabled" href="https://www.cdw.com/search/cables/ethernet-cables/cat-6-cables/?w=BD2&amp;cp=1&amp;key=ethernet+cable&amp;enkwrd=ethernet+cable&amp;akr=0" target="_blank" rel="noopener">Ethernet Cable</a></li>
+                    <li>(2) RJ-45 Modular Plugs (Terminators)<br /><a class="inline_disabled" href="https://www.cdw.com/search/?key=RJ-45%20Connectors" target="_blank" rel="noopener">RJ-45 Connectors</a></li>
+                    <li>(2) Snagless Boot Covers <br /><a class="inline_disabled" href="https://www.cdwg.com/search/?key=boot%20covers" target="_blank" rel="noopener">Boot Covers</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="margin: 10px auto; padding-top: 15px; padding-right: 15px; padding-bottom: 15px; background-color: #f0f4f9; font-family: sans-serif; border: 1px solid #003087;">
+            <h3 style="color: #003087; margin-top: 0;">Resource Disclaimer<span style="color: #273540; font-size: 1rem;">&nbsp;</span></h3>
+            <p style="margin-bottom: 0;"><strong>Note to Students:</strong> The links provided in this documentation are intended strictly for <strong>academic and reference purposes</strong> to support our lab activities. Please be advised that inclusion of these links <strong>does not constitute an endorsement, recommendation, or promotion</strong> of any specific company, product, or service found on these external websites. Our goal is to provide technical context for the cabling standards we are learning in class.</p>
+            <p style="color: #b22222ff; margin: 0;">Important Note for Students:</p>
+            <p style="margin: 5px 0 0;">Product links provided above are for reference only so you can identify the equipment. You are <strong>not</strong> required to purchase these items.</p>
+        </div>
+        <h2 style="color: #003087;">Procedure Checklist</h2>
+        <ol style="padding-left: 20px;">
+            <li>Measure and cut the  CAT6 cable to the specified length.</li>
+            <li>Slide the boot covers onto the cable <em>before</em> stripping the jacket.</li>
+            <li>Strip the outer jacket (approx. 1 inch), ensuring no copper conductors are nicked.</li>
+            <li>Untwist and arrange wires according to the T568B standard.</li>
+            <li>Trim wires to an even length (approx. 0.5 inches).</li>
+            <li>Insert wires into the RJ45 plug and crimp using the authorized tool.</li>
+            <li>Verify functionality using the cable tester.</li>
+        </ol>
+        <h2 style="color: #003087; border-bottom: 3px solid #C6B17D; padding-bottom: 10px;">Lab Submission &amp; Assessment Criteria</h2>
+        <p>Before submitting your  CAT6 patch cables for grading, use this checklist to ensure your work meets professional requirements.</p>
+        <h2 style="color: #003087;">1. Physical Construction Standards</h2>
+        <ul style="list-style-type: square; padding-left: 20px;">
+            <li><strong>Jacket Retention:</strong> The cable jacket must extend <em>inside</em> the RJ45 connector and be held firmly by the crimp-down strain relief tab. If you can see individual twisted pairs outside the connector, the termination is rejected.</li>
+            <li><strong>Boot Placement:</strong> The snagless boot must be fully seated over the connector to provide proper cable support.</li>
+            <li><strong>Flush Trimming:</strong> All eight conductors must be cut flush and reach the very end of the RJ45 pins to ensure a solid connection.</li>
+        </ul>
+        <h2 style="color: #003087;">2. Wiring Standard (TIA/EIA-568B)</h2>
+        <p>The sequence must match the <strong>T568B</strong> standard exactly from left to right when holding the connector with the gold pins facing up and the clip facing away.<br /><img id="156560458" style="border: 1px solid #000000;" src="https://cltcc.instructure.com/courses/463835/files/166888192/preview" alt="RJ-45 A and B Pinout" width="500" height="281" data-api-endpoint="https://cltcc.instructure.com/api/v1/courses/463835/files/166888192" data-api-returntype="File" /></p>
+        <div style="background-color: #fcfcfc; padding: 15px; border-left: 5px solid #C6B17D; margin: 15px 0;">
+            <p><strong>Sequence (Left to Right):</strong> White/Orange, Orange, White/Green, Blue, White/Blue, Green, White/Brown, Brown.</p>
+        </div>
+        <h2 style="color: #003087;">3. Electrical Performance Testing</h2>
+        <p>Every cable must pass a continuity and wire-map test using a digital cable tester.</p>
+        <ul style="list-style-type: square; padding-left: 20px;">
+            <li><strong>Continuity:</strong> Every pin (1-8) must show a solid connection without intermittent flickering.</li>
+            <li><strong>Wire Map:</strong> The tester must confirm a "Straight-Through" connection. Any "Crossed Pair" or "Split Pair" results indicate a failure.</li>
+            <li><strong>Short Circuits:</strong> The tester must show no shorts between adjacent pins.</li>
+        </ul>
+        <h2 style="color: #003087;">Submission Checklist</h2>
+        <div style="margin-top: 15px;">The cable is verified for T568B standard. All connectors pass continuity testing (1-8). Jacket is seated inside the connector housing. Snagless boots are installed and secure.</div>
     </div>
-  </div>
-  <div class="flex-row">
-    <div class="flex-col">
-      <label for="nominee_name">Nominee Full Name <span class="required">*</span></label>
-      <input type="text" id="nominee_name" name="nominee_name" required aria-required="true">
-    </div>Google Project Management
-    <div class="flex-col">
-      <label for="nominee_email">Nominee Campus Email Address <span class="required">*</span></label>
-      <input type="email" id="nominee_email" name="nominee_email" placeholder="username@cltcc.edu" required aria-required="true">
-    </div>
-  </div>
-  <div class="flex-row" style="margin-top: 12px;">
-    <div class="flex-col">
-      <label for="nominee_department">Nominee Department / Program <span class="required">*</span></label>
-      <input type="text" id="nominee_department" name="nominee_department" required aria-required="true">
-    </div>
-    <div class="flex-col">
-      <label for="nominee_title">Nominee Academic Rank / Title <span class="required">*</span></label>
-      <input type="text" id="nominee_title" name="nominee_title" placeholder="e.g., Instructor, Associate Professor" required aria-required="true">
-    </div>
-  </div>
 </div>
-
-<!-- Statement & Qualifications -->
-<div class="section-card">
-  <div class="section-title">3. Nomination Statement</div>
-  <div class="flex-row">
-    <div class="flex-col-full">
-      <label for="statement">Statement of Support / Qualifications <span class="required">*</span></label>
-      <textarea id="statement" name="statement" required aria-required="true" placeholder="Please briefly describe how the nominee embodies leadership, service, integrity, and shared governance..."></textarea>
-      <div class="help-text">Limit response to 250-300 words. This statement may be shared with faculty voters during the election period.</div>
-    </div>
-  </div>
-</div>
-
-<!-- Eligibility & Verification -->
-<div class="section-card">
-  <div class="section-title">4. Eligibility Verification</div>
-  <div class="checkbox-group">
-    <input type="checkbox" id="eligibility_confirm" name="eligibility_confirm" required aria-required="true">
-    <label for="eligibility_confirm">I confirm that the nominee is a full-time faculty member in good standing and meets all eligibility criteria set forth by the Faculty Senate Constitution. <span class="required">*</span></label>
-  </div>
-  <div class="checkbox-group" style="margin-top: 12px;">
-    <input type="checkbox" id="consent_confirm" name="consent_confirm" required aria-required="true">
-    <label for="consent_confirm">If nominating a colleague, I have discussed this nomination with the nominee, and they have agreed to serve if elected. <span class="required">*</span></label>
-  </div>
-</div>
-
-<div style="margin-top: 24px;">
-  <button type="submit" class="btn-submit">Submit Nomination</button>
-</div>
-
