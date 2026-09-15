@@ -1,66 +1,1081 @@
-<div style="width: 99%; margin: 0 auto; font-family: sans-serif; color: #333; line-height: 1.6; padding: 5px;">
-    <div style="width: 99%; margin: 0 auto; font-family: sans-serif; color: #333; line-height: 1.6; padding: 5px;">
-        <h2 style="color: #003087; border-bottom: 3px solid #C6B17D; padding-bottom: 10px;">Lab Assignment:  CAT6 Patch Cable Termination</h2>
-        <p>This practical lab requires students to construct <strong>one</strong>  CAT6 patch cables by hand. This work must be completed in <strong>Room 312</strong> at the <a href="https://maps.app.goo.gl/FZjxt2KmYdeGk2G66" target="_blank" rel="noopener">Murray Street Campus</a>.</p>
-        <h2 style="color: #003087;">Project Specifications</h2>
-        <p>You are required to fabricate one individual Ethernet cable. The standard length is set to 3 feet; however, <strong>please consult your instructor for any length adjustments before beginning your work.</strong></p>
-        <h2 style="color: #003087;">Required Tools and Supplies</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
-            <div style="flex: 1; min-width: 300px;">
-                <h3 style="color: #000000ff;">Tools</h3>
-                <ul style="list-style-type: square; padding-left: 20px;">
-                    <li>RJ45 Crimper<br /><a class="inline_disabled" href="https://www.cdw.com/search/?key=rj45%20crimper%20tool&amp;fta=1" target="_blank" rel="noopener">RJ-45 Crimpers</a></li>
-                    <li>UTP Cable Stripper <br /><a class="inline_disabled" href="https://www.cdw.com/search/?key=cable%20stripper&amp;fta=1" target="_blank" rel="noopener">Cable Strippers</a></li>
-                    <li>Scissors or Wire Cutters</li>
-                    <li>Cable Tester<br /><a class="inline_disabled" href="https://www.cdw.com/search/networking/network-management/network-testing/?w=RD4&amp;cp=1&amp;key=cable+tester&amp;enkwrd=cable+tester&amp;akr=0" target="_blank" rel="noopener">Cable Testers</a></li>
-                </ul>
-            </div>
-            <div style="flex: 1; min-width: 300px;">
-                <h3 style="color: #000000ff;">Supplies</h3>
-                <ul style="list-style-type: square; padding-left: 20px;">
-                    <li>(1) 3.5-foot lengths of UTP Cat 6 cable<br /><a class="inline_disabled" href="https://www.cdw.com/search/cables/ethernet-cables/cat-6-cables/?w=BD2&amp;cp=1&amp;key=ethernet+cable&amp;enkwrd=ethernet+cable&amp;akr=0" target="_blank" rel="noopener">Ethernet Cable</a></li>
-                    <li>(2) RJ-45 Modular Plugs (Terminators)<br /><a class="inline_disabled" href="https://www.cdw.com/search/?key=RJ-45%20Connectors" target="_blank" rel="noopener">RJ-45 Connectors</a></li>
-                    <li>(2) Snagless Boot Covers <br /><a class="inline_disabled" href="https://www.cdwg.com/search/?key=boot%20covers" target="_blank" rel="noopener">Boot Covers</a></li>
-                </ul>
-            </div>
-        </div>
-        <div style="margin: 10px auto; padding-top: 15px; padding-right: 15px; padding-bottom: 15px; background-color: #f0f4f9; font-family: sans-serif; border: 1px solid #003087;">
-            <h3 style="color: #003087; margin-top: 0;">Resource Disclaimer<span style="color: #273540; font-size: 1rem;">&nbsp;</span></h3>
-            <p style="margin-bottom: 0;"><strong>Note to Students:</strong> The links provided in this documentation are intended strictly for <strong>academic and reference purposes</strong> to support our lab activities. Please be advised that inclusion of these links <strong>does not constitute an endorsement, recommendation, or promotion</strong> of any specific company, product, or service found on these external websites. Our goal is to provide technical context for the cabling standards we are learning in class.</p>
-            <p style="color: #b22222ff; margin: 0;">Important Note for Students:</p>
-            <p style="margin: 5px 0 0;">Product links provided above are for reference only so you can identify the equipment. You are <strong>not</strong> required to purchase these items.</p>
-        </div>
-        <h2 style="color: #003087;">Procedure Checklist</h2>
-        <ol style="padding-left: 20px;">
-            <li>Measure and cut the  CAT6 cable to the specified length.</li>
-            <li>Slide the boot covers onto the cable <em>before</em> stripping the jacket.</li>
-            <li>Strip the outer jacket (approx. 1 inch), ensuring no copper conductors are nicked.</li>
-            <li>Untwist and arrange wires according to the T568B standard.</li>
-            <li>Trim wires to an even length (approx. 0.5 inches).</li>
-            <li>Insert wires into the RJ45 plug and crimp using the authorized tool.</li>
-            <li>Verify functionality using the cable tester.</li>
-        </ol>
-        <h2 style="color: #003087; border-bottom: 3px solid #C6B17D; padding-bottom: 10px;">Lab Submission &amp; Assessment Criteria</h2>
-        <p>Before submitting your  CAT6 patch cables for grading, use this checklist to ensure your work meets professional requirements.</p>
-        <h2 style="color: #003087;">1. Physical Construction Standards</h2>
-        <ul style="list-style-type: square; padding-left: 20px;">
-            <li><strong>Jacket Retention:</strong> The cable jacket must extend <em>inside</em> the RJ45 connector and be held firmly by the crimp-down strain relief tab. If you can see individual twisted pairs outside the connector, the termination is rejected.</li>
-            <li><strong>Boot Placement:</strong> The snagless boot must be fully seated over the connector to provide proper cable support.</li>
-            <li><strong>Flush Trimming:</strong> All eight conductors must be cut flush and reach the very end of the RJ45 pins to ensure a solid connection.</li>
+<header style="background-color: #0d233a; color: #ffffff; padding: 24px; border-radius: 8px; margin-bottom: 20px;">
+    <h2 style="margin: 0 0 10px 0; font-size: 1.8rem; color: #ffffff;">ASCII Character Code Reference Guide</h2>
+    <p style="margin: 0; font-size: 1rem; color: #e0e6ed;">Welcome to the Cybersecurity ASCII Reference. Understanding ASCII encoding (American Standard Code for Information Interchange) is foundational for packet analysis, reverse engineering, and low-level data manipulation. Below is a structured representation of printable ASCII characters (32&ndash;126), along with binary, octal, decimal, and hexadecimal conversions.</p>
+</header>
+<div style="background-color: #1e293b; border-radius: 8px; padding: 24px; margin-bottom: 20px; border: 1px solid #334155;">
+    <h2 style="color: #38bdf8; margin-top: 0; font-size: 1.8rem; border-bottom: 2px solid #334155; padding-bottom: 10px;">ASCII Character Code Reference &amp; Cybersecurity Context</h2>
+    <p style="font-size: 1.05rem; line-height: 1.6; color: #e2e8f0;">Data Representation&nbsp;<br /><strong>Instructor Overview:</strong> ASCII (American Standard Code for Information Interchange) encodes 128 specified characters into 7-bit integers (represented in 8-bit bytes with a leading zero). Understanding control signals (0&ndash;31) and basic printable characters (32&ndash;44) is essential for security auditing, log analysis, protocol analysis, shell payload development, and identifying injection vulnerabilities.</p>
+    <p style="font-size: 0.95rem; line-height: 1.5; color: #cbd5e1;"><strong>Reference Resources:</strong> <a style="color: #7dd3fc; text-decoration: underline;" title="RFC 20 - ASCII Standard Specification Documentation" href="https://www.rfc-editor.org/info/rfc20" target="_blank" rel="noopener">IETF RFC 20: ASCII Character Set Specification</a> | <a style="color: #7dd3fc; text-decoration: underline;" title="American National Standards Institute Homepage" href="https://www.ansi.org" target="_blank" rel="noopener">ANSI Official Site</a></p>
+</div>
+<div style="background-color: #1e293b; border-radius: 8px; padding: 20px; margin-bottom: 20px; border: 1px solid #334155;">
+    <h2 style="color: #38bdf8; margin-top: 0; font-size: 1.4rem;">Executive Summary &amp; Cybersecurity Relevance</h2>
+    <div style="font-size: 1rem; line-height: 1.6; color: #e2e8f0;">
+        <p><strong>Control Characters (Dec 0&ndash;31 / Hex 00&ndash;1F):</strong> Originally designed to control physical hardware (teleprinters, line printers, modems). In modern cybersecurity, control codes frequently appear in low-level socket communication, input sanitization bypasses, and exploit strings. For example:</p>
+        <ul style="padding-left: 20px;">
+            <li><strong>NUL (0x00):</strong> Can cause Null Byte Injection vulnerabilities in C/C++ string implementations or legacy systems.</li>
+            <li><strong>LF (0x0A) &amp; CR (0x0D):</strong> Form CRLF sequence used in HTTP headers; crucial for analyzing <a style="color: #7dd3fc; text-decoration: underline;" title="OWASP Foundation CRLF Injection Vulnerability Overview" href="https://owasp.org/www-community/vulnerabilities/CRLF_Injection" target="_blank" rel="noopener">OWASP CRLF Injection Vulnerabilities</a>.</li>
+            <li><strong>ESC (0x1B):</strong> Used in ANSI escape sequences; key in command line terminal spoofing and log poisoning attacks.</li>
         </ul>
-        <h2 style="color: #003087;">2. Wiring Standard (TIA/EIA-568B)</h2>
-        <p>The sequence must match the <strong>T568B</strong> standard exactly from left to right when holding the connector with the gold pins facing up and the clip facing away.<br /><img id="156560458" style="border: 1px solid #000000;" src="https://cltcc.instructure.com/courses/463835/files/166888192/preview" alt="RJ-45 A and B Pinout" width="500" height="281" data-api-endpoint="https://cltcc.instructure.com/api/v1/courses/463835/files/166888192" data-api-returntype="File" /></p>
-        <div style="background-color: #fcfcfc; padding: 15px; border-left: 5px solid #C6B17D; margin: 15px 0;">
-            <p><strong>Sequence (Left to Right):</strong> White/Orange, Orange, White/Green, Blue, White/Blue, Green, White/Brown, Brown.</p>
-        </div>
-        <h2 style="color: #003087;">3. Electrical Performance Testing</h2>
-        <p>Every cable must pass a continuity and wire-map test using a digital cable tester.</p>
-        <ul style="list-style-type: square; padding-left: 20px;">
-            <li><strong>Continuity:</strong> Every pin (1-8) must show a solid connection without intermittent flickering.</li>
-            <li><strong>Wire Map:</strong> The tester must confirm a "Straight-Through" connection. Any "Crossed Pair" or "Split Pair" results indicate a failure.</li>
-            <li><strong>Short Circuits:</strong> The tester must show no shorts between adjacent pins.</li>
-        </ul>
-        <h2 style="color: #003087;">Submission Checklist</h2>
-        <div style="margin-top: 15px;">The cable is verified for T568B standard. All connectors pass continuity testing (1-8). Jacket is seated inside the connector housing. Snagless boots are installed and secure.</div>
+        <p><strong>Printable Characters (Dec 32&ndash;44 / Hex 20&ndash;2C):</strong> These symbols form the basis of syntax in programming, command execution, and formatting. Characters like single quotes (<code style="background-color: #090d16; padding: 2px 4px; border-radius: 4px; color: #f43f5e;">'</code>), double quotes (<code style="background-color: #090d16; padding: 2px 4px; border-radius: 4px; color: #f43f5e;">"</code>), ampersand (<code style="background-color: #090d16; padding: 2px 4px; border-radius: 4px; color: #f43f5e;">&amp;</code>), and space (<code style="background-color: #090d16; padding: 2px 4px; border-radius: 4px; color: #f43f5e;">%20</code>) are prime targets in SQL Injection (SQLi) and Cross-Site Scripting (XSS).</p>
     </div>
 </div>
+<div style="background-color: #1e293b; border-radius: 8px; padding: 20px; margin-bottom: 20px; border: 1px solid #334155;">
+    <h2 style="color: #38bdf8; margin-top: 0; font-size: 1.4rem; margin-bottom: 15px;">ASCII Table Dataset (Dec 0 - Dec 44)</h2>
+    <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 20px;">Each sub-card below details the character symbol, full description, and base conversions (Decimal, Octal, Hexadecimal, Binary).</p>
+    <div style="background-color: #0f172a; border-radius: 6px; padding: 12px; margin-bottom: 10px; color: #f8fafc; font-size: 0.9rem; border: 1px solid #475569;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">Symbol / Description</div>
+        <div style="display: inline-block; width: 12%;">Dec</div>
+        <div style="display: inline-block; width: 12%;">Oct</div>
+        <div style="display: inline-block; width: 15%;">Hex</div>
+        <div style="display: inline-block; width: 25%;">Binary</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">NUL (Null)</div>
+        <div style="display: inline-block; width: 12%;">0</div>
+        <div style="display: inline-block; width: 12%;">0</div>
+        <div style="display: inline-block; width: 15%;">00</div>
+        <div style="display: inline-block; width: 25%;">00000000</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">SOH (Start of Heading)</div>
+        <div style="display: inline-block; width: 12%;">1</div>
+        <div style="display: inline-block; width: 12%;">1</div>
+        <div style="display: inline-block; width: 15%;">01</div>
+        <div style="display: inline-block; width: 25%;">00000001</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">STX (Start of Text)</div>
+        <div style="display: inline-block; width: 12%;">2</div>
+        <div style="display: inline-block; width: 12%;">2</div>
+        <div style="display: inline-block; width: 15%;">02</div>
+        <div style="display: inline-block; width: 25%;">00000010</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">ETX (End of Text)</div>
+        <div style="display: inline-block; width: 12%;">3</div>
+        <div style="display: inline-block; width: 12%;">3</div>
+        <div style="display: inline-block; width: 15%;">03</div>
+        <div style="display: inline-block; width: 25%;">00000011</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">EOT (End of Transmission)</div>
+        <div style="display: inline-block; width: 12%;">4</div>
+        <div style="display: inline-block; width: 12%;">4</div>
+        <div style="display: inline-block; width: 15%;">04</div>
+        <div style="display: inline-block; width: 25%;">00000100</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">ENQ (Enquiry)</div>
+        <div style="display: inline-block; width: 12%;">5</div>
+        <div style="display: inline-block; width: 12%;">5</div>
+        <div style="display: inline-block; width: 15%;">05</div>
+        <div style="display: inline-block; width: 25%;">00000101</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">ACK (Acknowledgment)</div>
+        <div style="display: inline-block; width: 12%;">6</div>
+        <div style="display: inline-block; width: 12%;">6</div>
+        <div style="display: inline-block; width: 15%;">06</div>
+        <div style="display: inline-block; width: 25%;">00000110</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">BEL (Bell)</div>
+        <div style="display: inline-block; width: 12%;">7</div>
+        <div style="display: inline-block; width: 12%;">7</div>
+        <div style="display: inline-block; width: 15%;">07</div>
+        <div style="display: inline-block; width: 25%;">00000111</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">BS (Back Space)</div>
+        <div style="display: inline-block; width: 12%;">8</div>
+        <div style="display: inline-block; width: 12%;">10</div>
+        <div style="display: inline-block; width: 15%;">08</div>
+        <div style="display: inline-block; width: 25%;">00001000</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">HT (Horizontal Tab)</div>
+        <div style="display: inline-block; width: 12%;">9</div>
+        <div style="display: inline-block; width: 12%;">11</div>
+        <div style="display: inline-block; width: 15%;">09</div>
+        <div style="display: inline-block; width: 25%;">00001001</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">LF (Line Feed)</div>
+        <div style="display: inline-block; width: 12%;">10</div>
+        <div style="display: inline-block; width: 12%;">12</div>
+        <div style="display: inline-block; width: 15%;">0A</div>
+        <div style="display: inline-block; width: 25%;">00001010</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">VT (Vertical Tab)</div>
+        <div style="display: inline-block; width: 12%;">11</div>
+        <div style="display: inline-block; width: 12%;">13</div>
+        <div style="display: inline-block; width: 15%;">0B</div>
+        <div style="display: inline-block; width: 25%;">00001011</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">FF (Form Feed)</div>
+        <div style="display: inline-block; width: 12%;">12</div>
+        <div style="display: inline-block; width: 12%;">14</div>
+        <div style="display: inline-block; width: 15%;">0C</div>
+        <div style="display: inline-block; width: 25%;">00001100</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">CR (Carriage Return)</div>
+        <div style="display: inline-block; width: 12%;">13</div>
+        <div style="display: inline-block; width: 12%;">15</div>
+        <div style="display: inline-block; width: 15%;">0D</div>
+        <div style="display: inline-block; width: 25%;">00001101</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">SO (Shift Out / X-On)</div>
+        <div style="display: inline-block; width: 12%;">14</div>
+        <div style="display: inline-block; width: 12%;">16</div>
+        <div style="display: inline-block; width: 15%;">0E</div>
+        <div style="display: inline-block; width: 25%;">00001110</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">SI (Shift In / X-Off)</div>
+        <div style="display: inline-block; width: 12%;">15</div>
+        <div style="display: inline-block; width: 12%;">17</div>
+        <div style="display: inline-block; width: 15%;">0F</div>
+        <div style="display: inline-block; width: 25%;">00001111</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">DLE (Data Line Escape)</div>
+        <div style="display: inline-block; width: 12%;">16</div>
+        <div style="display: inline-block; width: 12%;">20</div>
+        <div style="display: inline-block; width: 15%;">10</div>
+        <div style="display: inline-block; width: 25%;">00010000</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">DC1 (Device Control 1 / soft XON)</div>
+        <div style="display: inline-block; width: 12%;">17</div>
+        <div style="display: inline-block; width: 12%;">21</div>
+        <div style="display: inline-block; width: 15%;">11</div>
+        <div style="display: inline-block; width: 25%;">00010001</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">DC2 (Device Control 2)</div>
+        <div style="display: inline-block; width: 12%;">18</div>
+        <div style="display: inline-block; width: 12%;">22</div>
+        <div style="display: inline-block; width: 15%;">12</div>
+        <div style="display: inline-block; width: 25%;">00010010</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">DC3 (Device Control 3 / soft XOFF)</div>
+        <div style="display: inline-block; width: 12%;">19</div>
+        <div style="display: inline-block; width: 12%;">23</div>
+        <div style="display: inline-block; width: 15%;">13</div>
+        <div style="display: inline-block; width: 25%;">00010011</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">DC4 (Device Control 4)</div>
+        <div style="display: inline-block; width: 12%;">20</div>
+        <div style="display: inline-block; width: 12%;">24</div>
+        <div style="display: inline-block; width: 15%;">14</div>
+        <div style="display: inline-block; width: 25%;">00010100</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">NAK (Negative Acknowledgement)</div>
+        <div style="display: inline-block; width: 12%;">21</div>
+        <div style="display: inline-block; width: 12%;">25</div>
+        <div style="display: inline-block; width: 15%;">15</div>
+        <div style="display: inline-block; width: 25%;">00010101</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">SYN (Synchronous Idle)</div>
+        <div style="display: inline-block; width: 12%;">22</div>
+        <div style="display: inline-block; width: 12%;">26</div>
+        <div style="display: inline-block; width: 15%;">16</div>
+        <div style="display: inline-block; width: 25%;">00010110</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">ETB (End of Transmit Block)</div>
+        <div style="display: inline-block; width: 12%;">23</div>
+        <div style="display: inline-block; width: 12%;">27</div>
+        <div style="display: inline-block; width: 15%;">17</div>
+        <div style="display: inline-block; width: 25%;">00010111</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">CAN (Cancel)</div>
+        <div style="display: inline-block; width: 12%;">24</div>
+        <div style="display: inline-block; width: 12%;">30</div>
+        <div style="display: inline-block; width: 15%;">18</div>
+        <div style="display: inline-block; width: 25%;">00011000</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">EM (End of Medium)</div>
+        <div style="display: inline-block; width: 12%;">25</div>
+        <div style="display: inline-block; width: 12%;">31</div>
+        <div style="display: inline-block; width: 15%;">19</div>
+        <div style="display: inline-block; width: 25%;">00011001</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">SUB (Substitute)</div>
+        <div style="display: inline-block; width: 12%;">26</div>
+        <div style="display: inline-block; width: 12%;">32</div>
+        <div style="display: inline-block; width: 15%;">1A</div>
+        <div style="display: inline-block; width: 25%;">00011010</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">ESC (Escape)</div>
+        <div style="display: inline-block; width: 12%;">27</div>
+        <div style="display: inline-block; width: 12%;">33</div>
+        <div style="display: inline-block; width: 15%;">1B</div>
+        <div style="display: inline-block; width: 25%;">00011011</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">FS (File Separator)</div>
+        <div style="display: inline-block; width: 12%;">28</div>
+        <div style="display: inline-block; width: 12%;">34</div>
+        <div style="display: inline-block; width: 15%;">1C</div>
+        <div style="display: inline-block; width: 25%;">00011100</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">GS (Group Separator)</div>
+        <div style="display: inline-block; width: 12%;">29</div>
+        <div style="display: inline-block; width: 12%;">35</div>
+        <div style="display: inline-block; width: 15%;">1D</div>
+        <div style="display: inline-block; width: 25%;">00011101</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">RS (Record Separator)</div>
+        <div style="display: inline-block; width: 12%;">30</div>
+        <div style="display: inline-block; width: 12%;">36</div>
+        <div style="display: inline-block; width: 15%;">1E</div>
+        <div style="display: inline-block; width: 25%;">00011110</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #f1f5f9;">US (Unit Separator)</div>
+        <div style="display: inline-block; width: 12%;">31</div>
+        <div style="display: inline-block; width: 12%;">37</div>
+        <div style="display: inline-block; width: 15%;">1F</div>
+        <div style="display: inline-block; width: 25%;">00011111</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">(Space)</div>
+        <div style="display: inline-block; width: 12%;">32</div>
+        <div style="display: inline-block; width: 12%;">40</div>
+        <div style="display: inline-block; width: 15%;">20</div>
+        <div style="display: inline-block; width: 25%;">00100000</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">!</div>
+        <div style="display: inline-block; width: 12%;">33</div>
+        <div style="display: inline-block; width: 12%;">41</div>
+        <div style="display: inline-block; width: 15%;">21</div>
+        <div style="display: inline-block; width: 25%;">00100001</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">"</div>
+        <div style="display: inline-block; width: 12%;">34</div>
+        <div style="display: inline-block; width: 12%;">42</div>
+        <div style="display: inline-block; width: 15%;">22</div>
+        <div style="display: inline-block; width: 25%;">00100010</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">#</div>
+        <div style="display: inline-block; width: 12%;">35</div>
+        <div style="display: inline-block; width: 12%;">43</div>
+        <div style="display: inline-block; width: 15%;">23</div>
+        <div style="display: inline-block; width: 25%;">00100011</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">$</div>
+        <div style="display: inline-block; width: 12%;">36</div>
+        <div style="display: inline-block; width: 12%;">44</div>
+        <div style="display: inline-block; width: 15%;">24</div>
+        <div style="display: inline-block; width: 25%;">00100100</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">%</div>
+        <div style="display: inline-block; width: 12%;">37</div>
+        <div style="display: inline-block; width: 12%;">45</div>
+        <div style="display: inline-block; width: 15%;">25</div>
+        <div style="display: inline-block; width: 25%;">00100101</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">&amp;</div>
+        <div style="display: inline-block; width: 12%;">38</div>
+        <div style="display: inline-block; width: 12%;">46</div>
+        <div style="display: inline-block; width: 15%;">26</div>
+        <div style="display: inline-block; width: 25%;">00100110</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">'</div>
+        <div style="display: inline-block; width: 12%;">39</div>
+        <div style="display: inline-block; width: 12%;">47</div>
+        <div style="display: inline-block; width: 15%;">27</div>
+        <div style="display: inline-block; width: 25%;">00100111</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">(</div>
+        <div style="display: inline-block; width: 12%;">40</div>
+        <div style="display: inline-block; width: 12%;">50</div>
+        <div style="display: inline-block; width: 15%;">28</div>
+        <div style="display: inline-block; width: 25%;">00101000</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">)</div>
+        <div style="display: inline-block; width: 12%;">41</div>
+        <div style="display: inline-block; width: 12%;">51</div>
+        <div style="display: inline-block; width: 15%;">29</div>
+        <div style="display: inline-block; width: 25%;">00101001</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">*</div>
+        <div style="display: inline-block; width: 12%;">42</div>
+        <div style="display: inline-block; width: 12%;">52</div>
+        <div style="display: inline-block; width: 15%;">2A</div>
+        <div style="display: inline-block; width: 25%;">00101010</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">+</div>
+        <div style="display: inline-block; width: 12%;">43</div>
+        <div style="display: inline-block; width: 12%;">53</div>
+        <div style="display: inline-block; width: 15%;">2B</div>
+        <div style="display: inline-block; width: 25%;">00101011</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">,</div>
+        <div style="display: inline-block; width: 12%;">44</div>
+        <div style="display: inline-block; width: 12%;">54</div>
+        <div style="display: inline-block; width: 15%;">2C</div>
+        <div style="display: inline-block; width: 25%;">00101100</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">-</div>
+        <div style="display: inline-block; width: 12%;">45</div>
+        <div style="display: inline-block; width: 12%;">55</div>
+        <div style="display: inline-block; width: 15%;">2D</div>
+        <div style="display: inline-block; width: 25%;">00101101</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">.</div>
+        <div style="display: inline-block; width: 12%;">46</div>
+        <div style="display: inline-block; width: 12%;">56</div>
+        <div style="display: inline-block; width: 15%;">2E</div>
+        <div style="display: inline-block; width: 25%;">00101110</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">/</div>
+        <div style="display: inline-block; width: 12%;">47</div>
+        <div style="display: inline-block; width: 12%;">57</div>
+        <div style="display: inline-block; width: 15%;">2F</div>
+        <div style="display: inline-block; width: 25%;">00101111</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #eab308; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fde047;">0</div>
+        <div style="display: inline-block; width: 12%;">48</div>
+        <div style="display: inline-block; width: 12%;">60</div>
+        <div style="display: inline-block; width: 15%;">30</div>
+        <div style="display: inline-block; width: 25%;">00110000</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #eab308; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fde047;">1</div>
+        <div style="display: inline-block; width: 12%;">49</div>
+        <div style="display: inline-block; width: 12%;">61</div>
+        <div style="display: inline-block; width: 15%;">31</div>
+        <div style="display: inline-block; width: 25%;">00110001</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #eab308; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fde047;">2</div>
+        <div style="display: inline-block; width: 12%;">50</div>
+        <div style="display: inline-block; width: 12%;">62</div>
+        <div style="display: inline-block; width: 15%;">32</div>
+        <div style="display: inline-block; width: 25%;">00110010</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #eab308; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fde047;">3</div>
+        <div style="display: inline-block; width: 12%;">51</div>
+        <div style="display: inline-block; width: 12%;">63</div>
+        <div style="display: inline-block; width: 15%;">33</div>
+        <div style="display: inline-block; width: 25%;">00110011</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #eab308; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fde047;">4</div>
+        <div style="display: inline-block; width: 12%;">52</div>
+        <div style="display: inline-block; width: 12%;">64</div>
+        <div style="display: inline-block; width: 15%;">34</div>
+        <div style="display: inline-block; width: 25%;">00110100</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #eab308; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fde047;">5</div>
+        <div style="display: inline-block; width: 12%;">53</div>
+        <div style="display: inline-block; width: 12%;">65</div>
+        <div style="display: inline-block; width: 15%;">35</div>
+        <div style="display: inline-block; width: 25%;">00110101</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #eab308; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fde047;">6</div>
+        <div style="display: inline-block; width: 12%;">54</div>
+        <div style="display: inline-block; width: 12%;">66</div>
+        <div style="display: inline-block; width: 15%;">36</div>
+        <div style="display: inline-block; width: 25%;">00110110</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #eab308; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fde047;">7</div>
+        <div style="display: inline-block; width: 12%;">55</div>
+        <div style="display: inline-block; width: 12%;">67</div>
+        <div style="display: inline-block; width: 15%;">37</div>
+        <div style="display: inline-block; width: 25%;">00110111</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #eab308; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fde047;">8</div>
+        <div style="display: inline-block; width: 12%;">56</div>
+        <div style="display: inline-block; width: 12%;">70</div>
+        <div style="display: inline-block; width: 15%;">38</div>
+        <div style="display: inline-block; width: 25%;">00111000</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #eab308; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fde047;">9</div>
+        <div style="display: inline-block; width: 12%;">57</div>
+        <div style="display: inline-block; width: 12%;">71</div>
+        <div style="display: inline-block; width: 15%;">39</div>
+        <div style="display: inline-block; width: 25%;">00111001</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">:</div>
+        <div style="display: inline-block; width: 12%;">58</div>
+        <div style="display: inline-block; width: 12%;">72</div>
+        <div style="display: inline-block; width: 15%;">3A</div>
+        <div style="display: inline-block; width: 25%;">00111010</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">;</div>
+        <div style="display: inline-block; width: 12%;">59</div>
+        <div style="display: inline-block; width: 12%;">73</div>
+        <div style="display: inline-block; width: 15%;">3B</div>
+        <div style="display: inline-block; width: 25%;">00111011</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">&lt;</div>
+        <div style="display: inline-block; width: 12%;">60</div>
+        <div style="display: inline-block; width: 12%;">74</div>
+        <div style="display: inline-block; width: 15%;">3C</div>
+        <div style="display: inline-block; width: 25%;">00111100</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">=</div>
+        <div style="display: inline-block; width: 12%;">61</div>
+        <div style="display: inline-block; width: 12%;">75</div>
+        <div style="display: inline-block; width: 15%;">3D</div>
+        <div style="display: inline-block; width: 25%;">00111101</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">&gt;</div>
+        <div style="display: inline-block; width: 12%;">62</div>
+        <div style="display: inline-block; width: 12%;">76</div>
+        <div style="display: inline-block; width: 15%;">3E</div>
+        <div style="display: inline-block; width: 25%;">00111110</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">?</div>
+        <div style="display: inline-block; width: 12%;">63</div>
+        <div style="display: inline-block; width: 12%;">77</div>
+        <div style="display: inline-block; width: 15%;">3F</div>
+        <div style="display: inline-block; width: 25%;">00111111</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">@</div>
+        <div style="display: inline-block; width: 12%;">64</div>
+        <div style="display: inline-block; width: 12%;">100</div>
+        <div style="display: inline-block; width: 15%;">40</div>
+        <div style="display: inline-block; width: 25%;">01000000</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">A</div>
+        <div style="display: inline-block; width: 12%;">65</div>
+        <div style="display: inline-block; width: 12%;">101</div>
+        <div style="display: inline-block; width: 15%;">41</div>
+        <div style="display: inline-block; width: 25%;">01000001</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">B</div>
+        <div style="display: inline-block; width: 12%;">66</div>
+        <div style="display: inline-block; width: 12%;">102</div>
+        <div style="display: inline-block; width: 15%;">42</div>
+        <div style="display: inline-block; width: 25%;">01000010</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">C</div>
+        <div style="display: inline-block; width: 12%;">67</div>
+        <div style="display: inline-block; width: 12%;">103</div>
+        <div style="display: inline-block; width: 15%;">43</div>
+        <div style="display: inline-block; width: 25%;">01000011</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">D</div>
+        <div style="display: inline-block; width: 12%;">68</div>
+        <div style="display: inline-block; width: 12%;">104</div>
+        <div style="display: inline-block; width: 15%;">44</div>
+        <div style="display: inline-block; width: 25%;">01000100</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">E</div>
+        <div style="display: inline-block; width: 12%;">69</div>
+        <div style="display: inline-block; width: 12%;">105</div>
+        <div style="display: inline-block; width: 15%;">45</div>
+        <div style="display: inline-block; width: 25%;">01000101</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">F</div>
+        <div style="display: inline-block; width: 12%;">70</div>
+        <div style="display: inline-block; width: 12%;">106</div>
+        <div style="display: inline-block; width: 15%;">46</div>
+        <div style="display: inline-block; width: 25%;">01000110</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">G</div>
+        <div style="display: inline-block; width: 12%;">71</div>
+        <div style="display: inline-block; width: 12%;">107</div>
+        <div style="display: inline-block; width: 15%;">47</div>
+        <div style="display: inline-block; width: 25%;">01000111</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">H</div>
+        <div style="display: inline-block; width: 12%;">72</div>
+        <div style="display: inline-block; width: 12%;">110</div>
+        <div style="display: inline-block; width: 15%;">48</div>
+        <div style="display: inline-block; width: 25%;">01001000</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">I</div>
+        <div style="display: inline-block; width: 12%;">73</div>
+        <div style="display: inline-block; width: 12%;">111</div>
+        <div style="display: inline-block; width: 15%;">49</div>
+        <div style="display: inline-block; width: 25%;">01001001</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">J</div>
+        <div style="display: inline-block; width: 12%;">74</div>
+        <div style="display: inline-block; width: 12%;">112</div>
+        <div style="display: inline-block; width: 15%;">4A</div>
+        <div style="display: inline-block; width: 25%;">01001010</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">K</div>
+        <div style="display: inline-block; width: 12%;">75</div>
+        <div style="display: inline-block; width: 12%;">113</div>
+        <div style="display: inline-block; width: 15%;">4B</div>
+        <div style="display: inline-block; width: 25%;">01001011</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">L</div>
+        <div style="display: inline-block; width: 12%;">76</div>
+        <div style="display: inline-block; width: 12%;">114</div>
+        <div style="display: inline-block; width: 15%;">4C</div>
+        <div style="display: inline-block; width: 25%;">01001100</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">M</div>
+        <div style="display: inline-block; width: 12%;">77</div>
+        <div style="display: inline-block; width: 12%;">115</div>
+        <div style="display: inline-block; width: 15%;">4D</div>
+        <div style="display: inline-block; width: 25%;">01001101</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">N</div>
+        <div style="display: inline-block; width: 12%;">78</div>
+        <div style="display: inline-block; width: 12%;">116</div>
+        <div style="display: inline-block; width: 15%;">4E</div>
+        <div style="display: inline-block; width: 25%;">01001110</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">O</div>
+        <div style="display: inline-block; width: 12%;">79</div>
+        <div style="display: inline-block; width: 12%;">117</div>
+        <div style="display: inline-block; width: 15%;">4F</div>
+        <div style="display: inline-block; width: 25%;">01001111</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">P</div>
+        <div style="display: inline-block; width: 12%;">80</div>
+        <div style="display: inline-block; width: 12%;">120</div>
+        <div style="display: inline-block; width: 15%;">50</div>
+        <div style="display: inline-block; width: 25%;">01010000</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">Q</div>
+        <div style="display: inline-block; width: 12%;">81</div>
+        <div style="display: inline-block; width: 12%;">121</div>
+        <div style="display: inline-block; width: 15%;">51</div>
+        <div style="display: inline-block; width: 25%;">01010001</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">R</div>
+        <div style="display: inline-block; width: 12%;">82</div>
+        <div style="display: inline-block; width: 12%;">122</div>
+        <div style="display: inline-block; width: 15%;">52</div>
+        <div style="display: inline-block; width: 25%;">01010010</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">S</div>
+        <div style="display: inline-block; width: 12%;">83</div>
+        <div style="display: inline-block; width: 12%;">123</div>
+        <div style="display: inline-block; width: 15%;">53</div>
+        <div style="display: inline-block; width: 25%;">01010011</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">T</div>
+        <div style="display: inline-block; width: 12%;">84</div>
+        <div style="display: inline-block; width: 12%;">124</div>
+        <div style="display: inline-block; width: 15%;">54</div>
+        <div style="display: inline-block; width: 25%;">01010100</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">U</div>
+        <div style="display: inline-block; width: 12%;">85</div>
+        <div style="display: inline-block; width: 12%;">125</div>
+        <div style="display: inline-block; width: 15%;">55</div>
+        <div style="display: inline-block; width: 25%;">01010101</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">V</div>
+        <div style="display: inline-block; width: 12%;">86</div>
+        <div style="display: inline-block; width: 12%;">126</div>
+        <div style="display: inline-block; width: 15%;">56</div>
+        <div style="display: inline-block; width: 25%;">01010110</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">W</div>
+        <div style="display: inline-block; width: 12%;">87</div>
+        <div style="display: inline-block; width: 12%;">127</div>
+        <div style="display: inline-block; width: 15%;">57</div>
+        <div style="display: inline-block; width: 25%;">01010111</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">X</div>
+        <div style="display: inline-block; width: 12%;">88</div>
+        <div style="display: inline-block; width: 12%;">130</div>
+        <div style="display: inline-block; width: 15%;">58</div>
+        <div style="display: inline-block; width: 25%;">01011000</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">Y</div>
+        <div style="display: inline-block; width: 12%;">89</div>
+        <div style="display: inline-block; width: 12%;">131</div>
+        <div style="display: inline-block; width: 15%;">59</div>
+        <div style="display: inline-block; width: 25%;">01011001</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #a855f7; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #c084fc;">Z</div>
+        <div style="display: inline-block; width: 12%;">90</div>
+        <div style="display: inline-block; width: 12%;">132</div>
+        <div style="display: inline-block; width: 15%;">5A</div>
+        <div style="display: inline-block; width: 25%;">01011010</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">[</div>
+        <div style="display: inline-block; width: 12%;">91</div>
+        <div style="display: inline-block; width: 12%;">133</div>
+        <div style="display: inline-block; width: 15%;">5B</div>
+        <div style="display: inline-block; width: 25%;">01011011</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">\</div>
+        <div style="display: inline-block; width: 12%;">92</div>
+        <div style="display: inline-block; width: 12%;">134</div>
+        <div style="display: inline-block; width: 15%;">5C</div>
+        <div style="display: inline-block; width: 25%;">01011100</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">]</div>
+        <div style="display: inline-block; width: 12%;">93</div>
+        <div style="display: inline-block; width: 12%;">135</div>
+        <div style="display: inline-block; width: 15%;">5D</div>
+        <div style="display: inline-block; width: 25%;">01011101</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">^</div>
+        <div style="display: inline-block; width: 12%;">94</div>
+        <div style="display: inline-block; width: 12%;">136</div>
+        <div style="display: inline-block; width: 15%;">5E</div>
+        <div style="display: inline-block; width: 25%;">01011110</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">_</div>
+        <div style="display: inline-block; width: 12%;">95</div>
+        <div style="display: inline-block; width: 12%;">137</div>
+        <div style="display: inline-block; width: 15%;">5F</div>
+        <div style="display: inline-block; width: 25%;">01011111</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">`</div>
+        <div style="display: inline-block; width: 12%;">96</div>
+        <div style="display: inline-block; width: 12%;">140</div>
+        <div style="display: inline-block; width: 15%;">60</div>
+        <div style="display: inline-block; width: 25%;">01100000</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">a</div>
+        <div style="display: inline-block; width: 12%;">97</div>
+        <div style="display: inline-block; width: 12%;">141</div>
+        <div style="display: inline-block; width: 15%;">61</div>
+        <div style="display: inline-block; width: 25%;">01100001</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">b</div>
+        <div style="display: inline-block; width: 12%;">98</div>
+        <div style="display: inline-block; width: 12%;">142</div>
+        <div style="display: inline-block; width: 15%;">62</div>
+        <div style="display: inline-block; width: 25%;">01100010</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">c</div>
+        <div style="display: inline-block; width: 12%;">99</div>
+        <div style="display: inline-block; width: 12%;">143</div>
+        <div style="display: inline-block; width: 15%;">63</div>
+        <div style="display: inline-block; width: 25%;">01100011</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">d</div>
+        <div style="display: inline-block; width: 12%;">100</div>
+        <div style="display: inline-block; width: 12%;">144</div>
+        <div style="display: inline-block; width: 15%;">64</div>
+        <div style="display: inline-block; width: 25%;">01100100</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">e</div>
+        <div style="display: inline-block; width: 12%;">101</div>
+        <div style="display: inline-block; width: 12%;">145</div>
+        <div style="display: inline-block; width: 15%;">65</div>
+        <div style="display: inline-block; width: 25%;">01100101</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">f</div>
+        <div style="display: inline-block; width: 12%;">102</div>
+        <div style="display: inline-block; width: 12%;">146</div>
+        <div style="display: inline-block; width: 15%;">66</div>
+        <div style="display: inline-block; width: 25%;">01100110</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">g</div>
+        <div style="display: inline-block; width: 12%;">103</div>
+        <div style="display: inline-block; width: 12%;">147</div>
+        <div style="display: inline-block; width: 15%;">67</div>
+        <div style="display: inline-block; width: 25%;">01100111</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">h</div>
+        <div style="display: inline-block; width: 12%;">104</div>
+        <div style="display: inline-block; width: 12%;">150</div>
+        <div style="display: inline-block; width: 15%;">68</div>
+        <div style="display: inline-block; width: 25%;">01101000</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">i</div>
+        <div style="display: inline-block; width: 12%;">105</div>
+        <div style="display: inline-block; width: 12%;">151</div>
+        <div style="display: inline-block; width: 15%;">69</div>
+        <div style="display: inline-block; width: 25%;">01101001</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">j</div>
+        <div style="display: inline-block; width: 12%;">106</div>
+        <div style="display: inline-block; width: 12%;">152</div>
+        <div style="display: inline-block; width: 15%;">6A</div>
+        <div style="display: inline-block; width: 25%;">01101010</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">k</div>
+        <div style="display: inline-block; width: 12%;">107</div>
+        <div style="display: inline-block; width: 12%;">153</div>
+        <div style="display: inline-block; width: 15%;">6B</div>
+        <div style="display: inline-block; width: 25%;">01101011</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">l</div>
+        <div style="display: inline-block; width: 12%;">108</div>
+        <div style="display: inline-block; width: 12%;">154</div>
+        <div style="display: inline-block; width: 15%;">6C</div>
+        <div style="display: inline-block; width: 25%;">01101100</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">m</div>
+        <div style="display: inline-block; width: 12%;">109</div>
+        <div style="display: inline-block; width: 12%;">155</div>
+        <div style="display: inline-block; width: 15%;">6D</div>
+        <div style="display: inline-block; width: 25%;">01101101</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">n</div>
+        <div style="display: inline-block; width: 12%;">110</div>
+        <div style="display: inline-block; width: 12%;">156</div>
+        <div style="display: inline-block; width: 15%;">6E</div>
+        <div style="display: inline-block; width: 25%;">01101110</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">o</div>
+        <div style="display: inline-block; width: 12%;">111</div>
+        <div style="display: inline-block; width: 12%;">157</div>
+        <div style="display: inline-block; width: 15%;">6F</div>
+        <div style="display: inline-block; width: 25%;">01101111</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">p</div>
+        <div style="display: inline-block; width: 12%;">112</div>
+        <div style="display: inline-block; width: 12%;">160</div>
+        <div style="display: inline-block; width: 15%;">70</div>
+        <div style="display: inline-block; width: 25%;">01110000</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">q</div>
+        <div style="display: inline-block; width: 12%;">113</div>
+        <div style="display: inline-block; width: 12%;">161</div>
+        <div style="display: inline-block; width: 15%;">71</div>
+        <div style="display: inline-block; width: 25%;">01110001</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">r</div>
+        <div style="display: inline-block; width: 12%;">114</div>
+        <div style="display: inline-block; width: 12%;">162</div>
+        <div style="display: inline-block; width: 15%;">72</div>
+        <div style="display: inline-block; width: 25%;">01110010</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">s</div>
+        <div style="display: inline-block; width: 12%;">115</div>
+        <div style="display: inline-block; width: 12%;">163</div>
+        <div style="display: inline-block; width: 15%;">73</div>
+        <div style="display: inline-block; width: 25%;">01110011</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">t</div>
+        <div style="display: inline-block; width: 12%;">116</div>
+        <div style="display: inline-block; width: 12%;">164</div>
+        <div style="display: inline-block; width: 15%;">74</div>
+        <div style="display: inline-block; width: 25%;">01110100</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">u</div>
+        <div style="display: inline-block; width: 12%;">117</div>
+        <div style="display: inline-block; width: 12%;">165</div>
+        <div style="display: inline-block; width: 15%;">75</div>
+        <div style="display: inline-block; width: 25%;">01110101</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">v</div>
+        <div style="display: inline-block; width: 12%;">118</div>
+        <div style="display: inline-block; width: 12%;">166</div>
+        <div style="display: inline-block; width: 15%;">76</div>
+        <div style="display: inline-block; width: 25%;">01110110</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">w</div>
+        <div style="display: inline-block; width: 12%;">119</div>
+        <div style="display: inline-block; width: 12%;">167</div>
+        <div style="display: inline-block; width: 15%;">77</div>
+        <div style="display: inline-block; width: 25%;">01110111</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">x</div>
+        <div style="display: inline-block; width: 12%;">120</div>
+        <div style="display: inline-block; width: 12%;">170</div>
+        <div style="display: inline-block; width: 15%;">78</div>
+        <div style="display: inline-block; width: 25%;">01111000</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">y</div>
+        <div style="display: inline-block; width: 12%;">121</div>
+        <div style="display: inline-block; width: 12%;">171</div>
+        <div style="display: inline-block; width: 15%;">79</div>
+        <div style="display: inline-block; width: 25%;">01111001</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #38bdf8; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #38bdf8;">z</div>
+        <div style="display: inline-block; width: 12%;">122</div>
+        <div style="display: inline-block; width: 12%;">172</div>
+        <div style="display: inline-block; width: 15%;">7A</div>
+        <div style="display: inline-block; width: 25%;">01111010</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">{</div>
+        <div style="display: inline-block; width: 12%;">123</div>
+        <div style="display: inline-block; width: 12%;">173</div>
+        <div style="display: inline-block; width: 15%;">7B</div>
+        <div style="display: inline-block; width: 25%;">01111011</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">|</div>
+        <div style="display: inline-block; width: 12%;">124</div>
+        <div style="display: inline-block; width: 12%;">174</div>
+        <div style="display: inline-block; width: 15%;">7C</div>
+        <div style="display: inline-block; width: 25%;">01111100</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">}</div>
+        <div style="display: inline-block; width: 12%;">125</div>
+        <div style="display: inline-block; width: 12%;">175</div>
+        <div style="display: inline-block; width: 15%;">7D</div>
+        <div style="display: inline-block; width: 25%;">01111101</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #22c55e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #4ade80;">~</div>
+        <div style="display: inline-block; width: 12%;">126</div>
+        <div style="display: inline-block; width: 12%;">176</div>
+        <div style="display: inline-block; width: 15%;">7E</div>
+        <div style="display: inline-block; width: 25%;">01111110</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #f43f5e; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb7185;">(Delete)</div>
+        <div style="display: inline-block; width: 12%;">127</div>
+        <div style="display: inline-block; width: 12%;">177</div>
+        <div style="display: inline-block; width: 15%;">7F</div>
+        <div style="display: inline-block; width: 25%;">01111111</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #f97316; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb923c;">&euro; (Euro Sign)</div>
+        <div style="display: inline-block; width: 12%;">128</div>
+        <div style="display: inline-block; width: 12%;">200</div>
+        <div style="display: inline-block; width: 15%;">80</div>
+        <div style="display: inline-block; width: 25%;">10000000</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #f97316; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb923c;">Unassigned (0x81)</div>
+        <div style="display: inline-block; width: 12%;">129</div>
+        <div style="display: inline-block; width: 12%;">201</div>
+        <div style="display: inline-block; width: 15%;">81</div>
+        <div style="display: inline-block; width: 25%;">10000001</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #f97316; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb923c;">&sbquo; (Baseline Quote)</div>
+        <div style="display: inline-block; width: 12%;">130</div>
+        <div style="display: inline-block; width: 12%;">202</div>
+        <div style="display: inline-block; width: 15%;">82</div>
+        <div style="display: inline-block; width: 25%;">10000010</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #f97316; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb923c;">&fnof; (Florin / Guilder)</div>
+        <div style="display: inline-block; width: 12%;">131</div>
+        <div style="display: inline-block; width: 12%;">203</div>
+        <div style="display: inline-block; width: 15%;">83</div>
+        <div style="display: inline-block; width: 25%;">10000011</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #f97316; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb923c;">&bdquo; (Double Low Quote)</div>
+        <div style="display: inline-block; width: 12%;">132</div>
+        <div style="display: inline-block; width: 12%;">204</div>
+        <div style="display: inline-block; width: 15%;">84</div>
+        <div style="display: inline-block; width: 25%;">10000100</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #f97316; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb923c;">&hellip; (Horizontal Ellipsis)</div>
+        <div style="display: inline-block; width: 12%;">133</div>
+        <div style="display: inline-block; width: 12%;">205</div>
+        <div style="display: inline-block; width: 15%;">85</div>
+        <div style="display: inline-block; width: 25%;">10000101</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #f97316; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb923c;">&dagger; (Dagger)</div>
+        <div style="display: inline-block; width: 12%;">134</div>
+        <div style="display: inline-block; width: 12%;">206</div>
+        <div style="display: inline-block; width: 15%;">86</div>
+        <div style="display: inline-block; width: 25%;">10000110</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #f97316; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb923c;">&Dagger; (Double Dagger)</div>
+        <div style="display: inline-block; width: 12%;">135</div>
+        <div style="display: inline-block; width: 12%;">207</div>
+        <div style="display: inline-block; width: 15%;">87</div>
+        <div style="display: inline-block; width: 25%;">10000111</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #f97316; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb923c;">&circ; (Modifier Circumflex)</div>
+        <div style="display: inline-block; width: 12%;">136</div>
+        <div style="display: inline-block; width: 12%;">210</div>
+        <div style="display: inline-block; width: 15%;">88</div>
+        <div style="display: inline-block; width: 25%;">10001000</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #f97316; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb923c;">&permil; (Per Mille Sign)</div>
+        <div style="display: inline-block; width: 12%;">137</div>
+        <div style="display: inline-block; width: 12%;">211</div>
+        <div style="display: inline-block; width: 15%;">89</div>
+        <div style="display: inline-block; width: 25%;">10001001</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #f97316; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb923c;">&Scaron; (S With Caron)</div>
+        <div style="display: inline-block; width: 12%;">138</div>
+        <div style="display: inline-block; width: 12%;">212</div>
+        <div style="display: inline-block; width: 15%;">8A</div>
+        <div style="display: inline-block; width: 25%;">10001010</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #f97316; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb923c;">&lsaquo; (Single Left Guillemet)</div>
+        <div style="display: inline-block; width: 12%;">139</div>
+        <div style="display: inline-block; width: 12%;">213</div>
+        <div style="display: inline-block; width: 15%;">8B</div>
+        <div style="display: inline-block; width: 25%;">10001011</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #f97316; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb923c;">&OElig; (OE Ligature)</div>
+        <div style="display: inline-block; width: 12%;">140</div>
+        <div style="display: inline-block; width: 12%;">214</div>
+        <div style="display: inline-block; width: 15%;">8C</div>
+        <div style="display: inline-block; width: 25%;">10001100</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #f97316; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb923c;">Unassigned (0x8D)</div>
+        <div style="display: inline-block; width: 12%;">141</div>
+        <div style="display: inline-block; width: 12%;">215</div>
+        <div style="display: inline-block; width: 15%;">8D</div>
+        <div style="display: inline-block; width: 25%;">10001101</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #f97316; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb923c;">Ž (Z With Caron)</div>
+        <div style="display: inline-block; width: 12%;">142</div>
+        <div style="display: inline-block; width: 12%;">216</div>
+        <div style="display: inline-block; width: 15%;">8E</div>
+        <div style="display: inline-block; width: 25%;">10001110</div>
+    </div>
+    <div style="background-color: #1a2234; border-left: 4px solid #f97316; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb923c;">Unassigned (0x8F)</div>
+        <div style="display: inline-block; width: 12%;">143</div>
+        <div style="display: inline-block; width: 12%;">217</div>
+        <div style="display: inline-block; width: 15%;">8F</div>
+        <div style="display: inline-block; width: 25%;">10001111</div>
+    </div>
+    <div style="background-color: #0f172a; border-left: 4px solid #f97316; border-top: 1px solid #334155; border-right: 1px solid #334155; border-bottom: 1px solid #334155; border-radius: 4px; padding: 10px 12px; margin-bottom: 8px; color: #e2e8f0; font-family: monospace;">
+        <div style="display: inline-block; width: 30%; color: #fb923c;">Unassigned (0x90)</div>
+        <div style="display: inline-block; width: 12%;">144</div>
+        <div style="display: inline-block; width: 12%;">220</div>
+        <div style="display: inline-block; width: 15%;">90</div>
+        <div style="display: inline-block; width: 25%;">10010000</div>
+    </div>
+</div>
+<div style="background-color: #1e293b; border-radius: 8px; padding: 20px; margin-bottom: 20px; border: 1px solid #334155;">
+    <h2 style="color: #38bdf8; margin-top: 0; font-size: 1.4rem;">Practical Lab Application: Command Injection &amp; Decoding</h2>
+    <p style="color: #e2e8f0; line-height: 1.6;"><strong>Lab Exercise:</strong> Analyzing Hex-Encoded Command Execution Payloads in Shell Environments.<br />When examining network traffic using tools like <a style="color: #7dd3fc; text-decoration: underline;" title="Wireshark Official Network Protocol Analyzer Website" href="https://www.wireshark.org" target="_blank" rel="noopener">Wireshark Protocol Analyzer</a>, attackers often obfuscate commands using hex byte values.</p>
+    <div style="background-color: #0f172a; padding: 15px; border-radius: 6px; font-family: monospace; color: #f8fafc; font-size: 0.95rem; border: 1px solid #334155;"><strong>Example Exploit String:</strong> <code style="color: #38bdf8;">\x2F\x62\x69\x6E\x2F\x73\x68</code><br />- <code style="color: #f43f5e;">\x2F</code> = Dec 47 = <code style="color: #4ade80;">/</code><br />- <code style="color: #f43f5e;">\x62</code> = Dec 98 = <code style="color: #4ade80;">b</code><br />- <code style="color: #f43f5e;">\x69</code> = Dec 105 = <code style="color: #4ade80;">i</code><br />- <code style="color: #f43f5e;">\x6E</code> = Dec 110 = <code style="color: #4ade80;">n</code><br />- <code style="color: #f43f5e;">\x2F</code> = Dec 47 = <code style="color: #4ade80;">/</code><br />- <code style="color: #f43f5e;">\x73</code> = Dec 115 = <code style="color: #4ade80;">s</code><br />- <code style="color: #f43f5e;">\x68</code> = Dec 104 = <code style="color: #4ade80;">h</code><br /><em>Decoded Command: <strong style="color: #4ade80;">/bin/sh</strong> (Shell Execution Request)</em></div>
+    <p style="color: #cbd5e1; font-size: 0.9rem; margin-top: 15px;">For further study on shell injection mitigations, review the <a style="color: #7dd3fc; text-decoration: underline;" title="MITRE CWE-78 OS Command Injection Guidelines" href="https://cwe.mitre.org/data/definitions/78.html" target="_blank" rel="noopener">MITRE CWE-78 Command Injection Reference</a>.</p>
+</div>
+<div style="background-color: #1e293b; border-radius: 8px; padding: 20px; margin-bottom: 20px; border: 1px solid #334155;">
+    <h2 style="color: #38bdf8; margin-top: 0; font-size: 1.4rem;">Practical Lab Application: Encoding &amp; Analysis</h2>
+    <p style="color: #e2e8f0; line-height: 1.6;"><strong>Class Exercise:</strong> When inspecting network packets using Wireshark or performing input analysis with tools like <a style="color: #7dd3fc; text-decoration: underline;" title="CyberChef - Web-Based Cyber Swiss Army Knife Tool" href="https://gchq.github.io/CyberChef/" target="_blank" rel="noopener">CyberChef Matrix Analysis</a>, converting between Hex, Binary, and Decimal is vital.</p>
+    <div style="background-color: #0f172a; padding: 15px; border-radius: 6px; font-family: monospace; color: #f8fafc; font-size: 0.95rem; border: 1px solid #334155;"><strong>Example Lab Task:</strong> Decode the HTTP Percent-Encoded String: <code style="color: #38bdf8;">%20%27%22</code><br />- <code style="color: #f43f5e;">%20</code> = Hex 20 = Dec 32 = Space<br />- <code style="color: #f43f5e;">%27</code> = Hex 27 = Dec 39 = Single Quote (<code style="color: #4ade80;">'</code>)<br />- <code style="color: #f43f5e;">%22</code> = Hex 22 = Dec 34 = Double Quote (<code style="color: #4ade80;">"</code>)<br /><em>Security Context: Indicates a potential SQL Injection attempt probing for parameter boundaries.</em></div>
+    <p style="color: #cbd5e1; font-size: 0.9rem; margin-top: 15px;">Additional standards documentation on character encoding and security vulnerabilities can be found via the <a style="color: #7dd3fc; text-decoration: underline;" title="MITRE Common Weakness Enumeration Repository" href="https://cwe.mitre.org" target="_blank" rel="noopener">MITRE Common Weakness Enumeration Database</a>.</p>
+</div>
+<section style="margin-top: 30px; background-color: #ffffff; border: 1px solid #c5d0dc; border-radius: 8px; padding: 20px;">
+    <h2 style="color: #0d233a; font-size: 1.5rem; margin-top: 0;">Security Context &amp; Vector Analysis</h2>
+    <div style="font-size: 1rem; color: #1a1a1a;">
+        <p><strong>Punctuation &amp; Special Symbols (Dec 45&ndash;47, 58&ndash;64, 91&ndash;96, 123&ndash;126):</strong> Key attack operators across multiple protocols and shell environments:</p>
+        <ul style="padding-left: 20px;">
+            <li><strong>Slashes (<code style="background-color: #090d16; padding: 2px 4px; border-radius: 4px; color: #f43f5e;">/</code> 0x2F, <code style="background-color: #090d16; padding: 2px 4px; border-radius: 4px; color: #f43f5e;">\</code> 0x5C, <code style="background-color: #090d16; padding: 2px 4px; border-radius: 4px; color: #f43f5e;">.</code> 0x2E):</strong> Central to Path Traversal vulnerabilities (<code style="background-color: #090d16; padding: 2px 4px; border-radius: 4px; color: #f43f5e;">../</code> or <code style="background-color: #090d16; padding: 2px 4px; border-radius: 4px; color: #f43f5e;">..\</code>).</li>
+            <li><strong>Command Separators &amp; Operators (<code style="background-color: #090d16; padding: 2px 4px; border-radius: 4px; color: #f43f5e;">;</code> 0x3B, <code style="background-color: #090d16; padding: 2px 4px; border-radius: 4px; color: #f43f5e;">|</code> 0x7C, <code style="background-color: #090d16; padding: 2px 4px; border-radius: 4px; color: #f43f5e;">&lt;</code> 0x3C, <code style="background-color: #090d16; padding: 2px 4px; border-radius: 4px; color: #f43f5e;">&gt;</code> 0x3E, <code style="background-color: #090d16; padding: 2px 4px; border-radius: 4px; color: #f43f5e;">`</code> 0x60):</strong> Frequently abused in OS Command Injection and Cross-Site Scripting (XSS).</li>
+        </ul>
+        <p><strong>Alphanumeric Values (Dec 48&ndash;57, 65&ndash;90, 97&ndash;122):</strong> Represent digits, uppercase letters, and lowercase letters. Notice that toggling bit 5 (0x20) converts uppercase characters to lowercase (e.g., 'A' 0x41 vs 'a' 0x61).</p>
+        <p><strong>Extended ASCII / High Bit Values (Dec 128&ndash;144 / Hex 80&ndash;90):</strong> Values with the 8th bit set (0x80+). Often leveraged in multi-byte character encoding exploits (such as UTF-8 validation bypasses or Windows-1252/ISO-8859-1 mismatch vulnerabilities).</p>
+        <p><strong>Reference Resources:</strong> <a style="color: #005a9c; text-decoration: underline;" title="IETF RFC 20 ASCII Standard Specification" href="https://www.rfc-editor.org/info/rfc20" target="_blank" rel="noopener">IETF RFC 20: ASCII Standard Specification</a> | <a style="color: #005a9c; text-decoration: underline;" title="OWASP Command Injection Attack Overview and Mitigations" href="https://owasp.org/www-community/attacks/Command_Injection" target="_blank" rel="noopener">OWASP Command Injection Guidelines</a></p>
+    </div>
+</section>
+<section style="margin-top: 30px; background-color: #ffffff; border: 1px solid #c5d0dc; border-radius: 8px; padding: 20px;">
+    <h2 style="color: #0d233a; font-size: 1.5rem; margin-top: 0;">Cybersecurity Application &amp; Additional Resources</h2>
+    <p style="font-size: 1rem; color: #1a1a1a;">In network security and digital forensics, ASCII representations help identify plain-text indicators of compromise (IoCs) within binary payloads or packet captures. Understanding how data maps across base systems (Decimal, Hexadecimal, Binary, Octal) is critical when inspecting raw memory dumps or analyzing shellcode.</p>
+    <p style="font-size: 1rem; color: #1a1a1a;">For official documentation and standardized information regarding character encoding standards:</p>
+    <ul style="padding-left: 20px; color: #1a1a1a;">
+        <li style="margin-bottom: 8px;"><a style="color: #005a9c; text-decoration: underline; font-weight: bold;" title="American National Standards Institute Official Website" href="https://www.ansi.org/" target="_blank" rel="noopener"> American National Standards Institute (ANSI) Official Portal </a> - Learn about formal technical standards development.</li>
+        <li style="margin-bottom: 8px;"><a style="color: #005a9c; text-decoration: underline; font-weight: bold;" title="Internet Engineering Task Force Official Website" href="https://www.ietf.org/" target="_blank" rel="noopener"> Internet Engineering Task Force (IETF) Standards Documentation </a> - Explore network protocols and character set RFC specifications.</li>
+    </ul>
+</section>
