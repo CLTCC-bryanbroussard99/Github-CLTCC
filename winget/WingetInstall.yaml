@@ -1,0 +1,29 @@
+# winget.yaml
+# Example list of applications to install with winget
+#
+# How to use:
+#	• Save this file as winget.yaml.
+#	• Open PowerShell as Administrator.
+#	• Run: winget import -i winget.yaml
+#	• Winget will install each listed app.
+# Idea from
+# https://www.makeuseof.com/winget-hacks-transformed-how-i-use-windows-11/
+
+$schema: https://aka.ms/winget-packages.schema.2.0.json
+CreationDate: 2025-09-06
+Sources:
+  - Packages:
+      - PackageIdentifier: Google.Chrome
+        PackageVersion: latest
+      - PackageIdentifier: Microsoft.VisualStudioCode
+        PackageVersion: latest
+      - PackageIdentifier: 7zip.7zip
+        PackageVersion: latest
+      - PackageIdentifier: Git.Git
+        PackageVersion: latest
+      - PackageIdentifier: Notepad++.Notepad++
+        PackageVersion: latest
+      - PackageIdentifier: Python.Python.3.12
+        PackageVersion: latest
+      - PackageIdentifier: Microsoft.PowerToys
+        PackageVersion: latest
