@@ -1,29 +1,124 @@
 # winget.yaml
-# Example list of applications to install with winget
-#
-# How to use:
-#	• Save this file as winget.yaml.
-#	• Open PowerShell as Administrator.
-#	• Run: winget import -i winget.yaml
-#	• Winget will install each listed app.
-# Idea from
-# https://www.makeuseof.com/winget-hacks-transformed-how-i-use-windows-11/
+# List of applications to install with winget
+
+# to use:
+# save this file as winget.yaml.
+# Open PowerShell as Administrator.
+# Run: winget import -i winget.yaml
+# Winget will install each listed app.
 
 $schema: https://aka.ms/winget-packages.schema.2.0.json
-CreationDate: 2025-09-06
+CreationDate: 2026-09-29
 Sources:
-  - Packages:
-      - PackageIdentifier: Google.Chrome
-        PackageVersion: latest
-      - PackageIdentifier: Microsoft.VisualStudioCode
-        PackageVersion: latest
-      - PackageIdentifier: 7zip.7zip
-        PackageVersion: latest
-      - PackageIdentifier: Git.Git
-        PackageVersion: latest
-      - PackageIdentifier: Notepad++.Notepad++
-        PackageVersion: latest
-      - PackageIdentifier: Python.Python.3.12
-        PackageVersion: latest
-      - PackageIdentifier: Microsoft.PowerToys
-        PackageVersion: latest
+
+Packages:
+
+# Browsers
+
+PackageIdentifier: Microsoft.Edge
+PackageVersion: latest
+
+PackageIdentifier: Mozilla.Firefox
+PackageVersion: latest
+
+PackageIdentifier: Vivaldi.Vivaldi
+PackageVersion: latest
+
+PackageIdentifier: Google.Chrome
+PackageVersion: latest
+
+PackageIdentifier: Opera.Opera
+PackageVersion: latest
+
+# Tools
+
+PackageIdentifier: Git.Git
+PackageVersion: latest
+
+PackageIdentifier: GitHub.GitHubDesktop
+PackageVersion: latest
+
+PackageIdentifier: Google.Drive
+PackageVersion: latest
+
+# PackageIdentifier: Microsoft.Office
+# PackageVersion: latest
+
+PackageIdentifier: Microsoft.VCRedist.2015+.x64
+PackageVersion: latest
+
+PackageIdentifier: Oracle.MySQLWorkbench
+PackageVersion: latest
+
+PackageIdentifier: PowerISO.PowerISO
+PackageVersion: latest
+
+PackageIdentifier: Microsoft.PowerToys
+PackageVersion: latest
+
+PackageIdentifier: RevoUninstaller.RevoUninstaller
+PackageVersion: latest
+
+PackageIdentifier: VideoLAN.VLC
+PackageVersion: latest
+
+# Communication
+
+# PackageIdentifier: Microsoft.Teams
+# PackageVersion: latest
+
+# PackageIdentifier: Microsoft.Outlook
+# PackageVersion: latest
+
+# Various / Utilities / Developer Tools
+
+PackageIdentifier: PDFgear.PDFgear
+PackageVersion: latest
+
+PackageIdentifier: Microsoft.LAPS
+PackageVersion: latest
+
+PackageIdentifier: Microsoft.DeploymentToolkit
+PackageVersion: latest
+
+PackageIdentifier: Microsoft.VisualStudioCode
+PackageVersion: latest
+
+PackageIdentifier: Famatech.AdvancedIPScanner
+PackageVersion: latest
+
+PackageIdentifier: Oracle.MySQL
+PackageVersion: latest
+
+PackageIdentifier: Oracle.JDK.21
+PackageVersion: latest
+
+PackageIdentifier: Python.Python.3.12
+PackageVersion: latest
+
+PackageIdentifier: 7zip.7zip
+PackageVersion: latest
+
+PackageIdentifier: PuTTY.PuTTY
+PackageVersion: latest
+
+PackageIdentifier: Notepad++.Notepad++
+PackageVersion: latest
+
+PackageIdentifier: CodecGuide.K-LiteCodecPack.Standard
+PackageVersion: latest
+
+PackageIdentifier: Microsoft.DotNet.DesktopRuntime.7
+PackageVersion: latest
+
+PackageIdentifier: dotPDNLLC.paint.net
+PackageVersion: latest
+
+PackageIdentifier: Microsoft.PowerShell
+PackageVersion: latest
+
+PackageIdentifier: Oracle.VirtualBox
+PackageVersion: latest
+
+PackageIdentifier: WiresharkFoundation.Wireshark
+PackageVersion: latest
