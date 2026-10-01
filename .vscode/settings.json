@@ -2,5 +2,6 @@
     "[html]": {
         "editor.suggest.insertMode": "replace",
         "editor.defaultFormatter": "vscode.html-language-features"
-    }
+    },
+    "editor.fontSize": 16
 }
