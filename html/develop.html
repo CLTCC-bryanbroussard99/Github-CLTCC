@@ -1,64 +1,115 @@
-
-<!-- Nominee Information -->
-<div class="section-card">
-  <div class="section-title">2. Nominee Information</div>
-  <div class="flex-row">
-    <div class="flex-col-full" style="margin-bottom: 12px;">
-      <label for="nomination_type">Nomination Type <span class="required">*</span></label>
-      <select id="nomination_type" name="nomination_type" required aria-required="true">
-        <option value="self">Self-Nomination</option>
-        <option value="peer">Nominating a Colleague</option>
-      </select>
-    </div>
-  </div>
-  <div class="flex-row">
-    <div class="flex-col">
-      <label for="nominee_name">Nominee Full Name <span class="required">*</span></label>
-      <input type="text" id="nominee_name" name="nominee_name" required aria-required="true">
-    </div>Google Project Management
-    <div class="flex-col">
-      <label for="nominee_email">Nominee Campus Email Address <span class="required">*</span></label>
-      <input type="email" id="nominee_email" name="nominee_email" placeholder="username@cltcc.edu" required aria-required="true">
-    </div>
-  </div>
-  <div class="flex-row" style="margin-top: 12px;">
-    <div class="flex-col">
-      <label for="nominee_department">Nominee Department / Program <span class="required">*</span></label>
-      <input type="text" id="nominee_department" name="nominee_department" required aria-required="true">
-    </div>
-    <div class="flex-col">
-      <label for="nominee_title">Nominee Academic Rank / Title <span class="required">*</span></label>
-      <input type="text" id="nominee_title" name="nominee_title" placeholder="e.g., Instructor, Associate Professor" required aria-required="true">
-    </div>
-  </div>
+```
+<!-- Title Card -->
+<div style="background-color: #ffffff; border: 1px solid #dee2e6; border-radius: 8px; max-width: 99%; width: 99%; margin: 0 auto 20px auto; padding: 20px; box-sizing: border-box; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+    <h2 style="color: #0d6efd; text-align: center; margin-top: 0; font-size: 2.2em;">How to Check Your SSD Health Without Third-Party Software</h2>
+    <p style="text-align: center; color: #6c757d; margin-bottom: 0;">Learn how to leverage native Windows tools to assess Solid State Drive (SSD) health, evaluate SMART metrics, monitor operational status, and check file system integrity.</p>
 </div>
 
-<!-- Statement & Qualifications -->
-<div class="section-card">
-  <div class="section-title">3. Nomination Statement</div>
-  <div class="flex-row">
-    <div class="flex-col-full">
-      <label for="statement">Statement of Support / Qualifications <span class="required">*</span></label>
-      <textarea id="statement" name="statement" required aria-required="true" placeholder="Please briefly describe how the nominee embodies leadership, service, integrity, and shared governance..."></textarea>
-      <div class="help-text">Limit response to 250-300 words. This statement may be shared with faculty voters during the election period.</div>
+<!-- Instructor Note Card -->
+<div style="background-color: #e7f1ff; border-left: 5px solid #0d6efd; border-radius: 4px; max-width: 99%; width: 99%; margin: 0 auto 20px auto; padding: 15px; box-sizing: border-box;">
+    <h2 style="color: #0a58ca; margin-top: 0; font-size: 1.4em;">Instructor Context &amp; Storage Maintenance</h2>
+    <p style="margin-bottom: 0; color: #212529;">Solid State Drives (SSDs) utilize NAND flash memory, which has a finite write endurance based on total bytes written (TBW). Proactively monitoring SSD health using built-in Windows diagnostics ensures critical data protection and helps prevent unexpected drive failures without installing unverified third-party software.</p>
+</div>
+
+<!-- Methods Container -->
+<div style="max-width: 99%; width: 99%; margin: 0 auto;">
+
+    <!-- Method 1 -->
+    <div style="background-color: #ffffff; border: 1px solid #dee2e6; border-radius: 8px; margin-bottom: 15px; padding: 20px; box-sizing: border-box; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; align-items: flex-start; flex-wrap: wrap;">
+        <div style="flex: 0 0 50px; background-color: #0d6efd; color: #ffffff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5em; font-weight: bold; margin-right: 20px;">01</div>
+        <div style="flex: 1; min-width: 250px;">
+            <h3 style="color: #212529; margin-top: 0; margin-bottom: 5px;">Check SSD Health in Windows Settings (Windows 11)</h3>
+            <p style="color: #6c757d; margin-top: 0; margin-bottom: 10px;"><strong>Best For:</strong> Visual Inspection &amp; Detailed Wear Metrics</p>
+            <ol style="color: #495057; margin-bottom: 10px; padding-left: 20px;">
+                <li style="margin-bottom: 5px;">Open <strong>Settings</strong> (Press <kbd style="background-color: #e9ecef; border: 1px solid #ced4da; border-radius: 3px; padding: 2px 5px;">Win + I</kbd>).</li>
+                <li style="margin-bottom: 5px;">Navigate to <strong>System</strong> &rarr; <strong>Storage</strong> &rarr; <strong>Advanced storage settings</strong> &rarr; <strong>Disks &amp; volumes</strong>.</li>
+                <li style="margin-bottom: 5px;">Select your SSD from the list and click <strong>Properties</strong>.</li>
+                <li style="margin-bottom: 5px;">Under the <strong>Drive health</strong> section, review metrics:
+                    <ul style="margin-top: 5px;">
+                        <li><strong>Estimated remaining life:</strong> Displays the percentage of write life remaining (e.g., 97%).</li>
+                        <li><strong>Available spare:</strong> Indicates percentage of reserved flash blocks remaining (e.g., 100%).</li>
+                        <li><strong>Drive temperature:</strong> Displays live operating temperature in Celsius (if supported by NVMe/SATA controller).</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
     </div>
-  </div>
+
+    <!-- Method 2 -->
+    <div style="background-color: #ffffff; border: 1px solid #dee2e6; border-radius: 8px; margin-bottom: 15px; padding: 20px; box-sizing: border-box; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; align-items: flex-start; flex-wrap: wrap;">
+        <div style="flex: 0 0 50px; background-color: #0d6efd; color: #ffffff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5em; font-weight: bold; margin-right: 20px;">02</div>
+        <div style="flex: 1; min-width: 250px;">
+            <h3 style="color: #212529; margin-top: 0; margin-bottom: 5px;">Use Command Prompt (Quick WMIC Check)</h3>
+            <p style="color: #6c757d; margin-top: 0; margin-bottom: 10px;"><strong>Best For:</strong> Fast Basic Hardware Pass/Fail Status</p>
+            <ol style="color: #495057; margin-bottom: 10px; padding-left: 20px;">
+                <li style="margin-bottom: 5px;">Open <strong>Command Prompt</strong> as Administrator.</li>
+                <li style="margin-bottom: 5px;">Execute the WMIC disk check query command:</li>
+            </ol>
+            <code style="background-color: #212529; color: #0d6efd; padding: 10px; border-radius: 4px; display: block; font-family: Consolas, monospace; font-size: 1em; margin-bottom: 10px;">wmic diskdrive get status</code>
+            <p style="color: #6c757d; margin-bottom: 0; font-size: 0.9em;"><em>Note: Returning <strong>"OK"</strong> confirms Windows has not detected major hardware faults, though WMIC does not display granular wear percentages.</em></p>
+        </div>
+    </div>
+
+    <!-- Method 3 -->
+    <div style="background-color: #ffffff; border: 1px solid #dee2e6; border-radius: 8px; margin-bottom: 15px; padding: 20px; box-sizing: border-box; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; align-items: flex-start; flex-wrap: wrap;">
+        <div style="flex: 0 0 50px; background-color: #0d6efd; color: #ffffff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5em; font-weight: bold; margin-right: 20px;">03</div>
+        <div style="flex: 1; min-width: 250px;">
+            <h3 style="color: #212529; margin-top: 0; margin-bottom: 5px;">Use PowerShell (Windows 10 / 11)</h3>
+            <p style="color: #6c757d; margin-top: 0; margin-bottom: 10px;"><strong>Best For:</strong> Multi-Drive Auditing &amp; PowerShell Automation</p>
+            <ol style="color: #495057; margin-bottom: 10px; padding-left: 20px;">
+                <li style="margin-bottom: 5px;">Open <strong>PowerShell</strong> as Administrator.</li>
+                <li style="margin-bottom: 5px;">Execute the Storage cmdlet to query physical drives:</li>
+            </ol>
+            <code style="background-color: #212529; color: #0d6efd; padding: 10px; border-radius: 4px; display: block; font-family: Consolas, monospace; font-size: 1em; margin-bottom: 10px;">Get-PhysicalDisk</code>
+            <p style="color: #495057; margin-bottom: 0;">Examine the output columns:
+                <br>&bull; <strong>HealthStatus:</strong> <code>Healthy</code> indicates normal operation. <code>Warning</code> or <code>Unhealthy</code> signals urgent backup needed.
+                <br>&bull; <strong>OperationalStatus:</strong> <code>OK</code> confirms active readiness.
+            </p>
+        </div>
+    </div>
+
+    <!-- Method 4 -->
+    <div style="background-color: #ffffff; border: 1px solid #dee2e6; border-radius: 8px; margin-bottom: 15px; padding: 20px; box-sizing: border-box; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; align-items: flex-start; flex-wrap: wrap;">
+        <div style="flex: 0 0 50px; background-color: #0d6efd; color: #ffffff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5em; font-weight: bold; margin-right: 20px;">04</div>
+        <div style="flex: 1; min-width: 250px;">
+            <h3 style="color: #212529; margin-top: 0; margin-bottom: 5px;">Check for File System Errors (CHKDSK Scan)</h3>
+            <p style="color: #6c757d; margin-top: 0; margin-bottom: 10px;"><strong>Best For:</strong> Online File System Integrity Inspection</p>
+            <ol style="color: #495057; margin-bottom: 10px; padding-left: 20px;">
+                <li style="margin-bottom: 5px;">Open <strong>Command Prompt</strong> or <strong>PowerShell</strong> as Administrator.</li>
+                <li style="margin-bottom: 5px;">Execute the online scan command (Replace <code>C:</code> with target drive letter if necessary):</li>
+            </ol>
+            <code style="background-color: #212529; color: #0d6efd; padding: 10px; border-radius: 4px; display: block; font-family: Consolas, monospace; font-size: 1em; margin-bottom: 10px;">chkdsk C: /scan</code>
+            <p style="color: #495057; margin-bottom: 0;">Runs a non-destructive background check to detect NTFS file system inconsistencies or bad sector allocations.</p>
+        </div>
+    </div>
+
+    <!-- Warning Flags Card -->
+    <div style="background-color: #f8d7da; border: 1px solid #f5c2c7; border-radius: 8px; margin-bottom: 20px; padding: 20px; box-sizing: border-box;">
+        <h2 style="color: #842029; margin-top: 0; font-size: 1.4em;">Critical SSD Failure Warning Signs</h2>
+        <div style="display: flex; flex-direction: column; gap: 10px; color: #842029;">
+            <p style="margin: 0;"><strong>1. Warning or Unhealthy Status:</strong> Indicates drive endurance exhaustion or pending hardware failure.</p>
+            <p style="margin: 0;"><strong>2. High SSD Operating Temperatures:</strong> Sustained temperatures above 70&deg;C under normal use cause thermal throttling and accelerated component degradation.</p>
+            <p style="margin: 0;"><strong>3. Frequent System Slowdowns:</strong> Severe latency spikes during standard file operations often indicate corrupted block read retries.</p>
+            <p style="margin: 0;"><strong>4. Read/Write Errors &amp; Unexpected Crashes:</strong> File corruption errors or BSODs when accessing specific file paths point to failing NAND flash sectors.</p>
+        </div>
+    </div>
+
+    <!-- Pro Tip Card -->
+    <div style="background-color: #fff3cd; border: 1px solid #ffe69c; border-radius: 8px; margin-bottom: 20px; padding: 15px; box-sizing: border-box;">
+        <h2 style="color: #664d03; margin-top: 0; font-size: 1.2em;">Pro Tip for SSD Maintenance</h2>
+        <p style="margin-bottom: 0; color: #664d03;">While native Windows utilities provide excellent immediate status checks, manufacturer-specific dashboard utilities (e.g., Samsung Magician, Crucial Executive, Western Digital Dashboard) or vendor SMART tools can display specific attributes like total host writes, raw vendor logs, and firmware updates.</p>
+    </div>
+
 </div>
 
-<!-- Eligibility & Verification -->
-<div class="section-card">
-  <div class="section-title">4. Eligibility Verification</div>
-  <div class="checkbox-group">
-    <input type="checkbox" id="eligibility_confirm" name="eligibility_confirm" required aria-required="true">
-    <label for="eligibility_confirm">I confirm that the nominee is a full-time faculty member in good standing and meets all eligibility criteria set forth by the Faculty Senate Constitution. <span class="required">*</span></label>
-  </div>
-  <div class="checkbox-group" style="margin-top: 12px;">
-    <input type="checkbox" id="consent_confirm" name="consent_confirm" required aria-required="true">
-    <label for="consent_confirm">If nominating a colleague, I have discussed this nomination with the nominee, and they have agreed to serve if elected. <span class="required">*</span></label>
-  </div>
+<!-- Technical Documentation Card -->
+<div style="background-color: #ffffff; border: 1px solid #dee2e6; border-radius: 8px; max-width: 99%; width: 99%; margin: 0 auto; padding: 20px; box-sizing: border-box; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+    <h2 style="color: #0d6efd; margin-top: 0; text-align: center;">Official Microsoft Storage Documentation</h2>
+    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+        <a href="[https://learn.microsoft.com/en-us/powershell/module/storage/get-physicaldisk](https://learn.microsoft.com/en-us/powershell/module/storage/get-physicaldisk)" title="Official Microsoft documentation for Get-PhysicalDisk PowerShell cmdlet" target="_blank" rel="noopener noreferrer" style="color: #0d6efd; font-weight: bold; text-decoration: none;">Microsoft Learn: Get-PhysicalDisk Cmdlet Reference</a>
+        <a href="[https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/chkdsk](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/chkdsk)" title="Official technical reference for CHKDSK command line utility" target="_blank" rel="noopener noreferrer" style="color: #0d6efd; font-weight: bold; text-decoration: none;">Microsoft Learn: CHKDSK Utility Command Reference</a>
+        <a href="[https://support.microsoft.com/en-us/windows/manage-drive-health-in-windows-11](https://support.microsoft.com/en-us/windows/manage-drive-health-in-windows-11)" title="Microsoft Support guide for managing drive health in Windows 11 Settings" target="_blank" rel="noopener noreferrer" style="color: #0d6efd; font-weight: bold; text-decoration: none;">Microsoft Support: Manage Drive Health in Windows 11</a>
+    </div>
 </div>
 
-<div style="margin-top: 24px;">
-  <button type="submit" class="btn-submit">Submit Nomination</button>
-</div>
-
+```
