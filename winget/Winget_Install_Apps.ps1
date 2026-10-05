@@ -111,16 +111,17 @@ $programs =@(
         'VideoLAN.VLC', # VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVDs, Audio CDs, VCDs, and various streaming protocols.
         
     # Communication
-        'Microsoft.Teams', # Make amazing things happen together at home, work, and school.
-        'tomlm.electron-outlook-365', # Outlook Web Application as a dedicated application. This hosts mail.office365.com and is suitable for using with enterprise work or school environmen
+        #'Microsoft.Teams', # Make amazing things happen together at home, work, and school.
+        #'tomlm.electron-outlook-365', # Outlook Web Application as a dedicated application. This hosts mail.office365.com and is suitable for using with enterprise work or school environmen
 
     # Various 
         '.net 45.2 targeting pack', # The .NET Framework 4.5.2 Targeting Pack enables developers to build applications that run on the .NET Framework 4.5.2.
         '.net desktopruntime.6', # Microsoft .NET Windows Desktop Runtime 6.0 - .NET is a free, cross-platform, open-source developer platform for building many different types of applications.
         '7zip.7zip', # 7-zip - Free and open source file archiver with a high compression ratio.
-        'Bitwarden.Bitwarden' # A secure and free password manager for all of your devices.
+        #'Bitwarden.Bitwarden' # A secure and free password manager for all of your devices.
         'CodecGuide.K-LiteCodecPack.Standard', # K-Lite Codec Pack Standard - is a collection of DirectShow filters, VFW/ACM codecs, and tools. Codecs and DirectShow filters are needed for encoding and decoding audio and video formats. The K-Lite Codec Pack is designed as a user-friendly solution for playing all your audio and movie files. With the K-Lite Codec Pack you should be able to play all the popular audio and video formats and even several less common formats.
         'dotPDNLLC.paintdotnet', # Paint.NET - is image and photo editing software for PCs that run Windows.
+        'Famatech.AdvancedPortScanner', # Advanced Port Scanner - is a network port scanner that helps you discover open ports on your network.
         'Famatech.AdvancedIPScanner', # Advanced IP Scanner - shows all network devices, gives you access to shared folders, and can even remotely switch computers off.
         'Microsoft.DeploymentToolkit', # Microsoft Deployment Toolkit (MDT) - provides a unified collection of tools, processes, and guidance for automating desktop and server deployments.
         'Microsoft.DotNet.DesktopRuntime.7', # Microsoft .NET Windows Desktop Runtime 7.0 - .NET is a free, cross-platform, open-source developer platform for building many different types of applications.
@@ -166,10 +167,10 @@ $programs =@(
     .\officetest.ps1 -Force -AutoConfirm
 #>
 
-param(
-    [switch]$Force,
-    [switch]$AutoConfirm
-)
+#param(
+  #  [switch]$Force,
+  #  [switch]$AutoConfirm
+#)
 
 function Get-OfficeProducts {
     $results = @()
