@@ -118,6 +118,7 @@ $programs =@(
         '.net 45.2 targeting pack', # The .NET Framework 4.5.2 Targeting Pack enables developers to build applications that run on the .NET Framework 4.5.2.
         '.net desktopruntime.6', # Microsoft .NET Windows Desktop Runtime 6.0 - .NET is a free, cross-platform, open-source developer platform for building many different types of applications.
         '7zip.7zip', # 7-zip - Free and open source file archiver with a high compression ratio.
+        'Belarc.Advisor', #  builds a detailed profile of your installed software and hardware, network inventory, any missing Microsoft hotfixes
         #'Bitwarden.Bitwarden' # A secure and free password manager for all of your devices.
         'CodecGuide.K-LiteCodecPack.Standard', # K-Lite Codec Pack Standard - is a collection of DirectShow filters, VFW/ACM codecs, and tools. Codecs and DirectShow filters are needed for encoding and decoding audio and video formats. The K-Lite Codec Pack is designed as a user-friendly solution for playing all your audio and movie files. With the K-Lite Codec Pack you should be able to play all the popular audio and video formats and even several less common formats.
         'dotPDNLLC.paintdotnet', # Paint.NET - is image and photo editing software for PCs that run Windows.
