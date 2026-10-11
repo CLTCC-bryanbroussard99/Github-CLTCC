@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cybersecurity Program Display</title>
+<style>
+  @page {
+    size: 8.5in 11in;
+    margin: 0;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    width: 11in;
+    height: 8.5in;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0f172a;
+    background-color: #f8fafc;
+    padding: 0.5in;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .container {
+    width: 99%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    border-bottom: 5px solid #0284c7;
+  }
+  .card-header h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+  .badge {
+    display: inline-block;
+    background-color: #0284c7;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .action-verbs {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .action-verbs span {
+    color: #38bdf8;
+  }
+  .intro-card {
+    background-color: #ffffff;
+    padding: 1.25rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: #334155;
+    margin: 0.75rem 0;
+  }
+  .section-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0f172a;
+    text-align: center;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .feature-card {
+    flex: 1 1 calc(50% - 0.75rem);
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 5px solid #0284c7;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+  }
+  .feature-card p {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.3;
+  }
+  .cta-card {
+    background-color: #1e293b;
+    color: #ffffff;
+    padding: 1.25rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .cta-text {
+    flex: 1;
+  }
+  .cta-text h2 {
+    font-size: 1.35rem;
+    color: #38bdf8;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+  }
+  .cta-text p {
+    font-size: 1rem;
+    color: #cbd5e1;
+    line-height: 1.4;
+  }
+  .qr-placeholder {
+    width: 110px;
+    height: 110px;
+    background-color: #ffffff;
+    border: 3px solid #0284c7;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  
+  <div class="card-header">
+    <h1>Launch Your Career In Cybersecurity</h1>
+    <div class="badge">Earn Your Degree in Just 2 Years</div>
+    <div class="action-verbs">
+      Protect Networks <span>•</span> Hunt Threats <span>•</span> Secure the Future
+    </div>
+  </div>
+
+  <div class="intro-card">
+    Our hands-on Cybersecurity Program prepares you for one of the <strong>fastest-growing, high-demand careers</strong> in the world.
+  </div>
+
+  <div>
+    <div class="section-title">Why Choose Our Program?</div>
+    <div class="grid-container">
+      <div class="feature-card">
+        <p>Hands-on labs & real-world simulations</p>
+      </div>
+      <div class="feature-card">
+        <p>Industry-recognized certifications</p>
+      </div>
+      <div class="feature-card">
+        <p>Internship & career placement support</p>
+      </div>
+      <div class="feature-card">
+        <p>Fast-track, high-demand career pathway</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-card">
+    <div class="cta-text">
+      <h2>Scan To Start Your Future</h2>
+      <p>Secure your spot. Build your skills. Get career ready.</p>
+    </div>
+    <div class="qr-placeholder">
+        <img src="img\cltccCyber-qr.png" alt="QR Code" style="width: 80px; height: 80px; margin-bottom: 5px;">
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
