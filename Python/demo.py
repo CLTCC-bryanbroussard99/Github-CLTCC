@@ -1,5 +1,13 @@
-password_length = 3
-letters = 26
+def pig_latin(text):
+  say = ""
+  # Separate the text into words
+  words = text.split()
+  for word in words:
+    # Create the pig latin word and add it to the list
+     pig_word = word[1:] + word[0] + "ay"+ " " 
+     say = say + pig_word
+  # Turn the list back into a phrase
+  return say.strip()
 
-total_combinations = letters ** password_length
-print(total_combinations)
+print(pig_latin("hello how are you")) # Should be "ellohay owhay reaay ouyay"
+print(pig_latin("programming in python is fun")) # Should be "rogrammingpay niay ythonpay siay unfay"
