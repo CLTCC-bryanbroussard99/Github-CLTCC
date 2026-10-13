@@ -1,13 +1,11 @@
-def pig_latin(text):
-  say = ""
-  # Separate the text into words
-  words = text.split()
-  for word in words:
-    # Create the pig latin word and add it to the list
-     pig_word = word[1:] + word[0] + "ay"+ " " 
-     say = say + pig_word
-  # Turn the list back into a phrase
-  return say.strip()
+def odd_numbers(maximum):
+    return_string = ""
+    for num in range(1, maximum + 1, 2):
+        return_string += str(num) + " "
+    return return_string.strip()
 
-print(pig_latin("hello how are you")) # Should be "ellohay owhay reaay ouyay"
-print(pig_latin("programming in python is fun")) # Should be "rogrammingpay niay ythonpay siay unfay"
+print(odd_numbers(6))
+print(odd_numbers(10))
+print(odd_numbers(1))
+print(odd_numbers(3))
+print(odd_numbers(0))
