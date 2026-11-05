@@ -1,0 +1,8 @@
+# Temp files
+hsimp.concat.js
+
+# Node
+node_modules/
+
+# Makefile
+.watch.ref

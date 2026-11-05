@@ -1,0 +1,21 @@
+{
+  "name": "how-secure-is-my-password",
+  "version": "0.2.0",
+  "description": "How Secure Is My Password?",
+  "author": "Small Hadron Collider",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/howsecureismypassword/hsimp.git"
+  },
+  "dependencies": {
+    "hsimp-main": "0.1.9",
+    "hsimp-checks": "0.1.2"
+  },
+  "devDependencies": {
+    "browserify": "8.*",
+    "buster": "0.7.*",
+    "uglify-js": "2.*",
+    "uglifycss": "0.0.11"
+  }
+}

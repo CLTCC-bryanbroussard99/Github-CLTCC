@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title>CLTCC Cybersecurity | Password Strength Checker</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: #1F2937;
+            background-color: #F8FAFC;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .cltcc-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            border: 2px solid #F3F4F6;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .cltcc-header {
+            background-color: #1E3A8A;
+            color: #FFFFFF;
+            padding: 20px 24px;
+            border-bottom: 3px solid #1D4ED8;
+        }
+
+            .cltcc-header h1 {
+                margin: 0;
+                font-size: 1.25rem;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+            }
+
+            .cltcc-header p {
+                margin: 4px 0 0 0;
+                font-size: 0.875rem;
+                color: #E0E7FF;
+            }
+
+        .cltcc-body {
+            padding: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1F2937;
+        }
+
+            label::after {
+                content: ":";
+            }
+
+        input[type="password"], input[type="text"] {
+            font-family: inherit;
+            font-size: 1rem;
+            color: #1F2937;
+            background-color: #FFFFFF;
+            border: 2px solid #CBD5E1;
+            border-radius: 6px;
+            padding: 10px 14px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease-in-out;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #1E3A8A;
+        }
+
+        .hsimp-time {
+            display: block;
+            margin-top: 12px;
+            padding: 12px;
+            background-color: #F3F4F6;
+            border-left: 4px solid #1E3A8A;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #1F2937;
+        }
+
+        .hsimp-checks {
+            padding-left: 0;
+            margin-top: 20px;
+        }
+
+            .hsimp-checks li {
+                list-style: none;
+                background-color: #F3F4F6;
+                border: 1px solid #E5E7EB;
+                border-radius: 6px;
+                padding: 12px 16px;
+                margin-bottom: 10px;
+            }
+
+            .hsimp-checks h2 {
+                font-size: 0.95rem;
+                font-weight: 600;
+                color: #1E3A8A;
+                margin: 0 0 4px 0;
+            }
+
+            .hsimp-checks p {
+                margin: 0;
+                font-size: 0.875rem;
+                color: #1F2937;
+                line-height: 1.4;
+            }
+    </style>
+
+    <link rel="stylesheet" href="hsimp.css">
+</head>
+<body>
+    <div class="cltcc-container">
+        <div class="cltcc-header">
+            <h1>CLTCC Cybersecurity Lab</h1>
+            <p>Password Crack Time & Vulnerability Analyzer</p>
+        </div>
+
+        <div class="cltcc-body">
+            <div class="form-group">
+                <label for="password-box">Enter Test Password</label>
+                <input id="password-box" type="password" placeholder="Type a password to test..." />
+            </div>
+
+            <div id="password-time" class="hsimp-time"></div>
+            <ul id="password-checks" class="hsimp-checks"></ul>
+        </div>
+        Code available at <a href="https://github.com/your-repo/hsimp">GitHub</a>
+    </div>
+
+    <script src="hsimp.min.js"></script>
+    <script>
+        (function (doc) {
+            var passwordInput = doc.getElementById("password-box"),
+                timeDiv = doc.getElementById("password-time"),
+                checksList = doc.getElementById("password-checks");
+
+            // Code to render the time returned by HSIMP
+            var renderTime = function (time, input) {
+                timeDiv.innerHTML = time || "";
+            };
+
+            // Code to output the checks returned by HSIMP
+            var renderChecks = function (checks, input) {
+                checksList.innerHTML = "";
+
+                for (var i = 0, l = checks.length; i < l; i++) {
+                    var li = doc.createElement("li"),
+                        title = doc.createElement("h2"),
+                        message = doc.createElement("p");
+
+                    title.innerHTML = checks[i].name;
+                    li.appendChild(title);
+
+                    message.innerHTML = checks[i].message;
+                    li.appendChild(message);
+
+                    checksList.appendChild(li);
+                }
+            };
+
+            // Setup the HSIMP object
+            var attachTo = hsimp({
+                options: {
+                    calculationsPerSecond: 10e9, // 10 billion calculations per second
+                    good: 31557600e9, // 1 billion years
+                    ok: 31557600e3 // 1 thousand years
+                },
+                outputTime: renderTime,
+                outputChecks: renderChecks
+            });
+
+            // setup custom values for "instantly"/"forever"
+            hsimp.setDictionary({
+                "instantly": "Immediately",
+                "forever": "Aaaaaaaaaaaaaaaages",
+            });
+
+            // Run the HSIMP
+            attachTo(passwordInput);
+        }(this.document));
+    </script>
+</body>
+</html>
