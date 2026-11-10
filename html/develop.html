@@ -1,37 +1,517 @@
-<div style="background-color: #FFFFFF; padding: 20px; border-radius: 6px; margin-bottom: 16px; border-left: 4px solid #CEB888;">
-  <h3 style="margin-top: 0; color: #003087; font-size: 20px;">1. Grants (Free Money)</h3>
-  <p>Grants are financial awards provided by federal and state governments that do not require repayment. They may be need-based, merit-based, or student-specific. Major programs include:</p>
-  <ul style="margin: 0; padding-left: 20px;">
-    <li><strong>Federal Pell Grants:</strong> Need-based grants for undergraduate students.</li>
-    <li><strong>Federal Supplemental Educational Opportunity Grant (FSEOG):</strong> For undergraduate students with exceptional financial need.</li>
-    <li><strong>State Grants:</strong> Programs like the Louisiana Go Grant and MJ Foster Promise.</li>
-  </ul>
-</div>
+<header role="banner" style="width: 99%; max-width: 1400px; margin: 0 auto; font-family: Arial, sans-serif; background-color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-bottom: 3px solid #CEB888;">
+  
+  <!-- EMBEDDED COMPONENT STYLES & ACCESSIBILITY BEHAVIORS -->
+  <style>
+    /* CSS Custom Properties & Reset Scoping */
+    .cltcc-nav-root * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<div style="background-color: #FFFFFF; padding: 20px; border-radius: 6px; margin-bottom: 16px; border-left: 4px solid #003087;">
-  <h3 style="margin-top: 0; color: #003087; font-size: 20px;">2. Scholarships</h3>
-  <p>Scholarships are gift aid awarded based on academic performance, technical skills, community involvement, or specific career paths. CLTCC students can apply for institutional and external awards such as:</p>
-  <ul style="margin: 0; padding-left: 20px;">
-    <li>Alexandria Business Foundation Scholarship</li>
-    <li>American Welding Society Scholarships</li>
-    <li>Cleco Power of a Promise Scholarship</li>
-    <li>TOPS and TOPS Tech Awards</li>
-  </ul>
-</div>
+    /* WCAG Focus Visible Outline */
+    .cltcc-nav-root a:focus-visible,
+    .cltcc-nav-root button:focus-visible,
+    .cltcc-nav-root input:focus-visible {
+      outline: 3px solid #CEB888 !important;
+      outline-offset: 2px !important;
+    }
 
-<div style="background-color: #FFFFFF; padding: 20px; border-radius: 6px; margin-bottom: 16px; border-left: 4px solid #CEB888;">
-  <h3 style="margin-top: 0; color: #003087; font-size: 20px;">3. Federal Work-Study</h3>
-  <p style="margin-bottom: 0;">Federal work-study provides part-time employment opportunities for eligible undergraduate students, allowing them to earn money to help pay for educational expenses while gaining valuable work experience on campus.</p>
-</div>
+    /* Top Utility Bar Styles */
+    .cltcc-utility-bar {
+      background-color: #003087;
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 20px;
+      font-size: 14px;
+    }
 
-<div style="background-color: #FFFFFF; padding: 20px; border-radius: 6px; margin-bottom: 16px; border-left: 4px solid #003087;">
-  <h3 style="margin-top: 0; color: #003087; font-size: 20px;">4. Student Loans</h3>
-  <p style="margin-bottom: 0;">Loans are borrowed funds that must be repaid with interest. CLTCC encourages students to maximize federal and state grants and scholarships before considering loans. For complete details, review the official <a href="[https://www.cltcc.edu/financial-aid/types-of-aid](https://www.cltcc.edu/financial-aid/types-of-aid)" target="_blank" style="color: #003087; text-decoration: underline;">CLTCC Types of Aid Page</a>.</p>
-</div>
+    .cltcc-utility-links {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      list-style: none;
+    }
 
-<div style="background-color: #FFFFFF; padding: 20px; border-radius: 6px; border: 1px solid #E5E7EB; text-align: center;">
-  <h3 style="margin-top: 0; color: #003087; font-size: 18px;">Need Assistance?</h3>
-  <p style="margin-bottom: 8px;">Contact the CLTCC Financial Aid Department for guidance on your application:</p>
-  <p style="margin: 0;"><strong>Email:</strong> <a href="mailto:financialaid@cltcc.edu" style="color: #003087; text-decoration: underline;">financialaid@cltcc.edu</a> | <strong>Phone:</strong> 318-487-5443 (Option #3)</p>
-</div>
+    .cltcc-utility-links a {
+      color: #ffffff;
+      text-decoration: underline;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
 
+    .cltcc-utility-links a:hover {
+      color: #CEB888;
+    }
+
+    /* Utility Apply CTA Button */
+    .cltcc-cta-apply {
+      background-color: #CEB888;
+      color: #003087 !important;
+      font-weight: 700 !important;
+      padding: 6px 14px;
+      border-radius: 4px;
+      text-decoration: none !important;
+      display: inline-block;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .cltcc-cta-apply:hover {
+      background-color: #e5cd98;
+      transform: translateY(-1px);
+    }
+
+    /* Utility Search Bar */
+    .cltcc-search-form {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border-radius: 4px;
+      padding: 2px 6px;
+      border: 1px solid #E5E7EB;
+    }
+
+    .cltcc-search-input {
+      border: none;
+      padding: 4px 8px;
+      font-size: 13px;
+      color: #1F2937;
+      width: 140px;
+    }
+
+    .cltcc-search-input:focus {
+      outline: none;
+    }
+
+    .cltcc-search-btn {
+      background: transparent;
+      border: none;
+      color: #003087;
+      cursor: pointer;
+      padding: 4px 6px;
+      font-weight: bold;
+    }
+
+    /* Main Navigation Bar */
+    .cltcc-main-navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      background-color: #ffffff;
+      position: relative;
+    }
+
+    .cltcc-brand-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      gap: 10px;
+    }
+
+    .cltcc-brand-title {
+      color: #003087;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+
+    .cltcc-brand-subtitle {
+      color: #1F2937;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: block;
+    }
+
+    .cltcc-nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .cltcc-nav-item {
+      position: relative;
+    }
+
+    .cltcc-nav-link {
+      background: none;
+      border: none;
+      color: #1F2937;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 12px 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 3px solid transparent;
+      transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+      text-decoration: none;
+    }
+
+    .cltcc-nav-link:hover,
+    .cltcc-nav-item:hover > .cltcc-nav-link,
+    .cltcc-nav-link[aria-expanded="true"] {
+      color: #003087;
+      background-color: #F3F4F6;
+      border-bottom-color: #003087;
+    }
+
+    /* Dropdown Menus */
+    .cltcc-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 260px;
+      background-color: #ffffff;
+      border: 1px solid #E5E7EB;
+      border-top: 3px solid #003087;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      list-style: none;
+      padding: 10px 0;
+      display: none;
+      z-index: 1000;
+    }
+
+    .cltcc-nav-item:hover .cltcc-dropdown,
+    .cltcc-nav-item:focus-within .cltcc-dropdown {
+      display: block;
+    }
+
+    .cltcc-dropdown-link {
+      display: block;
+      padding: 10px 20px;
+      color: #1F2937;
+      text-decoration: underline;
+      font-size: 15px;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .cltcc-dropdown-link:hover,
+    .cltcc-dropdown-link:focus {
+      background-color: #F3F4F6;
+      color: #003087;
+    }
+
+    /* Mega Menu Architecture */
+    .cltcc-megamenu {
+      position: absolute;
+      top: 100%;
+      left: -150px;
+      width: 900px;
+      background-color: #ffffff;
+      border: 1px solid #E5E7EB;
+      border-top: 4px solid #003087;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+      padding: 24px;
+      display: none;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      z-index: 1000;
+    }
+
+    .cltcc-nav-item:hover .cltcc-megamenu,
+    .cltcc-nav-item:focus-within .cltcc-megamenu {
+      display: grid;
+    }
+
+    .cltcc-mega-col h3 {
+      color: #003087;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #CEB888;
+    }
+
+    .cltcc-mega-col ul {
+      list-style: none;
+    }
+
+    .cltcc-mega-col li {
+      margin-bottom: 8px;
+    }
+
+    .cltcc-mega-col a {
+      color: #1F2937;
+      text-decoration: underline;
+      font-size: 14px;
+      line-height: 1.4;
+      display: block;
+    }
+
+    .cltcc-mega-col a:hover {
+      color: #003087;
+      font-weight: bold;
+    }
+
+    /* Mobile Hamburger Trigger */
+    .cltcc-mobile-toggle {
+      display: none;
+      background: #003087;
+      color: #ffffff;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Responsive Breakpoints (Mobile Drawer & Accordion Styling) */
+    @media (max-width: 1024px) {
+      .cltcc-utility-bar {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+      }
+      
+      .cltcc-utility-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .cltcc-mobile-toggle {
+        display: block;
+      }
+
+      .cltcc-nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #ffffff;
+        border-top: 2px solid #003087;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        z-index: 999;
+      }
+
+      .cltcc-nav-menu.is-active {
+        display: flex;
+      }
+
+      .cltcc-nav-item {
+        width: 100%;
+      }
+
+      .cltcc-nav-link {
+        width: 100%;
+        justify-content: space-between;
+        border-bottom: 1px solid #E5E7EB;
+        padding: 14px 20px;
+      }
+
+      .cltcc-dropdown,
+      .cltcc-megamenu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        background-color: #F3F4F6;
+        display: none;
+        padding: 10px 20px;
+      }
+
+      .cltcc-megamenu {
+        grid-template-columns: 1fr;
+      }
+
+      .cltcc-nav-item.mobile-open .cltcc-dropdown,
+      .cltcc-nav-item.mobile-open .cltcc-megamenu {
+        display: block;
+      }
+    }
+  </style>
+
+  <!-- UTILITY TOP BAR -->
+  <div class="cltcc-nav-root">
+    <div class="cltcc-utility-bar">
+      <!-- Audience Quick Jumps -->
+      <ul class="cltcc-utility-links" aria-label="Audience Quick Jumps">
+        <li><a href="/current-students">Current Students</a></li>
+        <li><a href="/faculty-staff">Faculty &amp; Staff</a></li>
+        <li><a href="/employers">Employers &amp; Industry</a></li>
+      </ul>
+
+      <!-- Quick Actions & Search -->
+      <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+        <ul class="cltcc-utility-links" aria-label="Quick Actions">
+          <li><a href="/portal" target="_blank" rel="noopener">Canvas / Student Portal</a></li>
+          <li><a href="/request-info">Request Info</a></li>
+          <li><a href="/visit">Visit Campus</a></li>
+          <li><a href="/apply" class="cltcc-cta-apply">Apply Now</a></li>
+        </ul>
+
+        <!-- Search Bar Form -->
+        <form class="cltcc-search-form" action="/search" method="get" role="search">
+          <label for="cltcc-search-input" class="visually-hidden" style="position:absolute; width:1px; height:1px; overflow:hidden;">Search CLTCC.edu</label>
+          <input type="search" id="cltcc-search-input" name="q" class="cltcc-search-input" placeholder="Search website..." aria-label="Search site content">
+          <button type="submit" class="cltcc-search-btn" aria-label="Submit Search">🔍</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- MAIN NAVIGATION BAR -->
+    <nav class="cltcc-main-navbar" role="navigation" aria-label="Main Navigation">
+      <!-- Brand Logo / Title -->
+      <a href="/" class="cltcc-brand-logo" aria-label="Central Louisiana Technical Community College Homepage">
+        <div>
+          <span class="cltcc-brand-title">CLTCC</span>
+          <span class="cltcc-brand-subtitle">Central Louisiana Technical Community College</span>
+        </div>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="cltcc-mobile-toggle" aria-expanded="false" aria-controls="primary-nav-list" aria-label="Toggle navigation menu" onclick="toggleMobileMenu(this)">
+        Menu ☰
+      </button>
+
+      <!-- Main Navigation Menu -->
+      <ul id="primary-nav-list" class="cltcc-nav-menu">
+        
+        <!-- 1. Mega Menu Category: Programs & Academics -->
+        <li class="cltcc-nav-item">
+          <button class="cltcc-nav-link" aria-expanded="false" aria-haspopup="true">
+            Programs &amp; Academics <span aria-hidden="true">▾</span>
+          </button>
+          <div class="cltcc-megamenu" role="region" aria-label="Programs &amp; Academics Submenu">
+            <div class="cltcc-mega-col">
+              <h3>Allied Health &amp; Nursing</h3>
+              <ul>
+                <li><a href="/programs/practical-nursing">Practical Nursing (PN)</a></li>
+                <li><a href="/programs/associate-nursing">Associate Degree Nursing (ASN)</a></li>
+                <li><a href="/programs/patient-care">Patient Care Technician</a></li>
+                <li><a href="/programs/emt">Emergency Medical Technician</a></li>
+              </ul>
+            </div>
+            <div class="cltcc-mega-col">
+              <h3>Industrial Technology</h3>
+              <ul>
+                <li><a href="/programs/welding">Welding Technology</a></li>
+                <li><a href="/programs/industrial-maintenance">Industrial Maintenance</a></li>
+                <li><a href="/programs/electrician">Electrician &amp; Automation</a></li>
+                <li><a href="/programs/hvac">Air Conditioning &amp; Refrigeration</a></li>
+              </ul>
+            </div>
+            <div class="cltcc-mega-col">
+              <h3>Business &amp; Cyber</h3>
+              <ul>
+                <li><a href="/programs/business-admin">Business Office Tech</a></li>
+                <li><a href="/programs/information-technology">Information Technology</a></li>
+                <li><a href="/programs/cybersecurity">Cybersecurity Specialist</a></li>
+                <li><a href="/programs/cloud-architecture">Cloud Architecture</a></li>
+              </ul>
+            </div>
+            <div class="cltcc-mega-col">
+              <h3>Transportation &amp; Resources</h3>
+              <ul>
+                <li><a href="/programs/cdl">Commercial Vehicle Ops (CDL)</a></li>
+                <li><a href="/programs/heavy-equipment">Heavy Equipment Operation</a></li>
+                <li><a href="/academics/online-learning">Online &amp; Distance Learning</a></li>
+                <li><a href="/academics/catalog">Academic Catalog &amp; Schedule</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <!-- 2. Dropdown: Admissions & Aid -->
+        <li class="cltcc-nav-item">
+          <button class="cltcc-nav-link" aria-expanded="false" aria-haspopup="true">
+            Admissions &amp; Aid <span aria-hidden="true">▾</span>
+          </button>
+          <ul class="cltcc-dropdown" aria-label="Admissions &amp; Aid Submenu">
+            <li><a href="/admissions/apply-steps" class="cltcc-dropdown-link">Steps to Apply</a></li>
+            <li><a href="/admissions/dual-enrollment" class="cltcc-dropdown-link">Dual Enrollment (High School)</a></li>
+            <li><a href="/admissions/testing" class="cltcc-dropdown-link">Testing &amp; ACCUPLACER Placement</a></li>
+            <li><a href="/financial-aid/tuition-fees" class="cltcc-dropdown-link">Tuition &amp; Fee Schedule</a></li>
+            <li><a href="/financial-aid/fafsa-guide" class="cltcc-dropdown-link">FAFSA &amp; Financial Aid Guide</a></li>
+            <li><a href="/financial-aid/tops-grants" class="cltcc-dropdown-link">TOPS &amp; Louisiana State Grants</a></li>
+            <li><a href="/financial-aid/scholarships" class="cltcc-dropdown-link">Scholarships &amp; Work-Study</a></li>
+          </ul>
+        </li>
+
+        <!-- 3. Dropdown: Student Resources -->
+        <li class="cltcc-nav-item">
+          <button class="cltcc-nav-link" aria-expanded="false" aria-haspopup="true">
+            Student Resources <span aria-hidden="true">▾</span>
+          </button>
+          <ul class="cltcc-dropdown" aria-label="Student Resources Submenu">
+            <li><a href="/resources/advising" class="cltcc-dropdown-link">Academic Advising &amp; Counseling</a></li>
+            <li><a href="/resources/tutoring" class="cltcc-dropdown-link">Tutoring &amp; Learning Centers</a></li>
+            <li><a href="/resources/library" class="cltcc-dropdown-link">Library &amp; Database Access</a></li>
+            <li><a href="/resources/registrar" class="cltcc-dropdown-link">Registrar &amp; Transcripts</a></li>
+            <li><a href="/resources/career-services" class="cltcc-dropdown-link">Career Services &amp; Job Placement</a></li>
+            <li><a href="/resources/it-helpdesk" class="cltcc-dropdown-link">IT Help Desk &amp; Canvas Support</a></li>
+          </ul>
+        </li>
+
+        <!-- 4. Dropdown: Workforce & Business -->
+        <li class="cltcc-nav-item">
+          <button class="cltcc-nav-link" aria-expanded="false" aria-haspopup="true">
+            Workforce &amp; Business <span aria-hidden="true">▾</span>
+          </button>
+          <ul class="cltcc-dropdown" aria-label="Workforce &amp; Business Submenu">
+            <li><a href="/workforce/corporate-training" class="cltcc-dropdown-link">Customized Corporate Training</a></li>
+            <li><a href="/workforce/workready-grants" class="cltcc-dropdown-link">WorkReady Louisiana Grants</a></li>
+            <li><a href="/workforce/continuing-ed" class="cltcc-dropdown-link">Continuing Education (Non-Credit)</a></li>
+            <li><a href="/workforce/hire-graduates" class="cltcc-dropdown-link">Hire CLTCC Graduates</a></li>
+            <li><a href="/workforce/advisory-boards" class="cltcc-dropdown-link">Program Advisory Boards</a></li>
+          </ul>
+        </li>
+
+        <!-- 5. Dropdown: About Us -->
+        <li class="cltcc-nav-item">
+          <button class="cltcc-nav-link" aria-expanded="false" aria-haspopup="true">
+            About Us <span aria-hidden="true">▾</span>
+          </button>
+          <ul class="cltcc-dropdown" aria-label="About Us Submenu">
+            <li><a href="/about/campuses" class="cltcc-dropdown-link">Campuses &amp; Locations</a></li>
+            <li><a href="/about/leadership" class="cltcc-dropdown-link">Leadership &amp; Executive Staff</a></li>
+            <li><a href="/about/accreditation" class="cltcc-dropdown-link">Accreditation &amp; Effectiveness</a></li>
+            <li><a href="/about/news-events" class="cltcc-dropdown-link">News, Events &amp; Press Releases</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+
+  <!-- MINIMAL JAVASCRIPT FOR ACCESSIBILITY & MOBILE TOGGLE -->
+  <script>
+    function toggleMobileMenu(btn) {
+      const menu = document.getElementById('primary-nav-list');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !expanded);
+      menu.classList.toggle('is-active');
+    }
+
+    // Accessible keyboard aria-expanded management for main navigation links
+    document.querySelectorAll('.cltcc-nav-item').forEach(item => {
+      const button = item.querySelector('.cltcc-nav-link');
+      if (button) {
+        button.addEventListener('click', (e) => {
+          const isMobile = window.innerWidth <= 1024;
+          if (isMobile) {
+            e.preventDefault();
+            item.classList.toggle('mobile-open');
+            const expanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', !expanded);
+          }
+        });
+        
+        item.addEventListener('mouseenter', () => button.setAttribute('aria-expanded', 'true'));
+        item.addEventListener('mouseleave', () => button.setAttribute('aria-expanded', 'false'));
+      }
+    });
+  </script>
+</header>
