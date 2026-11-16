@@ -4,10 +4,9 @@
 			"path": "."
 		},
 		{
-			"path": "\\\\dc02\\DistroFolder\\"
+			"name": "List-of-Resources",
+			"path": "../List-of-Resources/List-of-Resources"
 		}
 	],
-	"settings": {
-		"powershell.cwd": "Github-CLTCC"
-	}
+	"settings": {}
 }
